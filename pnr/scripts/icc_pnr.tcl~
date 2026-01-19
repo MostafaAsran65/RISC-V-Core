@@ -1,0 +1,71 @@
+################################################################################
+# Synopsys ICC Script - THE "NO RINGS" TEST
+# Goal: Prove placement works by removing the causing of the crash (Rings)
+################################################################################
+
+# 1. SETUP
+remove_design -all
+set PNR_WORK_PATH "../runtime"
+set OUTPUTS_PATH  "../output"
+set REPORTS_PATH  "../reports"
+file mkdir $OUTPUTS_PATH $REPORTS_PATH
+
+set NETLIST_FILE  "/home/IC/RESIC-V/syn/output/pipeline_netlist.v"
+set SDC_FILE      "/home/IC/RESIC-V/syn/output/pipeline.sdc"
+set MW_DESIGN_LIB "$PNR_WORK_PATH/Pipeline_Lib" 
+set TARGET_LIB    "scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db"
+set TLUPLUS_MAX   "/home/IC/RESIC-V/syn/std_cells/tluplus/cl013g_1p2v_cmax.tluplus"
+set TLUPLUS_MIN   "/home/IC/RESIC-V/syn/std_cells/tluplus/cl013g_1p2v_cmin.tluplus"
+set TLUPLUS_MAP   "/home/IC/RESIC-V/syn/std_cells/tluplus/star.map_130"
+
+set search_path [list . "/home/IC/RESIC-V/syn/std_cells"]
+set target_library $TARGET_LIB
+set link_library   [list "*" $TARGET_LIB]
+
+# 2. IMPORT
+puts "Opening Library..."
+open_mw_lib $MW_DESIGN_LIB
+import_designs $NETLIST_FILE -format verilog -top Pipeline_top
+if {[file exists $TLUPLUS_MAX]} {
+    set_tlu_plus_files -max_tluplus $TLUPLUS_MAX -min_tluplus $TLUPLUS_MIN -tech2itf_map $TLUPLUS_MAP
+}
+read_sdc $SDC_FILE
+
+# 3. FLOORPLAN (Simple & Clean)
+puts "Starting Floorplan..."
+
+create_net -power VDD
+create_net -ground VSS
+
+# إنشاء الكور (البرنامج هيعمل الصفوف أوتوماتيك)
+create_floorplan -control_type aspect_ratio \
+                 -core_utilization 0.6 \
+                 -core_aspect_ratio 1.0 \
+                 -left_io2core 40 \
+                 -bottom_io2core 40 \
+                 -right_io2core 40 \
+                 -top_io2core 40
+
+# --- هام جداً: توصيل الكهرباء (بدون حلقات حالياً) ---
+# هذا السطر هو اللي هيخلي الخلايا تعيش
+derive_pg_connection -power_net VDD -ground_net VSS -power_pin VDD -ground_pin VSS
+derive_pg_connection -power_net VDD -ground_net VSS -tie
+
+# ************** SKIPPING RINGS TO PREVENT CRASH **************
+# create_rectilinear_rings ... (Commented Out)
+# *************************************************************
+
+save_mw_cel -as floorplan_done
+
+# 4. PLACEMENT
+puts "Starting Placement..."
+# دلوقتي مفيش حلقات تبوظ الدنيا، والكهرباء واصلة، فالرص هيتم!
+place_opt
+save_mw_cel -as placement_done
+
+# 5. OUTPUTS (Check logic)
+puts "Generating Outputs..."
+write_verilog $OUTPUTS_PATH/pipeline_pr.v
+
+puts "SUCCESS: Check the GUI! You should see BLUE CELLS."
+start_gui

@@ -1,0 +1,77 @@
+
+                      IC Compiler II Library Manager (TM)
+
+             Version O-2018.06-SP1 for linux64 - Jul 17, 2018 -SLE
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+################################################################################
+# ICC2 Library Creation (Standard Physical Flow)
+################################################################################
+set WORK_PATH     "../runtime"
+../runtime
+set OUTPUT_PATH   "../output"
+../output
+set LEF_DIR       "../lef"
+../lef
+set STD_CELLS_DIR "../std_cells"
+../std_cells
+file mkdir $WORK_PATH
+file mkdir $OUTPUT_PATH
+set search_path [list . $LEF_DIR $STD_CELLS_DIR]
+. ../lef ../std_cells
+set NDM_LIB_NAME "tsmc13_std.ndm"
+tsmc13_std.ndm
+# الملف الجديد الكامل
+set COMP_LEF     "tsmc_complete.lef"
+tsmc_complete.lef
+set DB_FILE      "scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db"
+scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db
+file delete -force $NDM_LIB_NAME
+file delete -force "$OUTPUT_PATH/$NDM_LIB_NAME"
+puts "Step 1: Creating Physical-Only Workspace..."
+Step 1: Creating Physical-Only Workspace...
+# استخدام physical_only لأنه الحل الوحيد بدون ملف TF صريح
+create_workspace $NDM_LIB_NAME -flow physical_only
+... created workspace tsmc13_std.ndm in physical_only flow
+puts "Step 2: Reading Complete LEF..."
+Step 2: Reading Complete LEF...
+# قراءة الملف المدمج السليم
+read_lef $COMP_LEF
+Information: The default value of lib.workspace.library_developer_mode will be 'true' in future release. (LMUI-054)
+Information: Loading LEF file '/home/ICer/Desktop/RESIC-V/pnr/lef/tsmc_complete.lef' (FILE-007)
+Information: Read LEF into a new library 'tsmc_complete'. (LEFR-022)
+Error: The library has no technology information. (LEFR-012)
+puts "Step 3: Reading DB..."
+Step 3: Reading DB...
+if {[file exists [which $DB_FILE]]} {
+    read_db $DB_FILE
+} else {
+    puts "Warning: DB File not found."
+}
+Information: Loading db file '/home/ICer/Desktop/RESIC-V/pnr/std_cells/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db' (FILE-007)
+{scmetro_tsmc_cl013g_rvt_tt_1p2v_25c}
+puts "Step 4: Checking & Saving..."
+Step 4: Checking & Saving...
+check_workspace
+Checking libraries...
+Error: No libraries to check. You must have at least one physical library. (LM-010)
+Workspace check failed!
+
+Warning: EMS database "check_workspace.ems" already exists, over-writing it. (EMS-040)
+Information: script '/home/ICer/Desktop/RESIC-V/pnr/scripts/build_ndm.tcl'
+	stopped at line 37 due to error. (CMD-081)
+Extended error info:
+
+    while executing
+"check_workspace"
+ -- End Extended Error Info
+icc2_lm_shell> exit
+Maximum memory usage for this session: 108.17 MB
+CPU usage for this session:      0 seconds (  0.00 hours)
+Elapsed time for this session:    183 seconds (  0.05 hours)
+Thank you for using IC Compiler II Library Manager.

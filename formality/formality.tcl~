@@ -1,0 +1,111 @@
+################################################################################
+# Synopsys Formality Script (Equivalence Checking)
+# Project: RISC-V Pipeline
+################################################################################
+
+# 1. SETUP PATHS
+################################################################################
+
+set RTL_PATH "/home/IC/RESIC-V/syn/rtl"
+
+# Synthesis
+set NETLIST_PATH "/home/IC/RESIC-V/syn/output"
+
+
+set LIB_PATH "/home/IC/RESIC-V/syn/std_cells"
+set LIB_NAME "scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db"
+
+
+set SVF_PATH "/home/IC/RESIC-V/syn/scripts"
+
+# Create a log file
+set sh_output_log_file "formality.log"
+
+################################################################################
+# 2. GUIDANCE (Load SVF)
+################################################################################
+puts "----------------------------------------------------------------"
+puts "Loading SVF Guidance..."
+puts "----------------------------------------------------------------"
+
+set_svf "$SVF_PATH/default.svf"
+
+################################################################################
+# 3. READ REFERENCE DESIGN (RTL)
+################################################################################
+puts "----------------------------------------------------------------"
+puts "Reading Reference Design (RTL)..."
+puts "----------------------------------------------------------------"
+
+#  Compilation)
+set my_verilog_files [list \
+    "$RTL_PATH/Mux.v" \
+    "$RTL_PATH/PC.v" \
+    "$RTL_PATH/PC_Adder.v" \
+    "$RTL_PATH/Sign_Extend.v" \
+    "$RTL_PATH/ALU.v" \
+    "$RTL_PATH/Register_File.v" \
+    "$RTL_PATH/Instruction_Memory.v" \
+    "$RTL_PATH/Data_Memory.v" \
+    "$RTL_PATH/Main_Decoder.v" \
+    "$RTL_PATH/ALU_Decoder.v" \
+    "$RTL_PATH/Control_Unit_Top.v" \
+    "$RTL_PATH/Hazard_unit.v" \
+    "$RTL_PATH/Fetch_Cycle.v" \
+    "$RTL_PATH/Decode_Cyle.v" \
+    "$RTL_PATH/Execute_Cycle.v" \
+    "$RTL_PATH/Memory_Cycle.v" \
+    "$RTL_PATH/Writeback_Cycle.v" \
+    "$RTL_PATH/Pipeline_Top.v" \
+]
+
+#  (Reference)
+read_verilog -container r -libname WORK -05 $my_verilog_files
+
+#  Reference
+set_top r:/WORK/Pipeline_top
+
+################################################################################
+# 4. READ IMPLEMENTATION DESIGN (NETLIST)
+################################################################################
+puts "----------------------------------------------------------------"
+puts "Reading Implementation Design (Netlist)..."
+puts "----------------------------------------------------------------"
+
+read_db -container i "$LIB_PATH/$LIB_NAME"
+
+# (Implementation)
+read_verilog -container i -netlist "$NETLIST_PATH/pipeline_netlist.v"
+
+# Implementation
+set_top i:/WORK/Pipeline_top
+
+################################################################################
+# 5. MATCH & VERIFY
+################################################################################
+puts "----------------------------------------------------------------"
+puts "Matching and Verifying..."
+puts "----------------------------------------------------------------"
+
+#  (Compare Points)
+match
+
+
+if { [verify] } {
+    puts "----------------------------------------------------------------"
+    puts "  Verification SUCCEEDED: RTL matches Netlist exactly."
+    puts "----------------------------------------------------------------"
+} else {
+    puts "----------------------------------------------------------------"
+    puts "  Verification FAILED: Differences detected!"
+    puts "----------------------------------------------------------------"
+    
+   
+    report_failing_points
+}
+
+################################################################################
+# 6. START GUI
+################################################################################
+puts "Starting Formality GUI..."
+start_gui

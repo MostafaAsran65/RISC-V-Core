@@ -1,0 +1,84 @@
+
+                      IC Compiler II Library Manager (TM)
+
+             Version O-2018.06-SP1 for linux64 - Jul 17, 2018 -SLE
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+################################################################################
+# ICC2 Library Creation (The Bypass Method)
+################################################################################
+set WORK_PATH     "../runtime"
+../runtime
+set OUTPUT_PATH   "../output"
+../output
+set LEF_DIR       "../lef"
+../lef
+set STD_CELLS_DIR "../std_cells"
+../std_cells
+file mkdir $WORK_PATH
+file mkdir $OUTPUT_PATH
+set search_path [list . $LEF_DIR $STD_CELLS_DIR]
+. ../lef ../std_cells
+set NDM_LIB_NAME "tsmc13_std.ndm"
+tsmc13_std.ndm
+# استخدام الملفات النظيفة البسيطة
+set TECH_LEF     "simple_tech.lef"
+simple_tech.lef
+set MACRO_LEF    "simple_macros.lef"
+simple_macros.lef
+set DB_FILE      "scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db"
+scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db
+# تنظيف القديم
+file delete -force $NDM_LIB_NAME
+file delete -force "$OUTPUT_PATH/$NDM_LIB_NAME"
+puts "Step 1: Creating Empty Physical Workspace..."
+Step 1: Creating Empty Physical Workspace...
+# لاحظ: شيلنا -technology خالص عشان نتفادى الإيرور
+create_workspace $NDM_LIB_NAME -flow physical_only
+... created workspace tsmc13_std.ndm in physical_only flow
+puts "Step 2: Reading Technology LEF..."
+Step 2: Reading Technology LEF...
+# قراءة ملف التكنولوجي كـ LEF عادي
+read_lef $TECH_LEF
+Information: The default value of lib.workspace.library_developer_mode will be 'true' in future release. (LMUI-054)
+Information: Loading LEF file '/home/ICer/Desktop/RESIC-V/pnr/lef/simple_tech.lef' (FILE-007)
+Information: Read LEF into a new library 'simple_tech'. (LEFR-022)
+Error: The library has no technology information. (LEFR-012)
+puts "Step 3: Reading Macros LEF..."
+Step 3: Reading Macros LEF...
+# قراءة ملف الخلايا
+read_lef $MACRO_LEF
+Information: The default value of lib.workspace.library_developer_mode will be 'true' in future release. (LMUI-054)
+Information: Loading LEF file '/home/ICer/Desktop/RESIC-V/pnr/lef/simple_macros.lef' (FILE-007)
+Information: Read LEF into a new library 'simple_macros'. (LEFR-022)
+Error: The library has no technology information. (LEFR-012)
+puts "Step 4: Reading DB..."
+Step 4: Reading DB...
+if {[file exists [which $DB_FILE]]} {
+    read_db $DB_FILE
+} else {
+    puts "Warning: DB File not found."
+}
+Information: Loading db file '/home/ICer/Desktop/RESIC-V/pnr/std_cells/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db' (FILE-007)
+{scmetro_tsmc_cl013g_rvt_tt_1p2v_25c}
+puts "Step 5: Checking & Saving..."
+Step 5: Checking & Saving...
+check_workspace
+Checking libraries...
+Error: No libraries to check. You must have at least one physical library. (LM-010)
+Workspace check failed!
+
+Warning: EMS database "check_workspace.ems" already exists, over-writing it. (EMS-040)
+Information: script '/home/ICer/Desktop/RESIC-V/pnr/scripts/build_ndm.tcl'
+	stopped at line 44 due to error. (CMD-081)
+Extended error info:
+
+    while executing
+"check_workspace"
+ -- End Extended Error Info
+icc2_lm_shell> 

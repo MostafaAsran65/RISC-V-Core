@@ -1,0 +1,96 @@
+**************************************************
+Report         : failing_points
+
+Reference      : r:/WORK/Pipeline_top
+Implementation : i:/WORK/Pipeline_top
+Version        : L-2016.03-SP1
+Date           : Sat Jan 17 03:25:08 2026
+**************************************************
+
+20 Failing compare points (20 matched, 0 unmatched):
+
+  Ref  DFF        r:/WORK/Pipeline_top/Decode/ALUSrcE_reg
+  Impl DFF0       i:/WORK/Pipeline_top/Decode/ALUSrcE_reg
+
+  Ref  DFF        r:/WORK/Pipeline_top/Decode/ImmExtE_reg[0]
+  Impl DFF0       i:/WORK/Pipeline_top/Decode/ImmExtE_reg[0]
+
+  Ref  DFF        r:/WORK/Pipeline_top/Decode/ImmExtE_reg[10]
+  Impl DFF0       i:/WORK/Pipeline_top/Decode/ImmExtE_reg[10]
+
+  Ref  DFF        r:/WORK/Pipeline_top/Decode/ImmExtE_reg[11]
+  Impl DFF0       i:/WORK/Pipeline_top/Decode/ImmExtE_reg[11]
+
+  Ref  DFF        r:/WORK/Pipeline_top/Decode/ImmExtE_reg[12]
+  Impl DFF0       i:/WORK/Pipeline_top/Decode/ImmExtE_reg[12]
+
+  Ref  DFF        r:/WORK/Pipeline_top/Decode/ImmExtE_reg[13]
+  Impl DFF0       i:/WORK/Pipeline_top/Decode/ImmExtE_reg[13]
+
+  Ref  DFF        r:/WORK/Pipeline_top/Decode/ImmExtE_reg[14]
+  Impl DFF0       i:/WORK/Pipeline_top/Decode/ImmExtE_reg[14]
+
+  Ref  DFF        r:/WORK/Pipeline_top/Decode/ImmExtE_reg[15]
+  Impl DFF0       i:/WORK/Pipeline_top/Decode/ImmExtE_reg[15]
+
+  Ref  DFF        r:/WORK/Pipeline_top/Decode/ImmExtE_reg[16]
+  Impl DFF0       i:/WORK/Pipeline_top/Decode/ImmExtE_reg[16]
+
+  Ref  DFF        r:/WORK/Pipeline_top/Decode/ImmExtE_reg[17]
+  Impl DFF0       i:/WORK/Pipeline_top/Decode/ImmExtE_reg[17]
+
+  Ref  DFF        r:/WORK/Pipeline_top/Decode/ImmExtE_reg[18]
+  Impl DFF0       i:/WORK/Pipeline_top/Decode/ImmExtE_reg[18]
+
+  Ref  DFF        r:/WORK/Pipeline_top/Decode/ImmExtE_reg[19]
+  Impl DFF0       i:/WORK/Pipeline_top/Decode/ImmExtE_reg[19]
+
+  Ref  DFF        r:/WORK/Pipeline_top/Decode/ImmExtE_reg[1]
+  Impl DFF0       i:/WORK/Pipeline_top/Decode/ImmExtE_reg[1]
+
+  Ref  DFF        r:/WORK/Pipeline_top/Decode/ImmExtE_reg[20]
+  Impl DFF0       i:/WORK/Pipeline_top/Decode/ImmExtE_reg[20]
+
+  Ref  DFF        r:/WORK/Pipeline_top/Decode/ImmExtE_reg[21]
+  Impl DFF0       i:/WORK/Pipeline_top/Decode/ImmExtE_reg[21]
+
+  Ref  DFF        r:/WORK/Pipeline_top/Decode/ImmExtE_reg[22]
+  Impl DFF0       i:/WORK/Pipeline_top/Decode/ImmExtE_reg[22]
+
+  Ref  DFF        r:/WORK/Pipeline_top/Decode/ImmExtE_reg[23]
+  Impl DFF0       i:/WORK/Pipeline_top/Decode/ImmExtE_reg[23]
+
+  Ref  DFF        r:/WORK/Pipeline_top/Decode/ImmExtE_reg[24]
+  Impl DFF0       i:/WORK/Pipeline_top/Decode/ImmExtE_reg[24]
+
+  Ref  DFF        r:/WORK/Pipeline_top/Decode/ImmExtE_reg[25]
+  Impl DFF0       i:/WORK/Pipeline_top/Decode/ImmExtE_reg[25]
+
+  Ref  DFF        r:/WORK/Pipeline_top/Decode/ImmExtE_reg[26]
+  Impl DFF0       i:/WORK/Pipeline_top/Decode/ImmExtE_reg[26]
+
+ [BBNet: multiply-driven net
+  BBPin: black-box pin
+  Cut:   cut-point
+  DFF:   non-constant DFF register
+  DFF0:  constant 0 DFF register
+  DFF1:  constant 1 DFF register
+  DFFX:  constant X DFF register
+  DFF0X: constrained 0X DFF register
+  DFF1X: constrained 1X DFF register
+  LAT:   non-constant latch register
+  LAT0:  constant 0 latch register
+  LAT1:  constant 1 latch register
+  LATX:  constant X latch register
+  LAT0X: constrained 0X latch register
+  LAT1X: constrained 1X latch register
+  LATCG: clock-gating latch register
+  TLA:   transparent latch register
+  TLA0X: transparent constrained 0X latch register
+  TLA1X: transparent constrained 1X latch register
+  Loop:  cycle break point
+  Port:  primary (top-level) port
+  Und:   undriven signal cut-point
+  Unk:   unknown signal cut-point]
+
+1

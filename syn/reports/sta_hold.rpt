@@ -1,0 +1,577 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 20
+Design : Pipeline_top
+Version: O-2018.06-SP1
+Date   : Sun Jan 18 02:30:11 2026
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: scmetro_tsmc_cl013g_rvt_tt_1p2v_25c   Library: scmetro_tsmc_cl013g_rvt_tt_1p2v_25c
+Wire Load Model Mode: top
+
+  Startpoint: Decode/rf/Register_reg[0][19]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Decode/rf/Register_reg[0][19]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][19]/CK (DFFQX2M)              0.00 #     0.00 r
+  Decode/rf/Register_reg[0][19]/Q (DFFQX2M)               0.20       0.20 r
+  Decode/rf/Register_reg[0][19]/D (DFFQX2M)               0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][19]/CK (DFFQX2M)              0.00       0.00 r
+  library hold time                                      -0.04      -0.04
+  data required time                                                -0.04
+  --------------------------------------------------------------------------
+  data required time                                                -0.04
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.24
+
+
+  Startpoint: Decode/rf/Register_reg[0][18]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Decode/rf/Register_reg[0][18]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][18]/CK (DFFQX2M)              0.00 #     0.00 r
+  Decode/rf/Register_reg[0][18]/Q (DFFQX2M)               0.20       0.20 r
+  Decode/rf/Register_reg[0][18]/D (DFFQX2M)               0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][18]/CK (DFFQX2M)              0.00       0.00 r
+  library hold time                                      -0.04      -0.04
+  data required time                                                -0.04
+  --------------------------------------------------------------------------
+  data required time                                                -0.04
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.24
+
+
+  Startpoint: Decode/rf/Register_reg[0][17]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Decode/rf/Register_reg[0][17]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][17]/CK (DFFQX2M)              0.00 #     0.00 r
+  Decode/rf/Register_reg[0][17]/Q (DFFQX2M)               0.20       0.20 r
+  Decode/rf/Register_reg[0][17]/D (DFFQX2M)               0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][17]/CK (DFFQX2M)              0.00       0.00 r
+  library hold time                                      -0.04      -0.04
+  data required time                                                -0.04
+  --------------------------------------------------------------------------
+  data required time                                                -0.04
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.24
+
+
+  Startpoint: Decode/rf/Register_reg[0][16]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Decode/rf/Register_reg[0][16]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][16]/CK (DFFQX2M)              0.00 #     0.00 r
+  Decode/rf/Register_reg[0][16]/Q (DFFQX2M)               0.20       0.20 r
+  Decode/rf/Register_reg[0][16]/D (DFFQX2M)               0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][16]/CK (DFFQX2M)              0.00       0.00 r
+  library hold time                                      -0.04      -0.04
+  data required time                                                -0.04
+  --------------------------------------------------------------------------
+  data required time                                                -0.04
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.24
+
+
+  Startpoint: Decode/rf/Register_reg[0][15]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Decode/rf/Register_reg[0][15]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][15]/CK (DFFQX2M)              0.00 #     0.00 r
+  Decode/rf/Register_reg[0][15]/Q (DFFQX2M)               0.20       0.20 r
+  Decode/rf/Register_reg[0][15]/D (DFFQX2M)               0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][15]/CK (DFFQX2M)              0.00       0.00 r
+  library hold time                                      -0.04      -0.04
+  data required time                                                -0.04
+  --------------------------------------------------------------------------
+  data required time                                                -0.04
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.24
+
+
+  Startpoint: Decode/rf/Register_reg[0][14]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Decode/rf/Register_reg[0][14]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][14]/CK (DFFQX2M)              0.00 #     0.00 r
+  Decode/rf/Register_reg[0][14]/Q (DFFQX2M)               0.20       0.20 r
+  Decode/rf/Register_reg[0][14]/D (DFFQX2M)               0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][14]/CK (DFFQX2M)              0.00       0.00 r
+  library hold time                                      -0.04      -0.04
+  data required time                                                -0.04
+  --------------------------------------------------------------------------
+  data required time                                                -0.04
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.24
+
+
+  Startpoint: Decode/rf/Register_reg[0][13]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Decode/rf/Register_reg[0][13]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][13]/CK (DFFQX2M)              0.00 #     0.00 r
+  Decode/rf/Register_reg[0][13]/Q (DFFQX2M)               0.20       0.20 r
+  Decode/rf/Register_reg[0][13]/D (DFFQX2M)               0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][13]/CK (DFFQX2M)              0.00       0.00 r
+  library hold time                                      -0.04      -0.04
+  data required time                                                -0.04
+  --------------------------------------------------------------------------
+  data required time                                                -0.04
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.24
+
+
+  Startpoint: Decode/rf/Register_reg[0][12]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Decode/rf/Register_reg[0][12]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][12]/CK (DFFQX2M)              0.00 #     0.00 r
+  Decode/rf/Register_reg[0][12]/Q (DFFQX2M)               0.20       0.20 r
+  Decode/rf/Register_reg[0][12]/D (DFFQX2M)               0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][12]/CK (DFFQX2M)              0.00       0.00 r
+  library hold time                                      -0.04      -0.04
+  data required time                                                -0.04
+  --------------------------------------------------------------------------
+  data required time                                                -0.04
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.24
+
+
+  Startpoint: Decode/rf/Register_reg[0][11]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Decode/rf/Register_reg[0][11]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][11]/CK (DFFQX2M)              0.00 #     0.00 r
+  Decode/rf/Register_reg[0][11]/Q (DFFQX2M)               0.20       0.20 r
+  Decode/rf/Register_reg[0][11]/D (DFFQX2M)               0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][11]/CK (DFFQX2M)              0.00       0.00 r
+  library hold time                                      -0.04      -0.04
+  data required time                                                -0.04
+  --------------------------------------------------------------------------
+  data required time                                                -0.04
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.24
+
+
+  Startpoint: Decode/rf/Register_reg[0][10]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Decode/rf/Register_reg[0][10]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][10]/CK (DFFQX2M)              0.00 #     0.00 r
+  Decode/rf/Register_reg[0][10]/Q (DFFQX2M)               0.20       0.20 r
+  Decode/rf/Register_reg[0][10]/D (DFFQX2M)               0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][10]/CK (DFFQX2M)              0.00       0.00 r
+  library hold time                                      -0.04      -0.04
+  data required time                                                -0.04
+  --------------------------------------------------------------------------
+  data required time                                                -0.04
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.24
+
+
+  Startpoint: Decode/rf/Register_reg[0][9]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Decode/rf/Register_reg[0][9]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][9]/CK (DFFQX2M)               0.00 #     0.00 r
+  Decode/rf/Register_reg[0][9]/Q (DFFQX2M)                0.20       0.20 r
+  Decode/rf/Register_reg[0][9]/D (DFFQX2M)                0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][9]/CK (DFFQX2M)               0.00       0.00 r
+  library hold time                                      -0.04      -0.04
+  data required time                                                -0.04
+  --------------------------------------------------------------------------
+  data required time                                                -0.04
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.24
+
+
+  Startpoint: Decode/rf/Register_reg[0][8]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Decode/rf/Register_reg[0][8]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][8]/CK (DFFQX2M)               0.00 #     0.00 r
+  Decode/rf/Register_reg[0][8]/Q (DFFQX2M)                0.20       0.20 r
+  Decode/rf/Register_reg[0][8]/D (DFFQX2M)                0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][8]/CK (DFFQX2M)               0.00       0.00 r
+  library hold time                                      -0.04      -0.04
+  data required time                                                -0.04
+  --------------------------------------------------------------------------
+  data required time                                                -0.04
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.24
+
+
+  Startpoint: Decode/rf/Register_reg[0][7]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Decode/rf/Register_reg[0][7]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][7]/CK (DFFQX2M)               0.00 #     0.00 r
+  Decode/rf/Register_reg[0][7]/Q (DFFQX2M)                0.20       0.20 r
+  Decode/rf/Register_reg[0][7]/D (DFFQX2M)                0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][7]/CK (DFFQX2M)               0.00       0.00 r
+  library hold time                                      -0.04      -0.04
+  data required time                                                -0.04
+  --------------------------------------------------------------------------
+  data required time                                                -0.04
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.24
+
+
+  Startpoint: Decode/rf/Register_reg[0][6]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Decode/rf/Register_reg[0][6]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][6]/CK (DFFQX2M)               0.00 #     0.00 r
+  Decode/rf/Register_reg[0][6]/Q (DFFQX2M)                0.20       0.20 r
+  Decode/rf/Register_reg[0][6]/D (DFFQX2M)                0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][6]/CK (DFFQX2M)               0.00       0.00 r
+  library hold time                                      -0.04      -0.04
+  data required time                                                -0.04
+  --------------------------------------------------------------------------
+  data required time                                                -0.04
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.24
+
+
+  Startpoint: Decode/rf/Register_reg[0][5]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Decode/rf/Register_reg[0][5]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][5]/CK (DFFQX2M)               0.00 #     0.00 r
+  Decode/rf/Register_reg[0][5]/Q (DFFQX2M)                0.20       0.20 r
+  Decode/rf/Register_reg[0][5]/D (DFFQX2M)                0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][5]/CK (DFFQX2M)               0.00       0.00 r
+  library hold time                                      -0.04      -0.04
+  data required time                                                -0.04
+  --------------------------------------------------------------------------
+  data required time                                                -0.04
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.24
+
+
+  Startpoint: Decode/rf/Register_reg[0][4]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Decode/rf/Register_reg[0][4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][4]/CK (DFFQX2M)               0.00 #     0.00 r
+  Decode/rf/Register_reg[0][4]/Q (DFFQX2M)                0.20       0.20 r
+  Decode/rf/Register_reg[0][4]/D (DFFQX2M)                0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][4]/CK (DFFQX2M)               0.00       0.00 r
+  library hold time                                      -0.04      -0.04
+  data required time                                                -0.04
+  --------------------------------------------------------------------------
+  data required time                                                -0.04
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.24
+
+
+  Startpoint: Decode/rf/Register_reg[0][3]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Decode/rf/Register_reg[0][3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][3]/CK (DFFQX2M)               0.00 #     0.00 r
+  Decode/rf/Register_reg[0][3]/Q (DFFQX2M)                0.20       0.20 r
+  Decode/rf/Register_reg[0][3]/D (DFFQX2M)                0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][3]/CK (DFFQX2M)               0.00       0.00 r
+  library hold time                                      -0.04      -0.04
+  data required time                                                -0.04
+  --------------------------------------------------------------------------
+  data required time                                                -0.04
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.24
+
+
+  Startpoint: Decode/rf/Register_reg[0][2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Decode/rf/Register_reg[0][2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][2]/CK (DFFQX2M)               0.00 #     0.00 r
+  Decode/rf/Register_reg[0][2]/Q (DFFQX2M)                0.20       0.20 r
+  Decode/rf/Register_reg[0][2]/D (DFFQX2M)                0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][2]/CK (DFFQX2M)               0.00       0.00 r
+  library hold time                                      -0.04      -0.04
+  data required time                                                -0.04
+  --------------------------------------------------------------------------
+  data required time                                                -0.04
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.24
+
+
+  Startpoint: Decode/rf/Register_reg[0][1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Decode/rf/Register_reg[0][1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][1]/CK (DFFQX2M)               0.00 #     0.00 r
+  Decode/rf/Register_reg[0][1]/Q (DFFQX2M)                0.20       0.20 r
+  Decode/rf/Register_reg[0][1]/D (DFFQX2M)                0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][1]/CK (DFFQX2M)               0.00       0.00 r
+  library hold time                                      -0.04      -0.04
+  data required time                                                -0.04
+  --------------------------------------------------------------------------
+  data required time                                                -0.04
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.24
+
+
+  Startpoint: Decode/rf/Register_reg[0][0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Decode/rf/Register_reg[0][0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][0]/CK (DFFQX2M)               0.00 #     0.00 r
+  Decode/rf/Register_reg[0][0]/Q (DFFQX2M)                0.20       0.20 r
+  Decode/rf/Register_reg[0][0]/D (DFFQX2M)                0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  Decode/rf/Register_reg[0][0]/CK (DFFQX2M)               0.00       0.00 r
+  library hold time                                      -0.04      -0.04
+  data required time                                                -0.04
+  --------------------------------------------------------------------------
+  data required time                                                -0.04
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.24
+
+
+1

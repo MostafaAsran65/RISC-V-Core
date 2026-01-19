@@ -1,0 +1,15 @@
+define		 _libId (dbGetCurrentLibId)
+
+dbDefineAntennaRule _libId 1 4 0 0
+dbDefineAntennaRule _libId 2 4 0 0
+dbAddAntennaLayerRule _libId 2 "METAL1" 5496 '(0.159 0 445.238 42990.8)
+dbAddAntennaLayerRule _libId 1 "VIA12" 50 '(0.159 0 210.714 899.286)
+dbAddAntennaLayerRule _libId 2 "METAL2" 5496 '(0.159 0 445.238 42990.8)
+dbAddAntennaLayerRule _libId 1 "VIA23" 50 '(0.159 0 210.714 899.286)
+dbAddAntennaLayerRule _libId 2 "METAL3" 5496 '(0.159 0 445.238 42990.8)
+dbAddAntennaLayerRule _libId 1 "VIA34" 50 '(0.159 0 210.714 899.286)
+dbAddAntennaLayerRule _libId 2 "METAL4" 5496 '(0.159 0 445.238 42990.8)
+dbAddAntennaLayerRule _libId 1 "VIA45" 50 '(0.159 0 210.714 899.286)
+dbAddAntennaLayerRule _libId 2 "METAL5" 5496 '(0.159 0 445.238 42990.8)
+dbAddAntennaLayerRule _libId 1 "VIA56" 50 '(0.159 0 210.714 899.286)
+dbAddAntennaLayerRule _libId 2 "METAL6" 5496 '(0.159 0 7988.1 49991.9)

@@ -1,0 +1,51 @@
+
+                      IC Compiler II Library Manager (TM)
+
+             Version O-2018.06-SP1 for linux64 - Jul 17, 2018 -SLE
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+################################################################################
+# ICC2 Library Creation (Direct Read Method)
+################################################################################
+set WORK_PATH     "../runtime"
+../runtime
+set OUTPUT_PATH   "../output"
+../output
+set LEF_DIR       "../lef"
+../lef
+set STD_CELLS_DIR "../std_cells"
+../std_cells
+file mkdir $WORK_PATH
+file mkdir $OUTPUT_PATH
+set NDM_LIB_NAME "tsmc13_std.ndm"
+tsmc13_std.ndm
+set COMBO_LEF    "$LEF_DIR/tsmc_combined.lef"
+../lef/tsmc_combined.lef
+set DB_FILE      "$STD_CELLS_DIR/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db"
+../std_cells/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db
+# مسح المكتبة القديمة
+file delete -force $NDM_LIB_NAME
+file delete -force "$OUTPUT_PATH/$NDM_LIB_NAME"
+puts "Step 1: Reading Combined LEF (Creates Lib automatically)..."
+Step 1: Reading Combined LEF (Creates Lib automatically)...
+# هنا التريكة: قراءة الملف المدمج هتنشئ مكتبة اسمها 'tsmc_combined' في الذاكرة
+read_lef $COMBO_LEF
+Information: The default value of lib.workspace.library_developer_mode will be 'true' in future release. (LMUI-054)
+Error: Cannot read LEF because there is no library workspace. (LMUI-005)
+Information: script '/home/ICer/Desktop/RESIC-V/pnr/scripts/build_ndm.tcl'
+	stopped at line 22 due to error. (CMD-081)
+Extended error info:
+
+    while executing
+"read_lef $COMBO_LEF"
+ -- End Extended Error Info
+icc2_lm_shell> exit
+Maximum memory usage for this session: 50.79 MB
+CPU usage for this session:      0 seconds (  0.00 hours)
+Elapsed time for this session:    156 seconds (  0.04 hours)
+Thank you for using IC Compiler II Library Manager.

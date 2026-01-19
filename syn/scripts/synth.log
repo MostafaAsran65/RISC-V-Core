@@ -1,0 +1,512 @@
+                                        
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+                                        
+                 Version K-2015.06 for linux64 - May 28, 2015 
+                                        
+                    Copyright (c) 1988 - 2015 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+Initializing gui preferences from file  /home/IC/.synopsys_dv_prefs.tcl
+################################################################################
+# Synopsys Design Compiler Synthesis Script
+# Project: RISC-V Pipeline
+# Description: Synthesis with clean workspace organization.
+################################################################################
+# 1. SETUP PATHS & DIRECTORIES
+################################################################################
+# Define project paths
+set RTL_PATH "/home/IC/RESIC-V/syn/rtl"
+/home/IC/RESIC-V/syn/rtl
+set LIB_PATH "/home/IC/RESIC-V/syn/std_cells"
+/home/IC/RESIC-V/syn/std_cells
+# Output directories (Relative to the scripts folder)
+set REPORTS_PATH "../reports"
+../reports
+set OUTPUTS_PATH "../output"
+../output
+set RUNTIME_PATH "../runtime" 
+../runtime
+# Create directories if they do not exist
+file mkdir $REPORTS_PATH
+file mkdir $OUTPUTS_PATH
+file mkdir $RUNTIME_PATH
+# --- CRITICAL FIX: Redirect WORK library to 'runtime' folder ---
+# This command forces all .mr, .pvl, .syn, and intermediate files 
+# to go into '../runtime' instead of cluttering the 'scripts' folder.
+define_design_lib WORK -path "$RUNTIME_PATH"
+1
+# Search Path Setup
+set search_path [list . $RTL_PATH $LIB_PATH]
+. /home/IC/RESIC-V/syn/rtl /home/IC/RESIC-V/syn/std_cells
+# Target Technology Library
+set target_library "scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db"
+scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db
+set link_library   [list "*" $target_library] 
+* scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db
+################################################################################
+# 2. SVF SETUP
+################################################################################
+# Save the .svf file in the runtime folder
+set_svf "$RUNTIME_PATH/default.svf"
+1
+################################################################################
+# 3. READ & ANALYZE RTL
+################################################################################
+# Clear previous designs
+remove_design -all
+1
+# List of Verilog source files
+set my_verilog_files [list     "$RTL_PATH/Mux.v"     "$RTL_PATH/PC.v"     "$RTL_PATH/PC_Adder.v"     "$RTL_PATH/Sign_Extend.v"     "$RTL_PATH/ALU.v"     "$RTL_PATH/Register_File.v"     "$RTL_PATH/Instruction_Memory.v"     "$RTL_PATH/Data_Memory.v"     "$RTL_PATH/Main_Decoder.v"     "$RTL_PATH/ALU_Decoder.v"     "$RTL_PATH/Control_Unit_Top.v"     "$RTL_PATH/Hazard_unit.v"     "$RTL_PATH/Fetch_Cycle.v"     "$RTL_PATH/Decode_Cyle.v"     "$RTL_PATH/Execute_Cycle.v"     "$RTL_PATH/Memory_Cycle.v"     "$RTL_PATH/Writeback_Cycle.v"     "$RTL_PATH/Pipeline_Top.v" ]
+/home/IC/RESIC-V/syn/rtl/Mux.v /home/IC/RESIC-V/syn/rtl/PC.v /home/IC/RESIC-V/syn/rtl/PC_Adder.v /home/IC/RESIC-V/syn/rtl/Sign_Extend.v /home/IC/RESIC-V/syn/rtl/ALU.v /home/IC/RESIC-V/syn/rtl/Register_File.v /home/IC/RESIC-V/syn/rtl/Instruction_Memory.v /home/IC/RESIC-V/syn/rtl/Data_Memory.v /home/IC/RESIC-V/syn/rtl/Main_Decoder.v /home/IC/RESIC-V/syn/rtl/ALU_Decoder.v /home/IC/RESIC-V/syn/rtl/Control_Unit_Top.v /home/IC/RESIC-V/syn/rtl/Hazard_unit.v /home/IC/RESIC-V/syn/rtl/Fetch_Cycle.v /home/IC/RESIC-V/syn/rtl/Decode_Cyle.v /home/IC/RESIC-V/syn/rtl/Execute_Cycle.v /home/IC/RESIC-V/syn/rtl/Memory_Cycle.v /home/IC/RESIC-V/syn/rtl/Writeback_Cycle.v /home/IC/RESIC-V/syn/rtl/Pipeline_Top.v
+puts "----------------------------------------------------------------"
+----------------------------------------------------------------
+puts "Analyzing RTL files..."
+Analyzing RTL files...
+puts "----------------------------------------------------------------"
+----------------------------------------------------------------
+analyze -format verilog $my_verilog_files
+Running PRESTO HDLC
+Compiling source file /home/IC/RESIC-V/syn/rtl/Mux.v
+Compiling source file /home/IC/RESIC-V/syn/rtl/PC.v
+Compiling source file /home/IC/RESIC-V/syn/rtl/PC_Adder.v
+Compiling source file /home/IC/RESIC-V/syn/rtl/Sign_Extend.v
+Compiling source file /home/IC/RESIC-V/syn/rtl/ALU.v
+Compiling source file /home/IC/RESIC-V/syn/rtl/Register_File.v
+Compiling source file /home/IC/RESIC-V/syn/rtl/Instruction_Memory.v
+Warning:  /home/IC/RESIC-V/syn/rtl/Register_File.v:22: The statements in initial blocks are ignored. (VER-281)
+Compiling source file /home/IC/RESIC-V/syn/rtl/Data_Memory.v
+Compiling source file /home/IC/RESIC-V/syn/rtl/Main_Decoder.v
+Warning:  /home/IC/RESIC-V/syn/rtl/Data_Memory.v:18: The statements in initial blocks are ignored. (VER-281)
+Compiling source file /home/IC/RESIC-V/syn/rtl/ALU_Decoder.v
+Compiling source file /home/IC/RESIC-V/syn/rtl/Control_Unit_Top.v
+Compiling source file /home/IC/RESIC-V/syn/rtl/Hazard_unit.v
+Compiling source file /home/IC/RESIC-V/syn/rtl/Fetch_Cycle.v
+Compiling source file /home/IC/RESIC-V/syn/rtl/Decode_Cyle.v
+Compiling source file /home/IC/RESIC-V/syn/rtl/Execute_Cycle.v
+Compiling source file /home/IC/RESIC-V/syn/rtl/Memory_Cycle.v
+Compiling source file /home/IC/RESIC-V/syn/rtl/Writeback_Cycle.v
+Compiling source file /home/IC/RESIC-V/syn/rtl/Pipeline_Top.v
+Presto compilation completed successfully.
+Loading db file '/home/IC/RESIC-V/syn/std_cells/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db'
+1
+# Elaborate the top-level module
+elaborate Pipeline_top
+Loading db file '/opt/Synopsys/Synplify2015/libraries/syn/gtech.db'
+Loading db file '/opt/Synopsys/Synplify2015/libraries/syn/standard.sldb'
+  Loading link library 'scmetro_tsmc_cl013g_rvt_tt_1p2v_25c'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'Pipeline_top'.
+Information: Building the design 'fetch_cycle'. (HDL-193)
+
+Inferred memory devices in process
+	in routine fetch_cycle line 41 in file
+		'/home/IC/RESIC-V/syn/rtl/Fetch_Cycle.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    PCPlus4D_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       PCD_reg       | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     InstrD_reg      | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'decode_cycle'. (HDL-193)
+
+Inferred memory devices in process
+	in routine decode_cycle line 59 in file
+		'/home/IC/RESIC-V/syn/rtl/Decode_Cyle.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       RdE_reg       | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      Rs1E_reg       | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      Rs2E_reg       | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    RegWriteE_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     ALUSrcE_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    MemWriteE_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   ResultSrcE_reg    | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     BranchE_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      JumpE_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   ALUControlE_reg   | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      RD1E_reg       | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      RD2E_reg       | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     ImmExtE_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       PCE_reg       | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    PCPlus4E_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'execute_cycle'. (HDL-193)
+
+Inferred memory devices in process
+	in routine execute_cycle line 59 in file
+		'/home/IC/RESIC-V/syn/rtl/Execute_Cycle.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    PCPlus4M_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   WriteDataM_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    RegWriteM_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    MemWriteM_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   ResultSrcM_reg    | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   ALUResultM_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       RDM_reg       | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'memory_cycle'. (HDL-193)
+
+Inferred memory devices in process
+	in routine memory_cycle line 26 in file
+		'/home/IC/RESIC-V/syn/rtl/Memory_Cycle.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| ALUResultW_out_reg  | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    ReadDataW_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    RegWriteW_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   ResultSrcW_reg    | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       RdW_reg       | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    PCPlus4W_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'writeback_cycle'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'hazard_unit'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'Mux'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'PC_Module'. (HDL-193)
+
+Inferred memory devices in process
+	in routine PC_Module line 6 in file
+		'/home/IC/RESIC-V/syn/rtl/PC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       PC_reg        | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'Instruction_Memory'. (HDL-193)
+
+Statistics for case statements in always block at line 8 in file
+	'/home/IC/RESIC-V/syn/rtl/Instruction_Memory.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            12            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'PC_Adder'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'Control_Unit_Top'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'Register_File'. (HDL-193)
+
+Inferred memory devices in process
+	in routine Register_File line 9 in file
+		'/home/IC/RESIC-V/syn/rtl/Register_File.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    Register_reg     | Flip-flop | 1024  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+===========================================================
+| block name/line  | Inputs | Outputs | # sel inputs | MB |
+===========================================================
+| Register_File/14 |   32   |   32    |      5       | N  |
+| Register_File/15 |   32   |   32    |      5       | N  |
+===========================================================
+Presto compilation completed successfully.
+Information: Building the design 'Sign_Extend'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'Mux_3_by_1'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'ALU'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'Data_Memory'. (HDL-193)
+
+Inferred memory devices in process
+	in routine Data_Memory line 8 in file
+		'/home/IC/RESIC-V/syn/rtl/Data_Memory.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       mem_reg       | Flip-flop | 32768 |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+===========================================================
+| block name/line  | Inputs | Outputs | # sel inputs | MB |
+===========================================================
+|  Data_Memory/13  |  1024  |   32    |      10      | N  |
+===========================================================
+Presto compilation completed successfully.
+Information: Building the design 'Main_Decoder'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'ALU_Decoder'. (HDL-193)
+Presto compilation completed successfully.
+1
+# Link the design
+current_design Pipeline_top
+Current design is 'Pipeline_top'.
+{Pipeline_top}
+link
+
+  Linking design 'Pipeline_top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (19 designs)              /home/IC/RESIC-V/syn/scripts/Pipeline_top.db, etc
+  scmetro_tsmc_cl013g_rvt_tt_1p2v_25c (library) /home/IC/RESIC-V/syn/std_cells/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db
+
+1
+################################################################################
+# 4. LINTING
+################################################################################
+puts "----------------------------------------------------------------"
+----------------------------------------------------------------
+puts "Running LINT (Check Design)..."
+Running LINT (Check Design)...
+puts "----------------------------------------------------------------"
+----------------------------------------------------------------
+check_design > $REPORTS_PATH/lint.rpt
+################################################################################
+# 5. CONSTRAINTS
+################################################################################
+# Define Clock (100 MHz)
+create_clock -name "clk" -period 10 -waveform {0 5} [get_ports clk]
+1
+set_ideal_network [get_ports rst]
+1
+# I/O Delays and Loads
+set_input_delay -max 2.0 -clock clk [remove_from_collection [all_inputs] [get_ports clk]]
+1
+set_output_delay -max 2.0 -clock clk [all_outputs]
+1
+set_load 0.05 [all_outputs]
+1
+# Verify constraints
+check_timing > $REPORTS_PATH/check_timing_pre_compile.rpt
+################################################################################
+# 6. COMPILE
+################################################################################
+puts "----------------------------------------------------------------"
+----------------------------------------------------------------
+puts "Starting Compilation..."
+Starting Compilation...
+puts "----------------------------------------------------------------"
+----------------------------------------------------------------
+set verilogout_no_tri true
+true
+set verilogout_show_unconnected_pins true
+true
+compile -map_effort medium
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | K-2015.06-DWBB_201506.0 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+
+Information: There are 128 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'hazard_unit'
+  Processing 'Mux_3_by_1_0'
+  Processing 'writeback_cycle'
+  Processing 'Data_Memory'
+  Processing 'memory_cycle'
+  Processing 'PC_Adder_0'
+  Processing 'ALU'
+  Processing 'Mux_0'
+  Processing 'execute_cycle'
+  Processing 'Sign_Extend'
+  Processing 'Register_File'
+  Processing 'ALU_Decoder'
+  Processing 'Main_Decoder'
+  Processing 'Control_Unit_Top'
+  Processing 'decode_cycle'
+  Processing 'Instruction_Memory'
+  Processing 'PC_Module'
+  Processing 'fetch_cycle'
+  Processing 'Pipeline_top'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'hazard_unit_DW01_cmp6_0'
+  Processing 'hazard_unit_DW01_cmp6_1'
+  Processing 'hazard_unit_DW01_cmp6_2'
+  Processing 'hazard_unit_DW01_cmp6_3'
+  Processing 'PC_Adder_1_DW01_add_0'
+  Processing 'ALU_DW01_add_0'
+  Processing 'PC_Adder_0_DW01_add_0'
+  Processing 'ALU_DW01_add_1'
+  Processing 'ALU_DW01_inc_0'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:02:39 2453535.9    565.26 18521284.0 3185950.2                          
+    0:02:39 2453535.9    565.26 18521284.0 3185950.2                          
+    0:02:41 2481268.4    565.26 18521284.0 3185943.5                          
+    0:02:41 2509283.2    565.26 18521284.0 3185935.8                          
+    0:02:42 2537326.4    565.26 18521284.0 3185929.0                          
+    0:02:43 2565341.2    565.26 18521284.0 3185921.0                          
+Information: The register 'Fetch/InstrD_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'Fetch/InstrD_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'Fetch/InstrD_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'Fetch/InstrD_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'Fetch/InstrD_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'Fetch/InstrD_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'Fetch/InstrD_reg[16]' is a constant and will be removed. (OPT-1206)
+Information: The register 'Fetch/InstrD_reg[19]' is a constant and will be removed. (OPT-1206)
+Information: The register 'Fetch/InstrD_reg[24]' is a constant and will be removed. (OPT-1206)
+Information: The register 'Fetch/InstrD_reg[25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'Fetch/InstrD_reg[26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'Fetch/InstrD_reg[27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'Fetch/InstrD_reg[28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'Fetch/InstrD_reg[29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'Fetch/InstrD_reg[30]' is a constant and will be removed. (OPT-1206)
+Information: The register 'Fetch/InstrD_reg[31]' is a constant and will be removed. (OPT-1206)
+    0:03:17 2733064.5      0.00       0.0       3.8                          
+    0:03:17 2733064.5      0.00       0.0       3.8                          
+    0:03:17 2733064.5      0.00       0.0       3.8                          
+    0:03:18 2733064.5      0.00       0.0       3.8                          
+    0:03:19 2733064.5      0.00       0.0       3.8                          
+    0:04:19 1401233.2      1.04      33.0       0.0                          
+    0:04:23 1400808.4      0.28       7.4       0.0                          
+    0:04:35 1400786.0      0.00       0.0       0.0                          
+    0:04:36 1400763.7      0.13       3.2       0.0                          
+    0:04:37 1400787.2      0.00       0.0       0.0                          
+    0:04:39 1400777.8      0.01       0.1       0.0                          
+    0:04:40 1400775.4      0.00       0.0       0.0                          
+    0:04:41 1400766.0      0.02       0.2       0.0                          
+    0:04:43 1400783.7      0.00       0.0       0.0                          
+    0:04:44 1400770.7      0.00       0.0       0.0                          
+    0:04:45 1400770.7      0.00       0.0       0.0                          
+    0:04:45 1399801.1      0.00       0.0       0.0                          
+    0:04:45 1399801.1      0.00       0.0       0.0                          
+    0:04:46 1399801.1      0.00       0.0       0.0                          
+    0:04:46 1399801.1      0.00       0.0       0.0                          
+    0:04:46 1399801.1      0.00       0.0       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:04:46 1399801.1      0.00       0.0       0.0                          
+    0:04:46 1399801.1      0.00       0.0       0.0                          
+    0:04:47 1399801.1      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:04:47 1399801.1      0.00       0.0       0.0                          
+    0:04:47 1399801.1      0.00       0.0       0.0                          
+    0:05:20 1399715.2      0.00       0.0       0.0                          
+    0:05:35 1399674.1      0.00       0.0       0.0                          
+    0:05:38 1399629.3      0.00       0.0       0.0                          
+    0:05:39 1399612.9      0.00       0.0       0.0                          
+    0:05:40 1399609.3      0.00       0.0       0.0                          
+    0:05:41 1399601.1      0.00       0.0       0.0                          
+    0:05:52 1399601.1      0.00       0.0       0.0                          
+    0:05:52 1399601.1      0.00       0.0       0.0                          
+    0:05:53 1399601.1      0.00       0.0       0.0                          
+    0:05:53 1399516.4      0.58      18.2       0.0                          
+    0:05:53 1399516.4      0.58      18.2       0.0                          
+    0:05:53 1399516.4      0.58      18.2       0.0                          
+    0:05:54 1399516.4      0.58      18.2       0.0                          
+    0:05:54 1399516.4      0.58      18.2       0.0                          
+    0:05:54 1399516.4      0.58      18.2       0.0                          
+    0:05:56 1399624.6      0.00       0.0       0.0                          
+Loading db file '/home/IC/RESIC-V/syn/std_cells/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'Pipeline_top' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'Memory/Memory/clk': 34298 load(s), 1 driver(s)
+1
+################################################################################
+# 7. STA (STATIC TIMING ANALYSIS)
+################################################################################
+puts "----------------------------------------------------------------"
+----------------------------------------------------------------
+puts "Running Static Timing Analysis (STA)..."
+Running Static Timing Analysis (STA)...
+puts "----------------------------------------------------------------"
+----------------------------------------------------------------
+report_timing -path full -delay max -max_paths 20 -nworst 1 > $REPORTS_PATH/sta_setup.rpt
+report_timing -path full -delay min -max_paths 20 -nworst 1 > $REPORTS_PATH/sta_hold.rpt
+report_constraint -all_violators > $REPORTS_PATH/sta_violations.rpt
+report_area > $REPORTS_PATH/area.rpt
+report_power > $REPORTS_PATH/power.rpt
+################################################################################
+# 8. GENERATE OUTPUT FILES
+################################################################################
+write -format verilog -hierarchy -output $OUTPUTS_PATH/pipeline_netlist.v
+Writing verilog file '/home/IC/RESIC-V/syn/output/pipeline_netlist.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+Warning: Verilog writer has added 16 nets to module fetch_cycle using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 16 nets to module Pipeline_top using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+1
+write -format ddc -hierarchy -output $OUTPUTS_PATH/pipeline.ddc
+Writing ddc file '../output/pipeline.ddc'.
+1
+write_sdc $OUTPUTS_PATH/pipeline.sdc
+1
+write_sdf $OUTPUTS_PATH/pipeline.sdf
+Information: Annotated 'cell' delays are assumed to include load delay. (UID-282)
+Information: Writing timing information to file '/home/IC/RESIC-V/syn/output/pipeline.sdf'. (WT-3)
+1
+puts "----------------------------------------------------------------"
+----------------------------------------------------------------
+puts "Synthesis Completed Successfully!"
+Synthesis Completed Successfully!
+puts "Starting GUI..."
+Starting GUI...
+puts "----------------------------------------------------------------"
+----------------------------------------------------------------
+gui_startCurrent design is 'Pipeline_top'.
+design_vision> design_vision> Current design is 'Pipeline_top'.
+Loading db file '/opt/Synopsys/Synplify2015/libraries/syn/generic.sdb'
+exit

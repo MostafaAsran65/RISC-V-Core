@@ -1,0 +1,90 @@
+Error: Can't find inout port 'PC_NEXT' on reference to 'PC_Module' in 'fetch_cycle'. (LINK-1)
+Warning: Unable to resolve reference 'PC_Module' in 'fetch_cycle'. (LINK-5)
+Error: Width mismatch on port 'In' of reference to 'Sign_Extend' in 'decode_cycle'. (LINK-3)
+Warning: Unable to resolve reference 'Sign_Extend' in 'decode_cycle'. (LINK-5)
+Information: Updating design information... (UID-85)
+Warning: Design 'Pipeline_top' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : qor
+Design : Pipeline_top
+Version: K-2015.06
+Date   : Fri Jan 16 07:37:52 2026
+****************************************
+
+
+  Timing Path Group 'clk'
+  -----------------------------------
+  Levels of Logic:              47.00
+  Critical Path Length:          7.87
+  Critical Path Slack:           0.02
+  Critical Path Clk Period:     10.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:         25
+  Hierarchical Port Count:       2887
+  Leaf Cell Count:              92092
+  Buf/Inv Cell Count:           10546
+  Buf Cell Count:               10376
+  Inv Cell Count:                 170
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:     57817
+  Sequential Cell Count:        34275
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:   669509.373482
+  Noncombinational Area:
+                        728259.603235
+  Buf/Inv Area:          50493.373646
+  Total Buffer Area:         49823.83
+  Total Inverter Area:         669.54
+  Macro/Black Box Area:      0.000000
+  Net Area:                  0.000000
+  -----------------------------------
+  Cell Area:           1397768.976717
+  Design Area:         1397768.976717
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:         92347
+  Nets With Violations:             4
+  Max Trans Violations:             4
+  Max Cap Violations:               0
+  -----------------------------------
+
+
+  Hostname: IC
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                   24.22
+  Logic Optimization:                 76.50
+  Mapping Optimization:              106.11
+  -----------------------------------------
+  Overall Compile Time:              219.14
+  Overall Compile Wall Clock Time:   222.64
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1

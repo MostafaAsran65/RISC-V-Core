@@ -1,0 +1,8 @@
+start_gui     1  source -echo -verbose formality.tcl
+1
+
+Received Signal 1 from: PID=30356 (UID=501)
+
+
+Process terminated by hangup.
+

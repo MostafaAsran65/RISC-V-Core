@@ -1,0 +1,182 @@
+ 
+****************************************
+check_design summary:
+Version:     O-2018.06-SP1
+Date:        Sun Jan 18 02:26:13 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                     93
+    Unconnected ports (LINT-28)                                    61
+    Shorted outputs (LINT-31)                                      16
+    Constant outputs (LINT-52)                                     16
+
+Cells                                                              35
+    Cells do not drive (LINT-1)                                     2
+    Connected to power or ground (LINT-32)                         32
+    Nets connected to multiple pins on same cell (LINT-33)          1
+--------------------------------------------------------------------------------
+
+Warning: In design 'ALU', cell 'B_8' does not drive any nets. (LINT-1)
+Warning: In design 'ALU', cell 'B_9' does not drive any nets. (LINT-1)
+Warning: In design 'memory_cycle', port 'ResultW[31]' is not connected to any nets. (LINT-28)
+Warning: In design 'memory_cycle', port 'ResultW[30]' is not connected to any nets. (LINT-28)
+Warning: In design 'memory_cycle', port 'ResultW[29]' is not connected to any nets. (LINT-28)
+Warning: In design 'memory_cycle', port 'ResultW[28]' is not connected to any nets. (LINT-28)
+Warning: In design 'memory_cycle', port 'ResultW[27]' is not connected to any nets. (LINT-28)
+Warning: In design 'memory_cycle', port 'ResultW[26]' is not connected to any nets. (LINT-28)
+Warning: In design 'memory_cycle', port 'ResultW[25]' is not connected to any nets. (LINT-28)
+Warning: In design 'memory_cycle', port 'ResultW[24]' is not connected to any nets. (LINT-28)
+Warning: In design 'memory_cycle', port 'ResultW[23]' is not connected to any nets. (LINT-28)
+Warning: In design 'memory_cycle', port 'ResultW[22]' is not connected to any nets. (LINT-28)
+Warning: In design 'memory_cycle', port 'ResultW[21]' is not connected to any nets. (LINT-28)
+Warning: In design 'memory_cycle', port 'ResultW[20]' is not connected to any nets. (LINT-28)
+Warning: In design 'memory_cycle', port 'ResultW[19]' is not connected to any nets. (LINT-28)
+Warning: In design 'memory_cycle', port 'ResultW[18]' is not connected to any nets. (LINT-28)
+Warning: In design 'memory_cycle', port 'ResultW[17]' is not connected to any nets. (LINT-28)
+Warning: In design 'memory_cycle', port 'ResultW[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'memory_cycle', port 'ResultW[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'memory_cycle', port 'ResultW[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'memory_cycle', port 'ResultW[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'memory_cycle', port 'ResultW[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'memory_cycle', port 'ResultW[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'memory_cycle', port 'ResultW[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'memory_cycle', port 'ResultW[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'memory_cycle', port 'ResultW[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'memory_cycle', port 'ResultW[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'memory_cycle', port 'ResultW[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'memory_cycle', port 'ResultW[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'memory_cycle', port 'ResultW[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'memory_cycle', port 'ResultW[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'memory_cycle', port 'ResultW[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'memory_cycle', port 'ResultW[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'memory_cycle', port 'ResultW[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'writeback_cycle', port 'clk' is not connected to any nets. (LINT-28)
+Warning: In design 'writeback_cycle', port 'rst' is not connected to any nets. (LINT-28)
+Warning: In design 'Sign_Extend', port 'In[19]' is not connected to any nets. (LINT-28)
+Warning: In design 'Sign_Extend', port 'In[18]' is not connected to any nets. (LINT-28)
+Warning: In design 'Sign_Extend', port 'In[17]' is not connected to any nets. (LINT-28)
+Warning: In design 'Sign_Extend', port 'In[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'Sign_Extend', port 'In[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'Sign_Extend', port 'In[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'Sign_Extend', port 'In[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'Sign_Extend', port 'In[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'Sign_Extend', port 'In[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'Sign_Extend', port 'In[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'Sign_Extend', port 'In[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'Sign_Extend', port 'In[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'Sign_Extend', port 'In[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'Sign_Extend', port 'In[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'Sign_Extend', port 'In[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_Decoder', port 'funct7[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_Decoder', port 'funct7[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_Decoder', port 'funct7[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_Decoder', port 'funct7[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_Decoder', port 'funct7[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_Decoder', port 'funct7[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_Decoder', port 'op[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_Decoder', port 'op[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_Decoder', port 'op[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_Decoder', port 'op[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_Decoder', port 'op[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_Decoder', port 'op[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'Instruction_Memory', output port 'RD[31]' is connected directly to output port 'RD[2]'. (LINT-31)
+Warning: In design 'Instruction_Memory', output port 'RD[31]' is connected directly to output port 'RD[3]'. (LINT-31)
+Warning: In design 'Instruction_Memory', output port 'RD[31]' is connected directly to output port 'RD[6]'. (LINT-31)
+Warning: In design 'Instruction_Memory', output port 'RD[31]' is connected directly to output port 'RD[11]'. (LINT-31)
+Warning: In design 'Instruction_Memory', output port 'RD[31]' is connected directly to output port 'RD[12]'. (LINT-31)
+Warning: In design 'Instruction_Memory', output port 'RD[31]' is connected directly to output port 'RD[14]'. (LINT-31)
+Warning: In design 'Instruction_Memory', output port 'RD[31]' is connected directly to output port 'RD[16]'. (LINT-31)
+Warning: In design 'Instruction_Memory', output port 'RD[31]' is connected directly to output port 'RD[19]'. (LINT-31)
+Warning: In design 'Instruction_Memory', output port 'RD[31]' is connected directly to output port 'RD[24]'. (LINT-31)
+Warning: In design 'Instruction_Memory', output port 'RD[31]' is connected directly to output port 'RD[25]'. (LINT-31)
+Warning: In design 'Instruction_Memory', output port 'RD[31]' is connected directly to output port 'RD[26]'. (LINT-31)
+Warning: In design 'Instruction_Memory', output port 'RD[31]' is connected directly to output port 'RD[27]'. (LINT-31)
+Warning: In design 'Instruction_Memory', output port 'RD[31]' is connected directly to output port 'RD[28]'. (LINT-31)
+Warning: In design 'Instruction_Memory', output port 'RD[31]' is connected directly to output port 'RD[29]'. (LINT-31)
+Warning: In design 'Instruction_Memory', output port 'RD[31]' is connected directly to output port 'RD[30]'. (LINT-31)
+Warning: In design 'ALU', output port 'Result[31]' is connected directly to output port 'Negative'. (LINT-31)
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[31]' is connected to logic 0. 
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[30]' is connected to logic 0. 
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[29]' is connected to logic 0. 
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[28]' is connected to logic 0. 
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[27]' is connected to logic 0. 
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[26]' is connected to logic 0. 
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[25]' is connected to logic 0. 
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[24]' is connected to logic 0. 
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[23]' is connected to logic 0. 
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[22]' is connected to logic 0. 
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[21]' is connected to logic 0. 
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[20]' is connected to logic 0. 
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[19]' is connected to logic 0. 
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[18]' is connected to logic 0. 
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[17]' is connected to logic 0. 
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[16]' is connected to logic 0. 
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[15]' is connected to logic 0. 
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[14]' is connected to logic 0. 
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[13]' is connected to logic 0. 
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[12]' is connected to logic 0. 
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[11]' is connected to logic 0. 
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[10]' is connected to logic 0. 
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[9]' is connected to logic 0. 
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[8]' is connected to logic 0. 
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[7]' is connected to logic 0. 
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[6]' is connected to logic 0. 
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[5]' is connected to logic 0. 
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[4]' is connected to logic 0. 
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[3]' is connected to logic 0. 
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[2]' is connected to logic 1. 
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[1]' is connected to logic 0. 
+Warning: In design 'fetch_cycle', a pin on submodule 'Adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[0]' is connected to logic 0. 
+Warning: In design 'fetch_cycle', the same net is connected to more than one pin on submodule 'Adder'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'b[31]', 'b[30]'', 'b[29]', 'b[28]', 'b[27]', 'b[26]', 'b[25]', 'b[24]', 'b[23]', 'b[22]', 'b[21]', 'b[20]', 'b[19]', 'b[18]', 'b[17]', 'b[16]', 'b[15]', 'b[14]', 'b[13]', 'b[12]', 'b[11]', 'b[10]', 'b[9]', 'b[8]', 'b[7]', 'b[6]', 'b[5]', 'b[4]', 'b[3]', 'b[1]', 'b[0]'.
+Warning: In design 'Instruction_Memory', output port 'RD[31]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'Instruction_Memory', output port 'RD[30]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'Instruction_Memory', output port 'RD[29]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'Instruction_Memory', output port 'RD[28]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'Instruction_Memory', output port 'RD[27]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'Instruction_Memory', output port 'RD[26]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'Instruction_Memory', output port 'RD[25]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'Instruction_Memory', output port 'RD[24]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'Instruction_Memory', output port 'RD[19]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'Instruction_Memory', output port 'RD[16]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'Instruction_Memory', output port 'RD[14]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'Instruction_Memory', output port 'RD[12]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'Instruction_Memory', output port 'RD[11]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'Instruction_Memory', output port 'RD[6]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'Instruction_Memory', output port 'RD[3]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'Instruction_Memory', output port 'RD[2]' is connected directly to 'logic 0'. (LINT-52)
+1

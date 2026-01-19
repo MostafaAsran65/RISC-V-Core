@@ -1,0 +1,448 @@
+################################################################################
+# Synopsys ICC Script - THE DIAMOND VERSION
+# Combines: Correct Ring Syntax + Wide Floorplan + Power Connection
+################################################################################
+# 1. SETUP & CLEANUP
+remove_design -all
+1
+set PNR_WORK_PATH "../runtime"
+../runtime
+set OUTPUTS_PATH  "../output"
+../output
+set REPORTS_PATH  "../reports"
+../reports
+file mkdir $OUTPUTS_PATH $REPORTS_PATH
+set NETLIST_FILE  "/home/IC/RESIC-V/syn/output/pipeline_netlist.v"
+/home/IC/RESIC-V/syn/output/pipeline_netlist.v
+set SDC_FILE      "/home/IC/RESIC-V/syn/output/pipeline.sdc"
+/home/IC/RESIC-V/syn/output/pipeline.sdc
+set MW_DESIGN_LIB "$PNR_WORK_PATH/Pipeline_Lib" 
+../runtime/Pipeline_Lib
+set TARGET_LIB    "scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db"
+scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db
+set TLUPLUS_MAX   "/home/IC/RESIC-V/syn/std_cells/tluplus/cl013g_1p2v_cmax.tluplus"
+/home/IC/RESIC-V/syn/std_cells/tluplus/cl013g_1p2v_cmax.tluplus
+set TLUPLUS_MIN   "/home/IC/RESIC-V/syn/std_cells/tluplus/cl013g_1p2v_cmin.tluplus"
+/home/IC/RESIC-V/syn/std_cells/tluplus/cl013g_1p2v_cmin.tluplus
+set TLUPLUS_MAP   "/home/IC/RESIC-V/syn/std_cells/tluplus/star.map_130"
+/home/IC/RESIC-V/syn/std_cells/tluplus/star.map_130
+set search_path [list . "/home/IC/RESIC-V/syn/std_cells"]
+. /home/IC/RESIC-V/syn/std_cells
+set target_library $TARGET_LIB
+scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db
+set link_library   [list "*" $TARGET_LIB]
+* scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db
+# 2. IMPORT
+puts "Opening Library..."
+Opening Library...
+open_mw_lib $MW_DESIGN_LIB
+{Pipeline_Lib}
+import_designs $NETLIST_FILE -format verilog -top Pipeline_top
+Loading db file '/home/IC/RESIC-V/syn/std_cells/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db'
+Loading db file '/opt/Synopsys/ICC2016/libraries/syn/gtech.db'
+Loading db file '/opt/Synopsys/ICC2016/libraries/syn/standard.sldb'
+Type of creating bus for undefined cells : 0
+
+*****  Verilog HDL translation! *****
+
+*****    Start Pass 1 *****
+
+*****  Pass 1 Complete *****
+Elapsed =    0:00:01, CPU =    0:00:00
+
+*****  Verilog HDL translation! *****
+
+*****    Start Pass 2 *****
+
+*****  Pass 2 Complete *****
+
+*****   Verilog HDL translation completed! *****
+Elapsed =    0:00:01, CPU =    0:00:01
+Hierarchy Preservation is turned ON
+The quick-attach skip-search mode has been turned on.
+  Start axu naming escaping style change ...
+INFO: net in module Sign_Extend renamed from \Imm_Ext[12] to Imm_Ext[12]1 because of name conflict
+INFO: net in module Main_Decoder renamed from \ResultSrc[1] to ResultSrc[1]1 because of name conflict
+  End axu naming escaping style change, status is 1
+Checking single pin net for cell 'Pipeline_top.CEL' now...
+Total number of cell instances: 92349
+Total number of nets: 92503
+Total number of ports: 66 (include 0 PG ports)
+Total number of hierarchical cell instances: 28
+
+The quick-attach skip-search mode has been turned off.
+INFO:  total find 0 pg nets connected with tie net.
+Elapsed =    0:00:01, CPU =    0:00:00
+Information: Read verilog completed successfully.
+1
+if {[file exists $TLUPLUS_MAX]} {
+    set_tlu_plus_files -max_tluplus $TLUPLUS_MAX -min_tluplus $TLUPLUS_MIN -tech2itf_map $TLUPLUS_MAP
+}
+read_sdc $SDC_FILE
+
+  Linking design 'Pipeline_top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (28 designs)              Pipeline_top.CEL, etc
+  scmetro_tsmc_cl013g_rvt_tt_1p2v_25c (library) /home/IC/RESIC-V/syn/std_cells/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db
+
+# GUI Debug: Building dc from empty. -- Time: 1sec 364ms
+ Info: hierarchy_separator was changed to /
+
+Reading SDC version 2.0...
+ Info: hierarchy_separator was changed to /
+1
+# 3. FLOORPLAN
+puts "Starting Floorplan..."
+Starting Floorplan...
+create_net -power VDD
+Creating net 'VDD' in design 'Pipeline_top'.
+1
+create_net -ground VSS
+Creating net 'VSS' in design 'Pipeline_top'.
+1
+# 3.1 إنشاء الكور (الصفوف بتتعمل هنا أوتوماتيك - متقلقش)
+# الهوامش 40 عشان الحلقات تاخد راحتها
+create_floorplan -control_type aspect_ratio                  -core_utilization 0.6                  -core_aspect_ratio 1.0                  -left_io2core 40                  -bottom_io2core 40                  -right_io2core 40                  -top_io2core 40
+0 pads are constrained in TDF table
+There are 0 IO pads 0 corner pads in total
+Start to create wire tracks ...
+GRC reference (74260,74260), dimensions (5740, 5740)
+Number of terminals created: 66.
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Name           Original Ports
+Pipeline_top               66
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Completed pin assignment.
+Elapsed =    0:00:01, CPU =    0:00:00
+Planner Summary:
+This floorplan is created by using tile name (unit).
+        Row Direction = HORIZONTAL
+        Control Parameter =  Aspect Ratio
+        Core Utilization = 0.600
+        Number Of Rows = 532
+        Core Width = 1527.25
+        Core Height = 1526.84
+        Aspect Ratio = 1.000
+        Double Back ON
+        Flip First Row = NO
+        Start From First Row = NO
+Planner run through successfully.
+1
+# 3.2 رسم الحلقات (The Fix)
+# رجعنا للصيغة اللي بتستخدم القوائم {} لأن دي الوحيدة اللي نسختك قبلتها قبل كدة
+# وبما إن الهوامش 40، مش هيحصل Obstruction Error
+create_rectilinear_rings -nets {VDD VSS}                          -width {2.0 2.0}                          -space {1.0 1.0}                          -layers {METAL5 METAL6}
+Using [4 x 4] Fat Wire Table for METAL1
+Using [2 x 2] Fat Wire Table for VIA12
+Using [4 x 4] Fat Wire Table for METAL2
+Using [2 x 2] Fat Wire Table for VIA23
+Using [4 x 4] Fat Wire Table for METAL3
+Using [2 x 2] Fat Wire Table for VIA34
+Using [4 x 4] Fat Wire Table for METAL4
+Using [2 x 2] Fat Wire Table for VIA45
+Using [4 x 4] Fat Wire Table for METAL5
+Using [2 x 2] Fat Wire Table for VIA56
+Using [2 x 2] Fat Wire Table for METAL6
+92349 cells out of bound
+Warning: wire dropped because obstruction, ((35.060 35.000) (36.940 37.000)) (Net: VDD) (Layer: METAL5 [10]) is blocked by ((35.020 35.020) (36.980 36.980)) (Net: VDD) (Layer: METAL5 [10]). (PGRT-030)
+Warning: wire dropped because obstruction, ((38.060 38.000) (39.940 40.000)) (Net: VSS) (Layer: METAL5 [10]) is blocked by ((38.020 38.020) (39.980 39.980)) (Net: VSS) (Layer: METAL5 [10]). (PGRT-030)
+Warning: wire dropped because obstruction, ((38.020 1566.860) (39.980 1568.820)) (Net: VSS) (Layer: METAL5 [10]) is blocked by ((38.060 1566.840) (39.940 1568.840)) (Net: VSS) (Layer: METAL5 [10]). (PGRT-030)
+Warning: wire dropped because obstruction, ((35.020 1569.860) (36.980 1571.820)) (Net: VDD) (Layer: METAL5 [10]) is blocked by ((35.060 1569.840) (36.940 1571.840)) (Net: VDD) (Layer: METAL5 [10]). (PGRT-030)
+Warning: wire dropped because obstruction, ((1567.310 1566.840) (1569.190 1568.840)) (Net: VSS) (Layer: METAL5 [10]) is blocked by ((1567.270 1566.860) (1569.230 1568.820)) (Net: VSS) (Layer: METAL5 [10]). (PGRT-030)
+Warning: wire dropped because obstruction, ((1570.310 1569.840) (1572.190 1571.840)) (Net: VDD) (Layer: METAL5 [10]) is blocked by ((1570.270 1569.860) (1572.230 1571.820)) (Net: VDD) (Layer: METAL5 [10]). (PGRT-030)
+Warning: wire dropped because obstruction, ((1570.270 35.020) (1572.230 36.980)) (Net: VDD) (Layer: METAL5 [10]) is blocked by ((1570.310 35.000) (1572.190 37.000)) (Net: VDD) (Layer: METAL5 [10]). (PGRT-030)
+Warning: wire dropped because obstruction, ((1567.270 38.020) (1569.230 39.980)) (Net: VSS) (Layer: METAL5 [10]) is blocked by ((1567.310 38.000) (1569.190 40.000)) (Net: VSS) (Layer: METAL5 [10]). (PGRT-030)
+Warning: wire dropped because obstruction, ((35.060 35.000) (36.940 37.000)) (Net: VDD) (Layer: METAL5 [10]) is blocked by ((35.020 35.020) (36.980 36.980)) (Net: VDD) (Layer: METAL5 [10]). (PGRT-030)
+Warning: wire dropped because obstruction, ((38.060 38.000) (39.940 40.000)) (Net: VSS) (Layer: METAL5 [10]) is blocked by ((38.020 38.020) (39.980 39.980)) (Net: VSS) (Layer: METAL5 [10]). (PGRT-030)
+Warning: wire dropped because obstruction, ((35.020 1569.860) (36.980 1571.820)) (Net: VDD) (Layer: METAL5 [10]) is blocked by ((35.060 1569.840) (36.940 1571.840)) (Net: VDD) (Layer: METAL5 [10]). (PGRT-030)
+Warning: wire dropped because obstruction, ((1567.310 1566.840) (1569.190 1568.840)) (Net: VSS) (Layer: METAL5 [10]) is blocked by ((1567.270 1566.860) (1569.230 1568.820)) (Net: VSS) (Layer: METAL5 [10]). (PGRT-030)
+Warning: wire dropped because obstruction, ((1570.310 1569.840) (1572.190 1571.840)) (Net: VDD) (Layer: METAL5 [10]) is blocked by ((1570.270 1569.860) (1572.230 1571.820)) (Net: VDD) (Layer: METAL5 [10]). (PGRT-030)
+Warning: wire dropped because obstruction, ((1567.270 38.020) (1569.230 39.980)) (Net: VSS) (Layer: METAL5 [10]) is blocked by ((1567.310 38.000) (1569.190 40.000)) (Net: VSS) (Layer: METAL5 [10]). (PGRT-030)
+
+[create_rectilinear_rings] CPU = 0:00:00, Elapsed = 0:00:00
+        Peak Memory =      355M Data =        0M
+1
+# 3.3 توصيل الكهرباء (مهم جداً)
+derive_pg_connection -power_net VDD -ground_net VSS -power_pin VDD -ground_pin VSS
+Information: connected 92349 power ports and 92349 ground ports
+1
+derive_pg_connection -power_net VDD -ground_net VSS -tie
+reconnected total 1 tie highs and 47 tie lows
+1
+save_mw_cel -as floorplan_done
+Information: Performing CEL netlist consistency check. (MWDC-118)
+Information: CEL consistency check PASSED. (MWDC-119)
+Information: Saved design named floorplan_done. (UIG-5)
+1
+# 4. PLACEMENT
+puts "Starting Placement..."
+Starting Placement...
+# بما إن الحلقات هتترسم صح، والصفوف موجودة من create_floorplan.. الرص هيتم!
+place_opt
+Warning: No driver connected with the Power net 'VDD'. (MWDC-284)
+Warning: Could not find a valid driver for the hierarchical Ground net 'VSS'. (MWDC-285)
+Warning: Could not find a valid driver for the hierarchical Power net 'VDD'. (MWDC-285)
+
+  Linking design 'Pipeline_top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (28 designs)              Pipeline_top.CEL, etc
+  scmetro_tsmc_cl013g_rvt_tt_1p2v_25c (library) /home/IC/RESIC-V/syn/std_cells/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db
+
+Warning: Should load physical library before reading this design, which has physical information. (MWDC-172)
+# GUI Debug: Building dc from empty. -- Time: 1sec 502ms
+Warning: Should load physical library before reading this design, which has physical information. (MWDC-172)
+Error: Floorplan loading failed.
+
+The options for place_opt:
+--------------------------
+POPT:  place_opt effort level               : Medium
+POPT:  Congestion removal                   : No
+POPT:  Layer Optimization                   : Yes
+POPT:  Area recovery                        : No
+POPT:  Optimize dft                         : No
+POPT:  Clock Tree Synthesis                 : No
+POPT:  Optimize power                       : No
+---------------------------------------------------
+
+Settings of some common used Tcl variables for place_opt:
+---------------------------------------------------------
+---------------------------------------------------------
+
+  Loading design 'Pipeline_top'
+Warning: The core area for block is not defined. (PSYN-006)
+Error: No floorplan is defined for the current design for incremental physical synthesis. (PSYN-080)
+Error: psynopt has abnormally terminated.  (OPT-100)
+0
+save_mw_cel -as placement_done
+Information: Saved design named placement_done. (UIG-5)
+1
+# 5. CTS & ROUTE
+puts "Starting CTS & Route..."
+Starting CTS & Route...
+clock_opt -only_cts -no_clock_route
+
+The options for clock_opt:
+--------------------------
+COPT:  Clock Tree Synthesis                 : Yes
+COPT:  Post CTS Optimization                : No
+COPT:  Concurrent Clock/Data Optimization   : No
+COPT:  Operation Condition                  : max
+COPT:  Balance Inter Clock Delay            : No
+COPT:  Route Clock Nets                     : No
+COPT:  Update Clock Latency                 : No
+COPT:  Optimize Power                       : No
+---------------------------------------------------
+
+Executing ICC clock_opt...
+medium
+*
+Building clock tree...
+Operating Condition is max
+Information: There is no scenario with cts_mode set to true, CTS will use old cts_scenario flow. (CTS-1115)
+CTS Operating Condition(s): MAX(Worst) 
+
+  Loading design 'Pipeline_top'
+Warning: Design 'Pipeline_top' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Warning: The core area for block is not defined. (PSYN-006)
+Error: No floorplan is defined for the current design for incremental physical synthesis. (PSYN-080)
+Error: Prelude Failed
+CTS prelude failed
+Information: Updating database...
+CTS UnSuccessful, Aborting clock_opt !!
+0
+save_mw_cel -as cts_done
+Information: Performing CEL netlist consistency check. (MWDC-118)
+Information: CEL consistency check PASSED. (MWDC-119)
+Information: Saved design named cts_done. (UIG-5)
+1
+route_opt
+Information: Running detail route with timing driven mode save after iteration 1 (route_opt default). (ROPT-020)
+ROPT:    route_opt strategy for the design:
+ROPT:    Stage                                 : auto
+ROPT:    Effort                                : medium
+ROPT:    Power mode                            : none
+ROPT:    Search-Repair loops                   : 10 
+ROPT:    ECO Search-Repair loops               : 4 
+ROPT:    Fix Hold Mode                         : route_based 
+ROPT:    Route Violation threshold             : 3000 
+ Routeopt: Using zrt router
+Information: Running global route with timing driven mode true (route_opt default). (ROPT-020)
+Information: Running track_assign with timing driven mode true (route_opt default). (ROPT-020)
+Information: Running detail route with timing driven mode true (route_opt default). (ROPT-020)
+
+  Loading design 'Pipeline_top'
+Warning: The core area for block is not defined. (PSYN-006)
+Error: No floorplan is defined for the current design for incremental physical synthesis. (PSYN-080)
+Error: extract_rc has abnormally terminated.  (OPT-100)
+Error: Design Pipeline_top has no associated physical design. (PSYN-005)
+Information: Running global route with timing driven mode true (route_opt default). (ROPT-020)
+Information: Running track_assign with timing driven mode true (route_opt default). (ROPT-020)
+Information: Running detail route with timing driven mode true (route_opt default). (ROPT-020)
+ROPT:    Running Initial Route             Sat Jan 17 07:53:22 2026
+
+  Beginning initial routing 
+  --------------------------
+
+Information: Updating graph... (UID-83)
+Warning: Design 'Pipeline_top' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Information: Updating design information... (UID-85)
+Warning: Design 'Pipeline_top' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Warning: Clock network timing may not be up-to-date since only 0.000000 percentage of clock nets are routed. (TIM-233)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : Pipeline_top
+Version: L-2016.03-SP1
+Date   : Sat Jan 17 07:53:23 2026
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: scmetro_tsmc_cl013g_rvt_tt_1p2v_25c   Library: scmetro_tsmc_cl013g_rvt_tt_1p2v_25c
+Wire Load Model Mode: top
+
+Information: Percent of Arnoldi-based delays =  0.00%
+No paths.
+
+Error: Design Pipeline_top has no associated physical design. (PSYN-005)
+ROPT:    Initial Route Done             Sat Jan 17 07:53:23 2026
+ 
+****************************************
+Report : qor
+Design : Pipeline_top
+Version: L-2016.03-SP1
+Date   : Sat Jan 17 07:53:23 2026
+****************************************
+
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:         27
+  Hierarchical Port Count:       3073
+  Leaf Cell Count:              92349
+  Buf/Inv Cell Count:           10723
+  Buf Cell Count:               10547
+  Inv Cell Count:                 176
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:     58051
+  Sequential Cell Count:        34298
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:   670790.799803
+  Noncombinational Area:
+                        728833.832829
+  Buf/Inv Area:          51335.890853
+  Total Buffer Area:         50701.65
+  Total Inverter Area:         634.24
+  Macro/Black Box Area:      0.000000
+  Net Area:                  0.000000
+  Net XLength        :           0.00
+  Net YLength        :           0.00
+  -----------------------------------
+  Cell Area:           1399624.632632
+  Design Area:         1399624.632632
+  Net Length        :            0.00
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:         92570
+  Nets With Violations:             0
+  Max Trans Violations:             0
+  Max Cap Violations:               0
+  -----------------------------------
+
+
+  Hostname: IC
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    0.00
+  Logic Optimization:                  0.00
+  Mapping Optimization:                0.00
+  -----------------------------------------
+  Overall Compile Time:                0.00
+  Overall Compile Wall Clock Time:     0.00
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+
+ROPT:    (SETUP) WNS: 0.0000 TNS: 0.0000  Number of Violating Path: 0
+ROPT:    (HOLD) WNS: 0.0000 TNS: 0.0000  Number of Violating Path: 0
+ROPT:    Number of DRC Violating Nets: 0
+ROPT:    Number of Route Violation: 0 
+1
+save_mw_cel -as routing_done
+Information: Saved design named routing_done. (UIG-5)
+1
+# 6. OUTPUTS
+puts "Generating Outputs..."
+Generating Outputs...
+write_stream -format gds -cells Pipeline_top $OUTPUTS_PATH/pipeline_chip.gds
+Warning: No Fill/Notch/Gap cell would be output! (MWSTRM-082)
+No layer map file is used during stream out!
+Skip layer map file
+Outputting Cell Pipeline_top.CEL
+Warning: Please close or open the cell (Pipeline_top) in read-only mode. (MWSTRM-023)
+====> TOTAL CELLS OUTPUT: 1 <====
+Outputting Contact $$VIA56_X_1420_1420_3_3
+Outputting Contact $$VIA56S_H_1420_1420_3_3
+write_gds completed successfully!
+1
+write_verilog $OUTPUTS_PATH/pipeline_pr.v
+Generating description for top level cell.
+Processing module hazard_unit
+Processing module Mux_3_by_1_1
+Processing module writeback_cycle
+Processing module Data_Memory
+Processing module memory_cycle
+Processing module PC_Adder_1_DW01_add_0
+Processing module PC_Adder_1
+Processing module ALU_DW01_add_1
+Processing module ALU_DW01_inc_0
+Processing module ALU_DW01_add_0
+Processing module ALU
+Processing module Mux_1
+Processing module Mux_3_by_1_2
+Processing module Mux_3_by_1_0
+Processing module execute_cycle
+Processing module Sign_Extend
+Processing module Register_File
+Processing module ALU_Decoder
+Processing module Main_Decoder
+Processing module Control_Unit_Top
+Processing module decode_cycle
+Processing module PC_Adder_0_DW01_add_0
+Processing module PC_Adder_0
+Processing module Instruction_Memory
+Processing module PC_Module
+Processing module Mux_0
+Processing module fetch_cycle
+Processing module Pipeline_top
+Elapsed =    0:00:01, CPU =    0:00:00
+Write verilog completed successfully.
+1
+puts "SUCCESS: Check GUI now!"
+SUCCESS: Check GUI now!
+start_gui
+Information: Visibility is turned ON for cells and cell contents because the task is set to Block Implementation (GUI-026)
+Preparing data for query................... 
+icc_shell> exit

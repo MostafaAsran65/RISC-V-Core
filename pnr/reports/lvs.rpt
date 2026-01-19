@@ -1,0 +1,226 @@
+
+-- LVS START : --
+WARNING : The boundary ((1617.250,-0.130),(5549.970,1631.120)) of metal Layer1 is out of top cell boundary ((0.000,0.000),(1607.250,1606.840)).
+Total area error in layer 0 is 0.  Elapsed =    0:00:06, CPU =    0:00:06
+Total area error in layer 1 is 0.  Elapsed =    0:00:07, CPU =    0:00:07
+ERROR : area  [(2.385,1606.640), (2.585,1606.840)]	0.0400 um sqr.
+ERROR : area  [(102.425,1606.640), (102.625,1606.840)]	0.0400 um sqr.
+ERROR : area  [(202.465,1606.640), (202.665,1606.840)]	0.0400 um sqr.
+ERROR : area  [(302.915,1606.640), (303.115,1606.840)]	0.0400 um sqr.
+ERROR : area  [(402.955,1606.640), (403.155,1606.840)]	0.0400 um sqr.
+ERROR : area  [(502.995,1606.640), (503.195,1606.840)]	0.0400 um sqr.
+ERROR : area  [(603.035,1606.640), (603.235,1606.840)]	0.0400 um sqr.
+ERROR : area  [(703.485,1606.640), (703.685,1606.840)]	0.0400 um sqr.
+ERROR : area  [(803.525,1606.640), (803.725,1606.840)]	0.0400 um sqr.
+ERROR : area  [(903.565,1606.640), (903.765,1606.840)]	0.0400 um sqr.
+ERROR : area  [(1003.605,1606.640), (1003.805,1606.840)]	0.0400 um sqr.
+ERROR : area  [(1104.055,1606.640), (1104.255,1606.840)]	0.0400 um sqr.
+ERROR : area  [(1204.095,1606.640), (1204.295,1606.840)]	0.0400 um sqr.
+ERROR : area  [(1304.135,1606.640), (1304.335,1606.840)]	0.0400 um sqr.
+ERROR : area  [(1404.175,1606.640), (1404.375,1606.840)]	0.0400 um sqr.
+ERROR : area  [(1504.625,1606.640), (1504.825,1606.840)]	0.0400 um sqr.
+ERROR : area  [(1604.665,1606.640), (1604.865,1606.840)]	0.0400 um sqr.
+ERROR : area  [(2.385,0.000), (2.585,0.200)]	0.0400 um sqr.
+ERROR : area  [(102.425,0.000), (102.625,0.200)]	0.0400 um sqr.
+ERROR : area  [(202.465,0.000), (202.665,0.200)]	0.0400 um sqr.
+ERROR : There are more errors than default Max Error Number 20.
+Total area error in layer 2 is 20.  Elapsed =    0:00:07, CPU =    0:00:07
+ERROR : area  [(0.000,2.385), (0.200,2.585)]	0.0400 um sqr.
+ERROR : area  [(0.000,108.985), (0.200,109.185)]	0.0400 um sqr.
+ERROR : area  [(0.000,215.995), (0.200,216.195)]	0.0400 um sqr.
+ERROR : area  [(0.000,322.595), (0.200,322.795)]	0.0400 um sqr.
+ERROR : area  [(0.000,429.605), (0.200,429.805)]	0.0400 um sqr.
+ERROR : area  [(0.000,536.205), (0.200,536.405)]	0.0400 um sqr.
+ERROR : area  [(0.000,643.215), (0.200,643.415)]	0.0400 um sqr.
+ERROR : area  [(0.000,749.815), (0.200,750.015)]	0.0400 um sqr.
+ERROR : area  [(0.000,856.825), (0.200,857.025)]	0.0400 um sqr.
+ERROR : area  [(0.000,963.425), (0.200,963.625)]	0.0400 um sqr.
+ERROR : area  [(0.000,1070.435), (0.200,1070.635)]	0.0400 um sqr.
+ERROR : area  [(0.000,1177.035), (0.200,1177.235)]	0.0400 um sqr.
+ERROR : area  [(0.000,1284.045), (0.200,1284.245)]	0.0400 um sqr.
+ERROR : area  [(0.000,1390.645), (0.200,1390.845)]	0.0400 um sqr.
+ERROR : area  [(0.000,1497.655), (0.200,1497.855)]	0.0400 um sqr.
+ERROR : area  [(0.000,1604.255), (0.200,1604.455)]	0.0400 um sqr.
+ERROR : area  [(1607.050,2.385), (1607.250,2.585)]	0.0400 um sqr.
+ERROR : area  [(1607.050,108.985), (1607.250,109.185)]	0.0400 um sqr.
+ERROR : area  [(1607.050,215.995), (1607.250,216.195)]	0.0400 um sqr.
+ERROR : area  [(1607.050,322.595), (1607.250,322.795)]	0.0400 um sqr.
+ERROR : There are more errors than default Max Error Number 20.
+Total area error in layer 3 is 20.  Elapsed =    0:00:07, CPU =    0:00:07
+Total area error in layer 4 is 0.  Elapsed =    0:00:07, CPU =    0:00:07
+Total area error in layer 5 is 0.  Elapsed =    0:00:07, CPU =    0:00:07
+Total area error in layer 6 is 0.  Elapsed =    0:00:07, CPU =    0:00:07
+Total area error in layer 7 is 0.  Elapsed =    0:00:07, CPU =    0:00:07
+Total area error in layer 8 is 0.  Elapsed =    0:00:07, CPU =    0:00:07
+Total area error in layer 9 is 0.  Elapsed =    0:00:07, CPU =    0:00:07
+Total area error in layer 10 is 0.  Elapsed =    0:00:07, CPU =    0:00:07
+Total area error in layer 11 is 0.  Elapsed =    0:00:07, CPU =    0:00:07
+Total area error in layer 12 is 0.  Elapsed =    0:00:07, CPU =    0:00:07
+Total area error in layer 13 is 0.  Elapsed =    0:00:07, CPU =    0:00:07
+Total area error in layer 14 is 0.  Elapsed =    0:00:07, CPU =    0:00:07
+Total area error in layer 15 is 0.  Elapsed =    0:00:07, CPU =    0:00:07
+ERROR : INPUT PortInst Fetch/PC_MUX/U13 A1(2826534) in net Fetch/PC_MUX/n1(2824725) is floating.
+
+ERROR : OUTPUT PortInst Fetch/PC_MUX/U13 Y(2826531) in net Fetch/PC_F[22](2822437) is floating.
+
+ERROR : OUTPUT PortInst Fetch/PC_MUX/U12 Y(2826538) in net Fetch/PC_F[21](2824704) is floating.
+
+ERROR : INPUT PortInst Fetch/PC_MUX/U12 A1(2826541) in net Fetch/PC_MUX/n1(2824725) is floating.
+
+ERROR : INPUT PortInst Fetch/PC_MUX/U11 A1(2826548) in net Fetch/PC_MUX/n1(2824725) is floating.
+
+ERROR : OUTPUT PortInst Fetch/PC_MUX/U11 Y(2826545) in net Fetch/PC_F[20](2824705) is floating.
+
+ERROR : OUTPUT PortInst Fetch/PC_MUX/U10 Y(2826552) in net Fetch/PC_MUX/n2(2824722) is floating.
+
+ERROR : OUTPUT PortInst Fetch/PC_MUX/U9 Y(2826556) in net Fetch/PC_MUX/n1(2824725) is floating.
+
+ERROR : INPUT PortInst Fetch/PC_MUX/U6 A1(2826571) in net Fetch/PC_MUX/n1(2824725) is floating.
+
+ERROR : OUTPUT PortInst Fetch/PC_MUX/U8 Y(2826560) in net Fetch/PC_MUX/n4(2824726) is floating.
+
+ERROR : OUTPUT PortInst Fetch/PC_MUX/U7 Y(2826564) in net Fetch/PC_MUX/n3(2824724) is floating.
+
+ERROR : OUTPUT PortInst Fetch/PC_MUX/U6 Y(2826568) in net Fetch/PC_F[17](2822436) is floating.
+
+ERROR : INPUT PortInst Fetch/PC_MUX/U5 A1(2826578) in net Fetch/PC_MUX/n1(2824725) is floating.
+
+ERROR : OUTPUT PortInst Fetch/PC_MUX/U5 Y(2826575) in net Fetch/PC_F[16](2822434) is floating.
+
+ERROR : OUTPUT PortInst Fetch/PC_MUX/U4 Y(2826582) in net Fetch/PC_F[15](2822432) is floating.
+
+ERROR : INPUT PortInst Fetch/PC_MUX/U4 A1(2826585) in net Fetch/PC_MUX/n1(2824725) is floating.
+
+ERROR : OUTPUT PortInst Fetch/PC_MUX/U2 Y(2826596) in net Fetch/PC_F[13](2822429) is floating.
+
+ERROR : INPUT PortInst Fetch/PC_MUX/U2 A1(2826599) in net Fetch/PC_MUX/n1(2824725) is floating.
+
+ERROR : OUTPUT PortInst Fetch/PC_MUX/U3 Y(2826589) in net Fetch/PC_F[14](2822430) is floating.
+
+ERROR : INPUT PortInst Fetch/PC_MUX/U3 A1(2826592) in net Fetch/PC_MUX/n1(2824725) is floating.
+
+ERROR : There are more errors than default Max Error Number 20.
+** Total Floating ports are 20.
+** Total Floating Nets are 2.
+** Total SHORT Nets are 0.
+ERROR : Logical Net Rs2E[3] is open.
+	Node 363 is in the region ((2096,1629),(2096,1629)).
+	Node 372 is in the region ((2079,1629),(2080,1629)).
+	Node 381487 is in the region ((3698,0),(3698,2)).
+	Total seperated nodes are 3.
+	Potential connection region ((2079, 1), (3699, 1630)).
+ERROR : Logical Net Forwarding_block/n15 is open.
+	Node 358 is in the region ((2090,1629),(2090,1629)).
+	Node 374 is in the region ((2080,1628),(2080,1630)).
+	Total seperated nodes are 2.
+	Potential connection region ((2079, 1628), (2091, 1630)).
+ERROR : Logical Net Forwarding_block/n12 is open.
+	Node 355 is in the region ((2091,1630),(2092,1630)).
+	Node 376 is in the region ((2075,1628),(2076,1630)).
+	Total seperated nodes are 2.
+	Potential connection region ((2075, 1629), (2092, 1631)).
+ERROR : Logical Net Rs2E[1] is open.
+	Node 350 is in the region ((2104,1629),(2105,1629)).
+	Node 379 is in the region ((2068,1629),(2069,1629)).
+	Node 381479 is in the region ((3734,0),(3734,2)).
+	Total seperated nodes are 3.
+	Potential connection region ((2068, 1), (3735, 1630)).
+ERROR : Logical Net Forwarding_block/n10 is open.
+	Node 353 is in the region ((2092,1629),(2093,1629)).
+	Node 380 is in the region ((2071,1628),(2072,1630)).
+	Total seperated nodes are 2.
+	Potential connection region ((2071, 1628), (2093, 1630)).
+ERROR : Logical Net Rs2E[2] is open.
+	Node 366 is in the region ((2087,1629),(2088,1629)).
+	Node 382 is in the region ((2064,1629),(2065,1629)).
+	Node 381476 is in the region ((3743,0),(3743,2)).
+	Total seperated nodes are 3.
+	Potential connection region ((2064, 1), (3744, 1630)).
+ERROR : Logical Net Forwarding_block/n8 is open.
+	Node 344 is in the region ((2107,1629),(2107,1629)).
+	Node 383 is in the region ((2067,1628),(2068,1630)).
+	Total seperated nodes are 2.
+	Potential connection region ((2067, 1628), (2108, 1630)).
+ERROR : Logical Net Rs2E[0] is open.
+	Node 377 is in the region ((2072,1629),(2073,1629)).
+	Node 387 is in the region ((2060,1629),(2060,1629)).
+	Node 381471 is in the region ((3770,0),(3770,2)).
+	Total seperated nodes are 3.
+	Potential connection region ((2059, 1), (3771, 1630)).
+ERROR : Logical Net Forwarding_block/n7 is open.
+	Node 343 is in the region ((2107,1629),(2107,1629)).
+	Node 385 is in the region ((2063,1628),(2064,1630)).
+	Total seperated nodes are 2.
+	Potential connection region ((2063, 1628), (2108, 1630)).
+ERROR : Logical Net Forwarding_block/n18 is open.
+	Node 321 is in the region ((2124,1629),(2125,1629)).
+	Node 341 is in the region ((2108,1629),(2108,1629)).
+	Node 391 is in the region ((2058,1628),(2060,1630)).
+	Total seperated nodes are 3.
+	Potential connection region ((2059, 1628), (2125, 1630)).
+ERROR : Logical Net Forwarding_block/n27 is open.
+	Node 390 is in the region ((2058,1629),(2058,1629)).
+	Node 395 is in the region ((2056,1628),(2057,1630)).
+	Total seperated nodes are 2.
+	Potential connection region ((2056, 1628), (2059, 1630)).
+ERROR : Logical Net Forwarding_block/n30 is open.
+	Node 394 is in the region ((2056,1629),(2056,1629)).
+	Node 398 is in the region ((2055,1628),(2055,1630)).
+	Total seperated nodes are 2.
+	Potential connection region ((2054, 1628), (2057, 1630)).
+ERROR : Logical Net Rs1E[4] is open.
+	Node 329 is in the region ((2118,1629),(2118,1629)).
+	Node 399 is in the region ((2050,1629),(2051,1629)).
+	Node 381481 is in the region ((3725,0),(3725,2)).
+	Total seperated nodes are 3.
+	Potential connection region ((2050, 1), (3726, 1630)).
+ERROR : Logical Net Forwarding_block/n29 is open.
+	Node 393 is in the region ((2056,1629),(2057,1629)).
+	Node 400 is in the region ((2051,1628),(2051,1630)).
+	Total seperated nodes are 2.
+	Potential connection region ((2050, 1628), (2057, 1630)).
+ERROR : Logical Net Rs1E[3] is open.
+	Node 326 is in the region ((2122,1629),(2122,1629)).
+	Node 402 is in the region ((2046,1629),(2046,1629)).
+	Node 381483 is in the region ((3716,0),(3716,2)).
+	Total seperated nodes are 3.
+	Potential connection region ((2045, 1), (3717, 1630)).
+ERROR : Logical Net Forwarding_block/n28 is open.
+	Node 392 is in the region ((2057,1629),(2057,1629)).
+	Node 403 is in the region ((2047,1628),(2047,1630)).
+	Total seperated nodes are 2.
+	Potential connection region ((2046, 1628), (2058, 1630)).
+ERROR : Logical Net Forwarding_block/n26 is open.
+	Node 389 is in the region ((2058,1630),(2058,1630)).
+	Node 415 is in the region ((2042,1628),(2043,1630)).
+	Total seperated nodes are 2.
+	Potential connection region ((2042, 1629), (2059, 1631)).
+ERROR : Logical Net Forwarding_block/n11 is open.
+	Node 354 is in the region ((2092,1629),(2092,1629)).
+	Node 388 is in the region ((2058,1629),(2059,1629)).
+	Node 412 is in the region ((2039,1628),(2039,1630)).
+	Total seperated nodes are 3.
+	Potential connection region ((2038, 1628), (2093, 1630)).
+ERROR : Logical Net RDM[0] is open.
+	Node 407 is in the region ((2035,1629),(2036,1629)).
+	Node 375 is in the region ((2074,1629),(2074,1629)).
+	Node 413 is in the region ((2041,1629),(2041,1629)).
+	Node 362902 is in the region ((3766,80),(3766,80)).
+	Node 366006 is in the region ((3509,66),(3509,68)).
+	Total seperated nodes are 5.
+	Potential connection region ((2035, 67), (3767, 1630)).
+ERROR : Logical Net RegWriteM is open.
+	Node 408 is in the region ((2037,1629),(2037,1629)).
+	Node 362890 is in the region ((3793,80),(3793,80)).
+	Node 366011 is in the region ((3518,66),(3518,68)).
+	Total seperated nodes are 3.
+	Potential connection region ((2036, 67), (3794, 1630)).
+ERROR : There are more errors than default Max Error Number 20.
+** Total OPEN Nets are 20.
+** Total Electrical Equivalent Error are 0.
+** Total Must Joint Error are 0.
+
+-- LVS END : --
+Elapsed =    0:00:07, CPU =    0:00:07
+Update error cell ...
+1

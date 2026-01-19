@@ -1,0 +1,178 @@
+Start CPD check: ::check_tlu_plus_files 
+Error: No TLU+ files were found. (PSYN-146)
+0
+End CPD check: ::check_tlu_plus_files
+Start CPD check: ::get_placement_area 
+40.000 40.000 1567.250 1566.840
+End CPD check: ::get_placement_area
+Start CPD check: report_routing_metal_info 
+No ignored layers specified.
+Information: Report design vs library layers and preferred routing directions. (PNR-164)
+ 
+****************************************
+Report : Layers
+Design : Pipeline_top
+Version: L-2016.03-SP1
+Date   : Sat Jan 17 06:43:14 2026
+****************************************
+
+Layer Name                   Library             Design              Tool understands
+METAL1                       Horizontal          Horizontal          Horizontal
+METAL2                       Vertical            Vertical            Vertical
+METAL3                       Horizontal          Horizontal          Horizontal
+METAL4                       Vertical            Vertical            Vertical
+METAL5                       Horizontal          Horizontal          Horizontal
+METAL6                       Vertical            Vertical            Vertical
+
+Information: Report track info.  (PNR-165)
+****************************************
+Report track
+Design : Pipeline_top
+Version: L-2016.03-SP1
+Date   : Sat Jan 17 06:43:14 2026
+****************************************
+Layer          Direction     Start         Tracks    Pitch          Attr
+------------------------------------------------------------------------
+Attributes :
+         usr : User defined
+         def : DEF defined
+
+METAL1             Y         0.4350         3918      0.4100          
+METAL2             Y         0.4350         3918      0.4100          
+METAL2             X         0.4350         3919      0.4100          
+METAL1             X         0.4350         3919      0.4100          
+METAL3             X         0.4350         3919      0.4100          
+METAL3             Y         0.4350         3918      0.4100          
+METAL2             Y         0.4350         3918      0.4100          
+METAL4             Y         0.4350         3918      0.4100          
+METAL4             X         0.4350         3919      0.4100          
+METAL3             X         0.4350         3919      0.4100          
+METAL5             X         0.4350         3919      0.4100          
+METAL5             Y         0.4350         3918      0.4100          
+METAL4             Y         0.4350         3918      0.4100          
+METAL6             Y         0.4350         3918      0.4100          
+METAL6             X         0.8450         1959      0.8200          
+METAL5             X         0.8450         1959      0.8200          
+1
+End CPD check: report_routing_metal_info
+Start CPD check: check_track_and_unit 
+
+End CPD check: check_track_and_unit
+Start CPD check: check_layer_direction 
+
+End CPD check: check_layer_direction
+Start CPD check: check_physical_only_ports 
+Warning: No port objects matched '*' (SEL-004)
+[]
+End CPD check: check_physical_only_ports
+Start CPD check: ::check_database 
+************************************************************
+CHECK_DATABASE RESULTS FOR CELL : Pipeline_top.CEL
+************************************************************
+MWUHIER: Checking for hierarchical internal netlist and flat internal netlist consistency ... 
+MWUHIER: Done with checking hierarchical internal netlist and flat internal netlist consistency. 
+Information: MWUHIER: Number of errors = 0 (MW-348)
+End PG consistent checking.. PG_Pass
+Information: Performing CEL netlist consistency check. (MWDC-118)
+Information: CEL consistency check PASSED. (MWDC-119)
+
+Start UPF checking.
+No UPF infomation. Finish UPF checking.
+1
+End CPD check: ::check_database
+Start CPD check: report_taint -dump_errors 
+
+****************************************
+  Report : Suggestions
+  Design : Pipeline_top
+  Version: L-2016.03-SP1
+  Date   : Sat Jan 17 06:43:15 2026
+****************************************
+
+Information: No suggestion for current design. (PSYN-1068)
+
+1
+End CPD check: report_taint -dump_errors
+Start CPD check: check_for_HFN_dont_touch_nets 
+
+End CPD check: check_for_HFN_dont_touch_nets
+Start CPD check: check_block_abstraction -stage pre_place_opt 
+Information: No blocks with abstraction information found
+1
+End CPD check: check_block_abstraction -stage pre_place_opt
+Start CPD check: check_placement_utilization_violation 
+0
+
+1
+End CPD check: check_placement_utilization_violation
+Start CPD check: cpd_check_tie_connection 
+0
+End CPD check: cpd_check_tie_connection
+Start CPD check: cpd_check_cells_restrictions 
+0
+End CPD check: cpd_check_cells_restrictions
+Start CPD check: check_bound_utilization 
+Checking Bounds Utilization:
+Warning: Nothing implicitly matched '*' (SEL-003)
+0
+End CPD check: check_bound_utilization
+Start CPD check: check_bounds 
+Warning: Nothing implicitly matched '*' (SEL-003)
+
+End CPD check: check_bounds
+Start CPD check: cpd_check_bounds_overlap 
+
+End CPD check: cpd_check_bounds_overlap
+Start CPD check: check_va_utilization 
+Checking Voltage Area Utilization:
+Warning: No voltage_area objects matched '*' (SEL-004)
+
+End CPD check: check_va_utilization
+Start CPD check: placement_check 
+
+  Loading design 'Pipeline_top'
+Warning: The core area for block is not defined. (PSYN-006)
+Error: No floorplan is defined for the current design for incremental physical synthesis. (PSYN-080)
+false
+End CPD check: placement_check
+Start CPD check: report_fp_placement 
+Reference Point: Lower Left-hand corner of Core Base Array
+Number of plan group pins = 0
+  172 blocks freed
+  0 bytes freed
+*********************************************
+Report     : Virtual Flat Placement
+Design     : Pipeline_top
+Version    : L-2016.03-SP1
+Date       : Sat Jan 17 06:43:16 2026
+*********************************************
+
+Total wirelength: 216839869.89
+Number of 100x100 tracks cell density regions: 1369
+Number of low (< 10%) cell density regions: 1444 (1.055%)
+Number of high (> 200%) cell density regions: 0 (0.000%)
+Maximum cell density: 0.00% (at 0 1 0 0)
+Checking hard macro to hard macro overlaps...
+Number of hard macro to hard macro overlaps: 0
+Checking hard macro to std cell overlaps...
+Number of hard macro to std cell overlaps: 0
+Checking plan group to plan group overlaps...
+Number of plan group to plan group overlaps: 0
+Number of TL cells overlapping PG: 0
+  Top Level: cell Execute/alu_inst/add_10/U1_29 is not inside core
+  Top Level: cell Execute/alu_inst/add_10_3/U1_2 is not inside core
+  Top Level: cell Execute/alu_inst/add_10_3/U1_3 is not inside core
+  Top Level: cell Execute/alu_inst/add_10_3/U1_1 is not inside core
+  Top Level: cell Execute/alu_inst/add_10/U1_10 is not inside core
+  Further messages suppressed ...
+Number of cells violating core area: 92349
+Total number of cells violating plan group or core area: 92349
+1
+End CPD check: report_fp_placement
+Start CPD check: ::check_physical_constraints 
+
+  Loading design 'Pipeline_top'
+Warning: The core area for block is not defined. (PSYN-006)
+Error: No floorplan is defined for the current design for incremental physical synthesis. (PSYN-080)
+0
+End CPD check: ::check_physical_constraints

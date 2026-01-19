@@ -1,0 +1,216 @@
+
+                      IC Compiler II Library Manager (TM)
+
+             Version O-2018.06-SP1 for linux64 - Jul 17, 2018 -SLE
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+################################################################################
+# ICC2 Library Creation (Split Files Strategy)
+################################################################################
+set WORK_PATH     "../runtime"
+../runtime
+set OUTPUT_PATH   "../output"
+../output
+set LEF_DIR       "../lef"
+../lef
+set STD_CELLS_DIR "../std_cells"
+../std_cells
+file mkdir $WORK_PATH
+file mkdir $OUTPUT_PATH
+set search_path [list . $LEF_DIR $STD_CELLS_DIR]
+. ../lef ../std_cells
+set NDM_LIB_NAME "tsmc13_std.ndm"
+tsmc13_std.ndm
+# تعريف الملفات المنفصلة التي قمنا بتنظيفها
+set TECH_FILE    "clean_tech_final.lef"
+clean_tech_final.lef
+set MACRO_FILE   "clean_macros_final.lef"
+clean_macros_final.lef
+set DB_FILE      "scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db"
+scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db
+# تنظيف المكتبة القديمة
+file delete -force $NDM_LIB_NAME
+file delete -force "$OUTPUT_PATH/$NDM_LIB_NAME"
+puts "Step 1: Creating Workspace using Clean Tech File..."
+Step 1: Creating Workspace using Clean Tech File...
+# استخدام ملف التكنولوجي المنفصل (الذي يحتوي على TECHNOLOGY tsmc13;)
+create_workspace $NDM_LIB_NAME -flow normal -technology $TECH_FILE
+Error: clean_tech_final.lef line 1, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 46, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 51, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 55, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 58, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 62, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 78, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 85, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 93, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 96, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 103, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 118, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 125, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 133, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 136, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 143, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 158, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 165, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 173, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 176, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 183, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 198, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 205, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 213, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 216, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 223, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 238, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 245, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 253, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 256, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 263, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 277, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 284, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 292, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 295, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 299, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 301, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 310, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 312, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 321, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 323, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 332, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 334, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 343, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 345, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 354, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 356, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 365, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 367, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 376, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 378, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 387, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 389, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 398, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 400, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 409, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 411, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 420, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 422, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 431, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 433, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 442, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 444, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 453, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 455, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 464, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 466, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 475, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 477, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 486, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 488, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 497, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 499, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 508, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 510, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 519, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 521, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 530, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 532, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 542, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 544, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 554, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 556, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 566, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 568, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 578, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 580, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 590, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 592, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 602, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 604, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 614, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 616, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 626, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 628, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 638, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 640, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 650, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 652, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 662, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 664, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 674, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 676, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 686, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 688, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 698, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 700, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 710, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 712, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 722, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 724, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 734, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 736, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 746, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 748, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 758, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 760, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 770, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 772, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 781, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 783, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 792, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 794, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 803, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 805, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 814, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 816, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 825, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 827, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 836, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 842, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 847, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 852, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 858, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 863, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 868, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 874, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 879, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 884, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 890, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 895, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 900, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 906, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 911, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 916, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 920, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 924, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 928, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 932, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 936, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 940, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 944, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 948, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 952, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 956, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 960, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 964, syntax error. This rule will be ignored. (TECH-006)
+Error: clean_tech_final.lef line 982, syntax error. This rule will be ignored. (TECH-006)
+Error: Technology section is missing. (clean_tech_final.lef line:983) (TECH-226)
+Error: Cannot load technology file '/home/ICer/Desktop/RESIC-V/pnr/lef/clean_tech_final.lef'. (LIB-007)
+Information: script '/home/ICer/Desktop/RESIC-V/pnr/scripts/build_ndm.tcl'
+	stopped at line 26 due to error. (CMD-081)
+Extended error info:
+problem in create_lib
+    while executing
+"__create_lib -technology clean_tech_final.lef -verbose tsmc13_std.ndm"
+    invoked from within
+"create_workspace $NDM_LIB_NAME -flow normal -technology $TECH_FILE"
+ -- End Extended Error Info
+icc2_lm_shell> exit
+Maximum memory usage for this session: 50.79 MB
+CPU usage for this session:      0 seconds (  0.00 hours)
+Elapsed time for this session:     54 seconds (  0.02 hours)
+Thank you for using IC Compiler II Library Manager.

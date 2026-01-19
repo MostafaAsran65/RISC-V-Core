@@ -1,0 +1,15 @@
+<Database>
+Name/home/ICer/Desktop/RESIC-V/pnr/scripts/check_workspace.ems
+Creation TimeSun Jan 18 05:17:30 2026
+Modified TimeSun Jan 18 05:17:30 2026
+Design Name
+Library Name
+</Database>
+<RuleCount>
+LM-0101
+</RuleCount>
+<UserDefinedRules>
+</UserDefinedRules>
+<Messages>
+LM-010para1check. You must have at least one physical library.10
+</Messages>

@@ -1,0 +1,32 @@
+ 
+****************************************
+Report : area
+Design : Pipeline_top
+Version: K-2015.06
+Date   : Fri Jan 16 07:37:52 2026
+****************************************
+
+Library(s) Used:
+
+    scmetro_tsmc_cl013g_rvt_tt_1p2v_25c (File: /home/IC/RESIC-V/syn/std_cells/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db)
+
+Number of ports:                         2889
+Number of nets:                         95105
+Number of cells:                        92158
+Number of combinational cells:          57815
+Number of sequential cells:             34318
+Number of macros/black boxes:               0
+Number of buf/inv:                      10546
+Number of references:                       6
+
+Combinational area:             669509.373482
+Buf/Inv area:                    50493.373646
+Noncombinational area:          728259.603235
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:               1397768.976717
+Total area:                 undefined
+
+Information: This design contains black box (unknown) components. (RPT-8)
+1

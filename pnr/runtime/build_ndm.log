@@ -1,0 +1,238 @@
+
+                      IC Compiler II Library Manager (TM)
+
+             Version O-2018.06-SP1 for linux64 - Jul 17, 2018 -SLE
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+################################################################################
+# ICC2 Library Creation Script
+# TSMC 130nm – Tech LEF + Macro LEF (NO MERGE)
+# Compatible with ICC2 LM O-2018.06
+################################################################################
+# =========================
+# Paths
+# =========================
+set WORK_PATH     "../runtime"
+../runtime
+set OUTPUT_PATH   "../output"
+../output
+set LEF_DIR       "../lef"
+../lef
+set STD_CELLS_DIR "../std_cells"
+../std_cells
+# =========================
+# Create required folders
+# =========================
+file mkdir $WORK_PATH
+file mkdir $OUTPUT_PATH
+# =========================
+# Search Path
+# =========================
+set search_path [list . $LEF_DIR $STD_CELLS_DIR]
+. ../lef ../std_cells
+# =========================
+# Library Name
+# =========================
+set NDM_LIB_NAME "tsmc13_std.ndm"
+tsmc13_std.ndm
+# =========================
+# LEF Files
+# =========================
+# >>> Choose ONE technology LEF only <<<
+set TECH_LEF "tsmc13fsg_6lm_tech.lef"
+tsmc13fsg_6lm_tech.lef
+# Standard cell macro LEF
+set MACRO_LEF "tsmc13_m_macros.lef"
+tsmc13_m_macros.lef
+# Timing DB
+set DB_FILE "scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db"
+scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db
+# =========================
+# Cleanup old outputs
+# =========================
+file delete -force $NDM_LIB_NAME
+file delete -force "$OUTPUT_PATH/$NDM_LIB_NAME"
+# =========================
+# Create Workspace with Technology LEF
+# =========================
+puts "Step 1: Creating workspace with Technology LEF..."
+Step 1: Creating workspace with Technology LEF...
+create_workspace $NDM_LIB_NAME     -flow normal     -technology $TECH_LEF
+Error: tsmc13fsg_6lm_tech.lef line 45, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 50, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 54, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 57, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 61, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 77, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 84, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 92, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 95, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 102, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 117, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 124, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 132, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 135, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 142, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 157, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 164, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 172, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 175, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 182, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 197, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 204, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 212, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 215, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 222, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 237, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 244, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 252, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 255, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 262, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 276, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 283, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 291, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 294, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 298, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 300, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 309, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 311, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 320, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 322, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 331, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 333, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 342, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 344, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 353, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 355, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 364, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 366, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 375, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 377, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 386, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 388, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 397, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 399, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 408, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 410, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 419, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 421, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 430, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 432, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 441, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 443, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 452, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 454, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 463, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 465, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 474, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 476, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 485, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 487, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 496, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 498, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 507, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 509, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 518, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 520, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 529, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 531, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 541, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 543, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 553, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 555, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 565, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 567, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 577, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 579, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 589, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 591, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 601, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 603, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 613, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 615, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 625, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 627, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 637, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 639, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 649, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 651, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 661, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 663, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 673, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 675, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 685, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 687, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 697, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 699, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 709, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 711, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 721, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 723, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 733, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 735, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 745, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 747, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 757, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 759, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 769, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 771, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 780, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 782, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 791, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 793, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 802, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 804, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 813, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 815, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 824, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 826, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 835, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 841, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 846, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 851, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 857, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 862, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 867, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 873, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 878, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 883, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 889, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 894, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 899, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 905, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 910, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 915, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 919, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 923, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 927, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 931, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 935, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 939, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 943, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 947, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 951, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 955, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 959, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 963, syntax error. This rule will be ignored. (TECH-006)
+Error: tsmc13fsg_6lm_tech.lef line 981, syntax error. This rule will be ignored. (TECH-006)
+Error: Technology section is missing. (tsmc13fsg_6lm_tech.lef line:982) (TECH-226)
+Error: Cannot load technology file '/home/ICer/Desktop/RESIC-V/pnr/lef/tsmc13fsg_6lm_tech.lef'. (LIB-007)
+Information: script '/home/ICer/Desktop/RESIC-V/pnr/scripts/build_ndm.tcl'
+	stopped at line 55 due to error. (CMD-081)
+Extended error info:
+problem in create_lib
+    while executing
+"__create_lib -technology tsmc13fsg_6lm_tech.lef -verbose tsmc13_std.ndm"
+    invoked from within
+"create_workspace $NDM_LIB_NAME     -flow normal     -technology $TECH_LEF"
+ -- End Extended Error Info
+icc2_lm_shell> exit
+Maximum memory usage for this session: 50.79 MB
+CPU usage for this session:      0 seconds (  0.00 hours)
+Elapsed time for this session:    205 seconds (  0.06 hours)
+Thank you for using IC Compiler II Library Manager.

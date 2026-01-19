@@ -1,0 +1,7 @@
+;# Tcl
+configureWindow 0 25x24+0+0
+source lef2mw.tcl
+abortCommand
+exit\
+exit
+exit

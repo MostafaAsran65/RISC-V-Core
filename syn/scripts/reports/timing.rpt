@@ -1,0 +1,1548 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 20
+Design : Pipeline_top
+Version: K-2015.06
+Date   : Fri Jan 16 07:37:52 2026
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: scmetro_tsmc_cl013g_rvt_tt_1p2v_25c   Library: scmetro_tsmc_cl013g_rvt_tt_1p2v_25c
+Wire Load Model Mode: top
+
+  Startpoint: rst (input port clocked by clk)
+  Endpoint: Execute/ALUResultM_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  rst (in)                                                0.00       2.00 r
+  Forwarding_block/rst (hazard_unit)                      0.00       2.00 r
+  Forwarding_block/U22/Y (CLKINVX16M)                     0.00       2.00 f
+  Forwarding_block/U36/Y (NAND3BX1M)                      0.12       2.12 f
+  Forwarding_block/U35/Y (CLKINVX1M)                      0.07       2.19 r
+  Forwarding_block/U4/Y (NAND4X2M)                        0.07       2.26 f
+  Forwarding_block/U3/Y (NOR4X1M)                         0.20       2.46 r
+  Forwarding_block/ForwardBE[0] (hazard_unit)             0.00       2.46 r
+  Execute/ForwardBE[0] (execute_cycle)                    0.00       2.46 r
+  Execute/SrcB_Mux/s[0] (Mux_3_by_1_2)                    0.00       2.46 r
+  Execute/SrcB_Mux/U22/Y (NOR2BX2M)                       0.06       2.52 f
+  Execute/SrcB_Mux/U17/Y (CLKBUFX2M)                      0.16       2.68 f
+  Execute/SrcB_Mux/U36/Y (AOI22X1M)                       0.12       2.80 r
+  Execute/SrcB_Mux/U4/Y (OAI2BB1X1M)                      0.05       2.85 f
+  Execute/SrcB_Mux/d[1] (Mux_3_by_1_2)                    0.00       2.85 f
+  Execute/ALU_Src_Mux/a[1] (Mux_1)                        0.00       2.85 f
+  Execute/ALU_Src_Mux/U1/Y (AO22XLM)                      0.26       3.11 f
+  Execute/ALU_Src_Mux/c[1] (Mux_1)                        0.00       3.11 f
+  Execute/alu_inst/B[1] (ALU)                             0.00       3.11 f
+  Execute/alu_inst/U4/Y (CLKINVX2M)                       0.06       3.16 r
+  Execute/alu_inst/add_10_2/A[1] (ALU_DW01_inc_0)         0.00       3.16 r
+  Execute/alu_inst/add_10_2/U1_1_1/S (ADDHX1M)            0.06       3.22 f
+  Execute/alu_inst/add_10_2/SUM[1] (ALU_DW01_inc_0)       0.00       3.22 f
+  Execute/alu_inst/add_10_3/B[1] (ALU_DW01_add_1)         0.00       3.22 f
+  Execute/alu_inst/add_10_3/U1_1/CO (ADDFX2M)             0.31       3.53 f
+  Execute/alu_inst/add_10_3/U1_2/CO (ADDFXLM)             0.19       3.72 f
+  Execute/alu_inst/add_10_3/U1_3/CO (ADDFX2M)             0.20       3.92 f
+  Execute/alu_inst/add_10_3/U1_4/CO (ADDFXLM)             0.19       4.11 f
+  Execute/alu_inst/add_10_3/U1_5/CO (ADDFX2M)             0.20       4.31 f
+  Execute/alu_inst/add_10_3/U1_6/CO (ADDFXLM)             0.19       4.51 f
+  Execute/alu_inst/add_10_3/U1_7/CO (ADDFX2M)             0.20       4.71 f
+  Execute/alu_inst/add_10_3/U1_8/CO (ADDFXLM)             0.19       4.90 f
+  Execute/alu_inst/add_10_3/U1_9/CO (ADDFX2M)             0.20       5.10 f
+  Execute/alu_inst/add_10_3/U1_10/CO (ADDFXLM)            0.19       5.29 f
+  Execute/alu_inst/add_10_3/U1_11/CO (ADDFX2M)            0.20       5.49 f
+  Execute/alu_inst/add_10_3/U1_12/CO (ADDFXLM)            0.19       5.69 f
+  Execute/alu_inst/add_10_3/U1_13/CO (ADDFX2M)            0.20       5.89 f
+  Execute/alu_inst/add_10_3/U1_14/CO (ADDFXLM)            0.19       6.08 f
+  Execute/alu_inst/add_10_3/U1_15/CO (ADDFX2M)            0.20       6.28 f
+  Execute/alu_inst/add_10_3/U1_16/CO (ADDFXLM)            0.19       6.47 f
+  Execute/alu_inst/add_10_3/U1_17/CO (ADDFX2M)            0.20       6.67 f
+  Execute/alu_inst/add_10_3/U1_18/CO (ADDFXLM)            0.19       6.87 f
+  Execute/alu_inst/add_10_3/U1_19/CO (ADDFX2M)            0.20       7.06 f
+  Execute/alu_inst/add_10_3/U1_20/CO (ADDFXLM)            0.19       7.26 f
+  Execute/alu_inst/add_10_3/U1_21/CO (ADDFX2M)            0.20       7.46 f
+  Execute/alu_inst/add_10_3/U1_22/CO (ADDFXLM)            0.19       7.65 f
+  Execute/alu_inst/add_10_3/U1_23/CO (ADDFX2M)            0.20       7.85 f
+  Execute/alu_inst/add_10_3/U1_24/CO (ADDFXLM)            0.19       8.04 f
+  Execute/alu_inst/add_10_3/U1_25/CO (ADDFX2M)            0.20       8.24 f
+  Execute/alu_inst/add_10_3/U1_26/CO (ADDFXLM)            0.19       8.44 f
+  Execute/alu_inst/add_10_3/U1_27/CO (ADDFX2M)            0.20       8.64 f
+  Execute/alu_inst/add_10_3/U1_28/CO (ADDFXLM)            0.19       8.83 f
+  Execute/alu_inst/add_10_3/U1_29/CO (ADDFX2M)            0.20       9.03 f
+  Execute/alu_inst/add_10_3/U1_30/CO (ADDFXLM)            0.19       9.22 f
+  Execute/alu_inst/add_10_3/U1_31/Y (XOR3XLM)             0.15       9.37 f
+  Execute/alu_inst/add_10_3/SUM[31] (ALU_DW01_add_1)      0.00       9.37 f
+  Execute/alu_inst/U224/Y (AOI22X1M)                      0.14       9.51 r
+  Execute/alu_inst/U225/Y (NOR4BX1M)                      0.07       9.58 f
+  Execute/alu_inst/U6/Y (AOI221XLM)                       0.19       9.77 r
+  Execute/alu_inst/U5/Y (OAI211X1M)                       0.10       9.87 f
+  Execute/alu_inst/Result[0] (ALU)                        0.00       9.87 f
+  Execute/ALUResultM_reg[0]/D (DFFRQX2M)                  0.00       9.87 f
+  data arrival time                                                  9.87
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  Execute/ALUResultM_reg[0]/CK (DFFRQX2M)                 0.00      10.00 r
+  library setup time                                     -0.11       9.89
+  data required time                                                 9.89
+  --------------------------------------------------------------------------
+  data required time                                                 9.89
+  data arrival time                                                 -9.87
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.02
+
+
+  Startpoint: rst (input port clocked by clk)
+  Endpoint: Execute/ALUResultM_reg[31]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  rst (in)                                                0.00       2.00 r
+  Forwarding_block/rst (hazard_unit)                      0.00       2.00 r
+  Forwarding_block/U22/Y (CLKINVX16M)                     0.00       2.00 f
+  Forwarding_block/U36/Y (NAND3BX1M)                      0.12       2.12 f
+  Forwarding_block/U35/Y (CLKINVX1M)                      0.07       2.19 r
+  Forwarding_block/U4/Y (NAND4X2M)                        0.07       2.26 f
+  Forwarding_block/U3/Y (NOR4X1M)                         0.20       2.46 r
+  Forwarding_block/ForwardBE[0] (hazard_unit)             0.00       2.46 r
+  Execute/ForwardBE[0] (execute_cycle)                    0.00       2.46 r
+  Execute/SrcB_Mux/s[0] (Mux_3_by_1_2)                    0.00       2.46 r
+  Execute/SrcB_Mux/U22/Y (NOR2BX2M)                       0.06       2.52 f
+  Execute/SrcB_Mux/U17/Y (CLKBUFX2M)                      0.16       2.68 f
+  Execute/SrcB_Mux/U36/Y (AOI22X1M)                       0.12       2.80 r
+  Execute/SrcB_Mux/U4/Y (OAI2BB1X1M)                      0.05       2.85 f
+  Execute/SrcB_Mux/d[1] (Mux_3_by_1_2)                    0.00       2.85 f
+  Execute/ALU_Src_Mux/a[1] (Mux_1)                        0.00       2.85 f
+  Execute/ALU_Src_Mux/U1/Y (AO22XLM)                      0.26       3.11 f
+  Execute/ALU_Src_Mux/c[1] (Mux_1)                        0.00       3.11 f
+  Execute/alu_inst/B[1] (ALU)                             0.00       3.11 f
+  Execute/alu_inst/U4/Y (CLKINVX2M)                       0.06       3.16 r
+  Execute/alu_inst/add_10_2/A[1] (ALU_DW01_inc_0)         0.00       3.16 r
+  Execute/alu_inst/add_10_2/U1_1_1/S (ADDHX1M)            0.06       3.22 f
+  Execute/alu_inst/add_10_2/SUM[1] (ALU_DW01_inc_0)       0.00       3.22 f
+  Execute/alu_inst/add_10_3/B[1] (ALU_DW01_add_1)         0.00       3.22 f
+  Execute/alu_inst/add_10_3/U1_1/CO (ADDFX2M)             0.31       3.53 f
+  Execute/alu_inst/add_10_3/U1_2/CO (ADDFXLM)             0.19       3.72 f
+  Execute/alu_inst/add_10_3/U1_3/CO (ADDFX2M)             0.20       3.92 f
+  Execute/alu_inst/add_10_3/U1_4/CO (ADDFXLM)             0.19       4.11 f
+  Execute/alu_inst/add_10_3/U1_5/CO (ADDFX2M)             0.20       4.31 f
+  Execute/alu_inst/add_10_3/U1_6/CO (ADDFXLM)             0.19       4.51 f
+  Execute/alu_inst/add_10_3/U1_7/CO (ADDFX2M)             0.20       4.71 f
+  Execute/alu_inst/add_10_3/U1_8/CO (ADDFXLM)             0.19       4.90 f
+  Execute/alu_inst/add_10_3/U1_9/CO (ADDFX2M)             0.20       5.10 f
+  Execute/alu_inst/add_10_3/U1_10/CO (ADDFXLM)            0.19       5.29 f
+  Execute/alu_inst/add_10_3/U1_11/CO (ADDFX2M)            0.20       5.49 f
+  Execute/alu_inst/add_10_3/U1_12/CO (ADDFXLM)            0.19       5.69 f
+  Execute/alu_inst/add_10_3/U1_13/CO (ADDFX2M)            0.20       5.89 f
+  Execute/alu_inst/add_10_3/U1_14/CO (ADDFXLM)            0.19       6.08 f
+  Execute/alu_inst/add_10_3/U1_15/CO (ADDFX2M)            0.20       6.28 f
+  Execute/alu_inst/add_10_3/U1_16/CO (ADDFXLM)            0.19       6.47 f
+  Execute/alu_inst/add_10_3/U1_17/CO (ADDFX2M)            0.20       6.67 f
+  Execute/alu_inst/add_10_3/U1_18/CO (ADDFXLM)            0.19       6.87 f
+  Execute/alu_inst/add_10_3/U1_19/CO (ADDFX2M)            0.20       7.06 f
+  Execute/alu_inst/add_10_3/U1_20/CO (ADDFXLM)            0.19       7.26 f
+  Execute/alu_inst/add_10_3/U1_21/CO (ADDFX2M)            0.20       7.46 f
+  Execute/alu_inst/add_10_3/U1_22/CO (ADDFXLM)            0.19       7.65 f
+  Execute/alu_inst/add_10_3/U1_23/CO (ADDFX2M)            0.20       7.85 f
+  Execute/alu_inst/add_10_3/U1_24/CO (ADDFXLM)            0.19       8.04 f
+  Execute/alu_inst/add_10_3/U1_25/CO (ADDFX2M)            0.20       8.24 f
+  Execute/alu_inst/add_10_3/U1_26/CO (ADDFXLM)            0.19       8.44 f
+  Execute/alu_inst/add_10_3/U1_27/CO (ADDFX2M)            0.20       8.64 f
+  Execute/alu_inst/add_10_3/U1_28/CO (ADDFXLM)            0.19       8.83 f
+  Execute/alu_inst/add_10_3/U1_29/CO (ADDFX2M)            0.20       9.03 f
+  Execute/alu_inst/add_10_3/U1_30/CO (ADDFXLM)            0.19       9.22 f
+  Execute/alu_inst/add_10_3/U1_31/Y (XOR3XLM)             0.16       9.38 r
+  Execute/alu_inst/add_10_3/SUM[31] (ALU_DW01_add_1)      0.00       9.38 r
+  Execute/alu_inst/U224/Y (AOI22X1M)                      0.07       9.45 f
+  Execute/alu_inst/U8/Y (OAI222XLM)                       0.23       9.68 r
+  Execute/alu_inst/Result[31] (ALU)                       0.00       9.68 r
+  Execute/ALUResultM_reg[31]/D (DFFRQX2M)                 0.00       9.68 r
+  data arrival time                                                  9.68
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  Execute/ALUResultM_reg[31]/CK (DFFRQX2M)                0.00      10.00 r
+  library setup time                                     -0.19       9.81
+  data required time                                                 9.81
+  --------------------------------------------------------------------------
+  data required time                                                 9.81
+  data arrival time                                                 -9.68
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: rst (input port clocked by clk)
+  Endpoint: Execute/ALUResultM_reg[30]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  rst (in)                                                0.00       2.00 r
+  Forwarding_block/rst (hazard_unit)                      0.00       2.00 r
+  Forwarding_block/U22/Y (CLKINVX16M)                     0.00       2.00 f
+  Forwarding_block/U36/Y (NAND3BX1M)                      0.12       2.12 f
+  Forwarding_block/U35/Y (CLKINVX1M)                      0.07       2.19 r
+  Forwarding_block/U4/Y (NAND4X2M)                        0.07       2.26 f
+  Forwarding_block/U3/Y (NOR4X1M)                         0.20       2.46 r
+  Forwarding_block/ForwardBE[0] (hazard_unit)             0.00       2.46 r
+  Execute/ForwardBE[0] (execute_cycle)                    0.00       2.46 r
+  Execute/SrcB_Mux/s[0] (Mux_3_by_1_2)                    0.00       2.46 r
+  Execute/SrcB_Mux/U22/Y (NOR2BX2M)                       0.06       2.52 f
+  Execute/SrcB_Mux/U17/Y (CLKBUFX2M)                      0.16       2.68 f
+  Execute/SrcB_Mux/U36/Y (AOI22X1M)                       0.12       2.80 r
+  Execute/SrcB_Mux/U4/Y (OAI2BB1X1M)                      0.05       2.85 f
+  Execute/SrcB_Mux/d[1] (Mux_3_by_1_2)                    0.00       2.85 f
+  Execute/ALU_Src_Mux/a[1] (Mux_1)                        0.00       2.85 f
+  Execute/ALU_Src_Mux/U1/Y (AO22XLM)                      0.26       3.11 f
+  Execute/ALU_Src_Mux/c[1] (Mux_1)                        0.00       3.11 f
+  Execute/alu_inst/B[1] (ALU)                             0.00       3.11 f
+  Execute/alu_inst/U4/Y (CLKINVX2M)                       0.06       3.16 r
+  Execute/alu_inst/add_10_2/A[1] (ALU_DW01_inc_0)         0.00       3.16 r
+  Execute/alu_inst/add_10_2/U1_1_1/S (ADDHX1M)            0.06       3.22 f
+  Execute/alu_inst/add_10_2/SUM[1] (ALU_DW01_inc_0)       0.00       3.22 f
+  Execute/alu_inst/add_10_3/B[1] (ALU_DW01_add_1)         0.00       3.22 f
+  Execute/alu_inst/add_10_3/U1_1/CO (ADDFX2M)             0.31       3.53 f
+  Execute/alu_inst/add_10_3/U1_2/CO (ADDFXLM)             0.19       3.72 f
+  Execute/alu_inst/add_10_3/U1_3/CO (ADDFX2M)             0.20       3.92 f
+  Execute/alu_inst/add_10_3/U1_4/CO (ADDFXLM)             0.19       4.11 f
+  Execute/alu_inst/add_10_3/U1_5/CO (ADDFX2M)             0.20       4.31 f
+  Execute/alu_inst/add_10_3/U1_6/CO (ADDFXLM)             0.19       4.51 f
+  Execute/alu_inst/add_10_3/U1_7/CO (ADDFX2M)             0.20       4.71 f
+  Execute/alu_inst/add_10_3/U1_8/CO (ADDFXLM)             0.19       4.90 f
+  Execute/alu_inst/add_10_3/U1_9/CO (ADDFX2M)             0.20       5.10 f
+  Execute/alu_inst/add_10_3/U1_10/CO (ADDFXLM)            0.19       5.29 f
+  Execute/alu_inst/add_10_3/U1_11/CO (ADDFX2M)            0.20       5.49 f
+  Execute/alu_inst/add_10_3/U1_12/CO (ADDFXLM)            0.19       5.69 f
+  Execute/alu_inst/add_10_3/U1_13/CO (ADDFX2M)            0.20       5.89 f
+  Execute/alu_inst/add_10_3/U1_14/CO (ADDFXLM)            0.19       6.08 f
+  Execute/alu_inst/add_10_3/U1_15/CO (ADDFX2M)            0.20       6.28 f
+  Execute/alu_inst/add_10_3/U1_16/CO (ADDFXLM)            0.19       6.47 f
+  Execute/alu_inst/add_10_3/U1_17/CO (ADDFX2M)            0.20       6.67 f
+  Execute/alu_inst/add_10_3/U1_18/CO (ADDFXLM)            0.19       6.87 f
+  Execute/alu_inst/add_10_3/U1_19/CO (ADDFX2M)            0.20       7.06 f
+  Execute/alu_inst/add_10_3/U1_20/CO (ADDFXLM)            0.19       7.26 f
+  Execute/alu_inst/add_10_3/U1_21/CO (ADDFX2M)            0.20       7.46 f
+  Execute/alu_inst/add_10_3/U1_22/CO (ADDFXLM)            0.19       7.65 f
+  Execute/alu_inst/add_10_3/U1_23/CO (ADDFX2M)            0.20       7.85 f
+  Execute/alu_inst/add_10_3/U1_24/CO (ADDFXLM)            0.19       8.04 f
+  Execute/alu_inst/add_10_3/U1_25/CO (ADDFX2M)            0.20       8.24 f
+  Execute/alu_inst/add_10_3/U1_26/CO (ADDFXLM)            0.19       8.44 f
+  Execute/alu_inst/add_10_3/U1_27/CO (ADDFX2M)            0.20       8.64 f
+  Execute/alu_inst/add_10_3/U1_28/CO (ADDFXLM)            0.19       8.83 f
+  Execute/alu_inst/add_10_3/U1_29/CO (ADDFX2M)            0.20       9.03 f
+  Execute/alu_inst/add_10_3/U1_30/S (ADDFXLM)             0.20       9.23 r
+  Execute/alu_inst/add_10_3/SUM[30] (ALU_DW01_add_1)      0.00       9.23 r
+  Execute/alu_inst/U36/Y (NAND2X2M)                       0.04       9.27 f
+  Execute/alu_inst/U34/Y (OAI211X2M)                      0.05       9.32 r
+  Execute/alu_inst/Result[30] (ALU)                       0.00       9.32 r
+  Execute/ALUResultM_reg[30]/D (DFFRQX2M)                 0.00       9.32 r
+  data arrival time                                                  9.32
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  Execute/ALUResultM_reg[30]/CK (DFFRQX2M)                0.00      10.00 r
+  library setup time                                     -0.17       9.83
+  data required time                                                 9.83
+  --------------------------------------------------------------------------
+  data required time                                                 9.83
+  data arrival time                                                 -9.32
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.51
+
+
+  Startpoint: rst (input port clocked by clk)
+  Endpoint: Execute/ALUResultM_reg[29]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  rst (in)                                                0.00       2.00 r
+  Forwarding_block/rst (hazard_unit)                      0.00       2.00 r
+  Forwarding_block/U22/Y (CLKINVX16M)                     0.00       2.00 f
+  Forwarding_block/U36/Y (NAND3BX1M)                      0.12       2.12 f
+  Forwarding_block/U35/Y (CLKINVX1M)                      0.07       2.19 r
+  Forwarding_block/U4/Y (NAND4X2M)                        0.07       2.26 f
+  Forwarding_block/U3/Y (NOR4X1M)                         0.20       2.46 r
+  Forwarding_block/ForwardBE[0] (hazard_unit)             0.00       2.46 r
+  Execute/ForwardBE[0] (execute_cycle)                    0.00       2.46 r
+  Execute/SrcB_Mux/s[0] (Mux_3_by_1_2)                    0.00       2.46 r
+  Execute/SrcB_Mux/U22/Y (NOR2BX2M)                       0.06       2.52 f
+  Execute/SrcB_Mux/U17/Y (CLKBUFX2M)                      0.16       2.68 f
+  Execute/SrcB_Mux/U36/Y (AOI22X1M)                       0.12       2.80 r
+  Execute/SrcB_Mux/U4/Y (OAI2BB1X1M)                      0.05       2.85 f
+  Execute/SrcB_Mux/d[1] (Mux_3_by_1_2)                    0.00       2.85 f
+  Execute/ALU_Src_Mux/a[1] (Mux_1)                        0.00       2.85 f
+  Execute/ALU_Src_Mux/U1/Y (AO22XLM)                      0.26       3.11 f
+  Execute/ALU_Src_Mux/c[1] (Mux_1)                        0.00       3.11 f
+  Execute/alu_inst/B[1] (ALU)                             0.00       3.11 f
+  Execute/alu_inst/U4/Y (CLKINVX2M)                       0.06       3.16 r
+  Execute/alu_inst/add_10_2/A[1] (ALU_DW01_inc_0)         0.00       3.16 r
+  Execute/alu_inst/add_10_2/U1_1_1/S (ADDHX1M)            0.06       3.22 f
+  Execute/alu_inst/add_10_2/SUM[1] (ALU_DW01_inc_0)       0.00       3.22 f
+  Execute/alu_inst/add_10_3/B[1] (ALU_DW01_add_1)         0.00       3.22 f
+  Execute/alu_inst/add_10_3/U1_1/CO (ADDFX2M)             0.31       3.53 f
+  Execute/alu_inst/add_10_3/U1_2/CO (ADDFXLM)             0.19       3.72 f
+  Execute/alu_inst/add_10_3/U1_3/CO (ADDFX2M)             0.20       3.92 f
+  Execute/alu_inst/add_10_3/U1_4/CO (ADDFXLM)             0.19       4.11 f
+  Execute/alu_inst/add_10_3/U1_5/CO (ADDFX2M)             0.20       4.31 f
+  Execute/alu_inst/add_10_3/U1_6/CO (ADDFXLM)             0.19       4.51 f
+  Execute/alu_inst/add_10_3/U1_7/CO (ADDFX2M)             0.20       4.71 f
+  Execute/alu_inst/add_10_3/U1_8/CO (ADDFXLM)             0.19       4.90 f
+  Execute/alu_inst/add_10_3/U1_9/CO (ADDFX2M)             0.20       5.10 f
+  Execute/alu_inst/add_10_3/U1_10/CO (ADDFXLM)            0.19       5.29 f
+  Execute/alu_inst/add_10_3/U1_11/CO (ADDFX2M)            0.20       5.49 f
+  Execute/alu_inst/add_10_3/U1_12/CO (ADDFXLM)            0.19       5.69 f
+  Execute/alu_inst/add_10_3/U1_13/CO (ADDFX2M)            0.20       5.89 f
+  Execute/alu_inst/add_10_3/U1_14/CO (ADDFXLM)            0.19       6.08 f
+  Execute/alu_inst/add_10_3/U1_15/CO (ADDFX2M)            0.20       6.28 f
+  Execute/alu_inst/add_10_3/U1_16/CO (ADDFXLM)            0.19       6.47 f
+  Execute/alu_inst/add_10_3/U1_17/CO (ADDFX2M)            0.20       6.67 f
+  Execute/alu_inst/add_10_3/U1_18/CO (ADDFXLM)            0.19       6.87 f
+  Execute/alu_inst/add_10_3/U1_19/CO (ADDFX2M)            0.20       7.06 f
+  Execute/alu_inst/add_10_3/U1_20/CO (ADDFXLM)            0.19       7.26 f
+  Execute/alu_inst/add_10_3/U1_21/CO (ADDFX2M)            0.20       7.46 f
+  Execute/alu_inst/add_10_3/U1_22/CO (ADDFXLM)            0.19       7.65 f
+  Execute/alu_inst/add_10_3/U1_23/CO (ADDFX2M)            0.20       7.85 f
+  Execute/alu_inst/add_10_3/U1_24/CO (ADDFXLM)            0.19       8.04 f
+  Execute/alu_inst/add_10_3/U1_25/CO (ADDFX2M)            0.20       8.24 f
+  Execute/alu_inst/add_10_3/U1_26/CO (ADDFXLM)            0.19       8.44 f
+  Execute/alu_inst/add_10_3/U1_27/CO (ADDFX2M)            0.20       8.64 f
+  Execute/alu_inst/add_10_3/U1_28/CO (ADDFXLM)            0.19       8.83 f
+  Execute/alu_inst/add_10_3/U1_29/S (ADDFX2M)             0.20       9.03 r
+  Execute/alu_inst/add_10_3/SUM[29] (ALU_DW01_add_1)      0.00       9.03 r
+  Execute/alu_inst/U56/Y (NAND2X2M)                       0.04       9.07 f
+  Execute/alu_inst/U54/Y (OAI211X2M)                      0.05       9.12 r
+  Execute/alu_inst/Result[29] (ALU)                       0.00       9.12 r
+  Execute/ALUResultM_reg[29]/D (DFFRQX2M)                 0.00       9.12 r
+  data arrival time                                                  9.12
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  Execute/ALUResultM_reg[29]/CK (DFFRQX2M)                0.00      10.00 r
+  library setup time                                     -0.17       9.83
+  data required time                                                 9.83
+  --------------------------------------------------------------------------
+  data required time                                                 9.83
+  data arrival time                                                 -9.12
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.70
+
+
+  Startpoint: rst (input port clocked by clk)
+  Endpoint: Execute/ALUResultM_reg[28]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  rst (in)                                                0.00       2.00 r
+  Forwarding_block/rst (hazard_unit)                      0.00       2.00 r
+  Forwarding_block/U22/Y (CLKINVX16M)                     0.00       2.00 f
+  Forwarding_block/U36/Y (NAND3BX1M)                      0.12       2.12 f
+  Forwarding_block/U35/Y (CLKINVX1M)                      0.07       2.19 r
+  Forwarding_block/U4/Y (NAND4X2M)                        0.07       2.26 f
+  Forwarding_block/U3/Y (NOR4X1M)                         0.20       2.46 r
+  Forwarding_block/ForwardBE[0] (hazard_unit)             0.00       2.46 r
+  Execute/ForwardBE[0] (execute_cycle)                    0.00       2.46 r
+  Execute/SrcB_Mux/s[0] (Mux_3_by_1_2)                    0.00       2.46 r
+  Execute/SrcB_Mux/U22/Y (NOR2BX2M)                       0.06       2.52 f
+  Execute/SrcB_Mux/U17/Y (CLKBUFX2M)                      0.16       2.68 f
+  Execute/SrcB_Mux/U36/Y (AOI22X1M)                       0.12       2.80 r
+  Execute/SrcB_Mux/U4/Y (OAI2BB1X1M)                      0.05       2.85 f
+  Execute/SrcB_Mux/d[1] (Mux_3_by_1_2)                    0.00       2.85 f
+  Execute/ALU_Src_Mux/a[1] (Mux_1)                        0.00       2.85 f
+  Execute/ALU_Src_Mux/U1/Y (AO22XLM)                      0.26       3.11 f
+  Execute/ALU_Src_Mux/c[1] (Mux_1)                        0.00       3.11 f
+  Execute/alu_inst/B[1] (ALU)                             0.00       3.11 f
+  Execute/alu_inst/U4/Y (CLKINVX2M)                       0.06       3.16 r
+  Execute/alu_inst/add_10_2/A[1] (ALU_DW01_inc_0)         0.00       3.16 r
+  Execute/alu_inst/add_10_2/U1_1_1/S (ADDHX1M)            0.06       3.22 f
+  Execute/alu_inst/add_10_2/SUM[1] (ALU_DW01_inc_0)       0.00       3.22 f
+  Execute/alu_inst/add_10_3/B[1] (ALU_DW01_add_1)         0.00       3.22 f
+  Execute/alu_inst/add_10_3/U1_1/CO (ADDFX2M)             0.31       3.53 f
+  Execute/alu_inst/add_10_3/U1_2/CO (ADDFXLM)             0.19       3.72 f
+  Execute/alu_inst/add_10_3/U1_3/CO (ADDFX2M)             0.20       3.92 f
+  Execute/alu_inst/add_10_3/U1_4/CO (ADDFXLM)             0.19       4.11 f
+  Execute/alu_inst/add_10_3/U1_5/CO (ADDFX2M)             0.20       4.31 f
+  Execute/alu_inst/add_10_3/U1_6/CO (ADDFXLM)             0.19       4.51 f
+  Execute/alu_inst/add_10_3/U1_7/CO (ADDFX2M)             0.20       4.71 f
+  Execute/alu_inst/add_10_3/U1_8/CO (ADDFXLM)             0.19       4.90 f
+  Execute/alu_inst/add_10_3/U1_9/CO (ADDFX2M)             0.20       5.10 f
+  Execute/alu_inst/add_10_3/U1_10/CO (ADDFXLM)            0.19       5.29 f
+  Execute/alu_inst/add_10_3/U1_11/CO (ADDFX2M)            0.20       5.49 f
+  Execute/alu_inst/add_10_3/U1_12/CO (ADDFXLM)            0.19       5.69 f
+  Execute/alu_inst/add_10_3/U1_13/CO (ADDFX2M)            0.20       5.89 f
+  Execute/alu_inst/add_10_3/U1_14/CO (ADDFXLM)            0.19       6.08 f
+  Execute/alu_inst/add_10_3/U1_15/CO (ADDFX2M)            0.20       6.28 f
+  Execute/alu_inst/add_10_3/U1_16/CO (ADDFXLM)            0.19       6.47 f
+  Execute/alu_inst/add_10_3/U1_17/CO (ADDFX2M)            0.20       6.67 f
+  Execute/alu_inst/add_10_3/U1_18/CO (ADDFXLM)            0.19       6.87 f
+  Execute/alu_inst/add_10_3/U1_19/CO (ADDFX2M)            0.20       7.06 f
+  Execute/alu_inst/add_10_3/U1_20/CO (ADDFXLM)            0.19       7.26 f
+  Execute/alu_inst/add_10_3/U1_21/CO (ADDFX2M)            0.20       7.46 f
+  Execute/alu_inst/add_10_3/U1_22/CO (ADDFXLM)            0.19       7.65 f
+  Execute/alu_inst/add_10_3/U1_23/CO (ADDFX2M)            0.20       7.85 f
+  Execute/alu_inst/add_10_3/U1_24/CO (ADDFXLM)            0.19       8.04 f
+  Execute/alu_inst/add_10_3/U1_25/CO (ADDFX2M)            0.20       8.24 f
+  Execute/alu_inst/add_10_3/U1_26/CO (ADDFXLM)            0.19       8.44 f
+  Execute/alu_inst/add_10_3/U1_27/CO (ADDFX2M)            0.20       8.64 f
+  Execute/alu_inst/add_10_3/U1_28/S (ADDFXLM)             0.20       8.83 r
+  Execute/alu_inst/add_10_3/SUM[28] (ALU_DW01_add_1)      0.00       8.83 r
+  Execute/alu_inst/U64/Y (NAND2X2M)                       0.04       8.87 f
+  Execute/alu_inst/U62/Y (OAI211X2M)                      0.05       8.93 r
+  Execute/alu_inst/Result[28] (ALU)                       0.00       8.93 r
+  Execute/ALUResultM_reg[28]/D (DFFRQX2M)                 0.00       8.93 r
+  data arrival time                                                  8.93
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  Execute/ALUResultM_reg[28]/CK (DFFRQX2M)                0.00      10.00 r
+  library setup time                                     -0.17       9.83
+  data required time                                                 9.83
+  --------------------------------------------------------------------------
+  data required time                                                 9.83
+  data arrival time                                                 -8.93
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.90
+
+
+  Startpoint: rst (input port clocked by clk)
+  Endpoint: Execute/ALUResultM_reg[27]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  rst (in)                                                0.00       2.00 r
+  Forwarding_block/rst (hazard_unit)                      0.00       2.00 r
+  Forwarding_block/U22/Y (CLKINVX16M)                     0.00       2.00 f
+  Forwarding_block/U36/Y (NAND3BX1M)                      0.12       2.12 f
+  Forwarding_block/U35/Y (CLKINVX1M)                      0.07       2.19 r
+  Forwarding_block/U4/Y (NAND4X2M)                        0.07       2.26 f
+  Forwarding_block/U3/Y (NOR4X1M)                         0.20       2.46 r
+  Forwarding_block/ForwardBE[0] (hazard_unit)             0.00       2.46 r
+  Execute/ForwardBE[0] (execute_cycle)                    0.00       2.46 r
+  Execute/SrcB_Mux/s[0] (Mux_3_by_1_2)                    0.00       2.46 r
+  Execute/SrcB_Mux/U22/Y (NOR2BX2M)                       0.06       2.52 f
+  Execute/SrcB_Mux/U17/Y (CLKBUFX2M)                      0.16       2.68 f
+  Execute/SrcB_Mux/U36/Y (AOI22X1M)                       0.12       2.80 r
+  Execute/SrcB_Mux/U4/Y (OAI2BB1X1M)                      0.05       2.85 f
+  Execute/SrcB_Mux/d[1] (Mux_3_by_1_2)                    0.00       2.85 f
+  Execute/ALU_Src_Mux/a[1] (Mux_1)                        0.00       2.85 f
+  Execute/ALU_Src_Mux/U1/Y (AO22XLM)                      0.26       3.11 f
+  Execute/ALU_Src_Mux/c[1] (Mux_1)                        0.00       3.11 f
+  Execute/alu_inst/B[1] (ALU)                             0.00       3.11 f
+  Execute/alu_inst/U4/Y (CLKINVX2M)                       0.06       3.16 r
+  Execute/alu_inst/add_10_2/A[1] (ALU_DW01_inc_0)         0.00       3.16 r
+  Execute/alu_inst/add_10_2/U1_1_1/S (ADDHX1M)            0.06       3.22 f
+  Execute/alu_inst/add_10_2/SUM[1] (ALU_DW01_inc_0)       0.00       3.22 f
+  Execute/alu_inst/add_10_3/B[1] (ALU_DW01_add_1)         0.00       3.22 f
+  Execute/alu_inst/add_10_3/U1_1/CO (ADDFX2M)             0.31       3.53 f
+  Execute/alu_inst/add_10_3/U1_2/CO (ADDFXLM)             0.19       3.72 f
+  Execute/alu_inst/add_10_3/U1_3/CO (ADDFX2M)             0.20       3.92 f
+  Execute/alu_inst/add_10_3/U1_4/CO (ADDFXLM)             0.19       4.11 f
+  Execute/alu_inst/add_10_3/U1_5/CO (ADDFX2M)             0.20       4.31 f
+  Execute/alu_inst/add_10_3/U1_6/CO (ADDFXLM)             0.19       4.51 f
+  Execute/alu_inst/add_10_3/U1_7/CO (ADDFX2M)             0.20       4.71 f
+  Execute/alu_inst/add_10_3/U1_8/CO (ADDFXLM)             0.19       4.90 f
+  Execute/alu_inst/add_10_3/U1_9/CO (ADDFX2M)             0.20       5.10 f
+  Execute/alu_inst/add_10_3/U1_10/CO (ADDFXLM)            0.19       5.29 f
+  Execute/alu_inst/add_10_3/U1_11/CO (ADDFX2M)            0.20       5.49 f
+  Execute/alu_inst/add_10_3/U1_12/CO (ADDFXLM)            0.19       5.69 f
+  Execute/alu_inst/add_10_3/U1_13/CO (ADDFX2M)            0.20       5.89 f
+  Execute/alu_inst/add_10_3/U1_14/CO (ADDFXLM)            0.19       6.08 f
+  Execute/alu_inst/add_10_3/U1_15/CO (ADDFX2M)            0.20       6.28 f
+  Execute/alu_inst/add_10_3/U1_16/CO (ADDFXLM)            0.19       6.47 f
+  Execute/alu_inst/add_10_3/U1_17/CO (ADDFX2M)            0.20       6.67 f
+  Execute/alu_inst/add_10_3/U1_18/CO (ADDFXLM)            0.19       6.87 f
+  Execute/alu_inst/add_10_3/U1_19/CO (ADDFX2M)            0.20       7.06 f
+  Execute/alu_inst/add_10_3/U1_20/CO (ADDFXLM)            0.19       7.26 f
+  Execute/alu_inst/add_10_3/U1_21/CO (ADDFX2M)            0.20       7.46 f
+  Execute/alu_inst/add_10_3/U1_22/CO (ADDFXLM)            0.19       7.65 f
+  Execute/alu_inst/add_10_3/U1_23/CO (ADDFX2M)            0.20       7.85 f
+  Execute/alu_inst/add_10_3/U1_24/CO (ADDFXLM)            0.19       8.04 f
+  Execute/alu_inst/add_10_3/U1_25/CO (ADDFX2M)            0.20       8.24 f
+  Execute/alu_inst/add_10_3/U1_26/CO (ADDFXLM)            0.19       8.44 f
+  Execute/alu_inst/add_10_3/U1_27/S (ADDFX2M)             0.20       8.64 r
+  Execute/alu_inst/add_10_3/SUM[27] (ALU_DW01_add_1)      0.00       8.64 r
+  Execute/alu_inst/U76/Y (NAND2X2M)                       0.04       8.67 f
+  Execute/alu_inst/U74/Y (OAI211X2M)                      0.05       8.73 r
+  Execute/alu_inst/Result[27] (ALU)                       0.00       8.73 r
+  Execute/ALUResultM_reg[27]/D (DFFRQX2M)                 0.00       8.73 r
+  data arrival time                                                  8.73
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  Execute/ALUResultM_reg[27]/CK (DFFRQX2M)                0.00      10.00 r
+  library setup time                                     -0.17       9.83
+  data required time                                                 9.83
+  --------------------------------------------------------------------------
+  data required time                                                 9.83
+  data arrival time                                                 -8.73
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.10
+
+
+  Startpoint: rst (input port clocked by clk)
+  Endpoint: Execute/ALUResultM_reg[26]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  rst (in)                                                0.00       2.00 r
+  Forwarding_block/rst (hazard_unit)                      0.00       2.00 r
+  Forwarding_block/U22/Y (CLKINVX16M)                     0.00       2.00 f
+  Forwarding_block/U36/Y (NAND3BX1M)                      0.12       2.12 f
+  Forwarding_block/U35/Y (CLKINVX1M)                      0.07       2.19 r
+  Forwarding_block/U4/Y (NAND4X2M)                        0.07       2.26 f
+  Forwarding_block/U3/Y (NOR4X1M)                         0.20       2.46 r
+  Forwarding_block/ForwardBE[0] (hazard_unit)             0.00       2.46 r
+  Execute/ForwardBE[0] (execute_cycle)                    0.00       2.46 r
+  Execute/SrcB_Mux/s[0] (Mux_3_by_1_2)                    0.00       2.46 r
+  Execute/SrcB_Mux/U22/Y (NOR2BX2M)                       0.06       2.52 f
+  Execute/SrcB_Mux/U17/Y (CLKBUFX2M)                      0.16       2.68 f
+  Execute/SrcB_Mux/U36/Y (AOI22X1M)                       0.12       2.80 r
+  Execute/SrcB_Mux/U4/Y (OAI2BB1X1M)                      0.05       2.85 f
+  Execute/SrcB_Mux/d[1] (Mux_3_by_1_2)                    0.00       2.85 f
+  Execute/ALU_Src_Mux/a[1] (Mux_1)                        0.00       2.85 f
+  Execute/ALU_Src_Mux/U1/Y (AO22XLM)                      0.26       3.11 f
+  Execute/ALU_Src_Mux/c[1] (Mux_1)                        0.00       3.11 f
+  Execute/alu_inst/B[1] (ALU)                             0.00       3.11 f
+  Execute/alu_inst/U4/Y (CLKINVX2M)                       0.06       3.16 r
+  Execute/alu_inst/add_10_2/A[1] (ALU_DW01_inc_0)         0.00       3.16 r
+  Execute/alu_inst/add_10_2/U1_1_1/S (ADDHX1M)            0.06       3.22 f
+  Execute/alu_inst/add_10_2/SUM[1] (ALU_DW01_inc_0)       0.00       3.22 f
+  Execute/alu_inst/add_10_3/B[1] (ALU_DW01_add_1)         0.00       3.22 f
+  Execute/alu_inst/add_10_3/U1_1/CO (ADDFX2M)             0.31       3.53 f
+  Execute/alu_inst/add_10_3/U1_2/CO (ADDFXLM)             0.19       3.72 f
+  Execute/alu_inst/add_10_3/U1_3/CO (ADDFX2M)             0.20       3.92 f
+  Execute/alu_inst/add_10_3/U1_4/CO (ADDFXLM)             0.19       4.11 f
+  Execute/alu_inst/add_10_3/U1_5/CO (ADDFX2M)             0.20       4.31 f
+  Execute/alu_inst/add_10_3/U1_6/CO (ADDFXLM)             0.19       4.51 f
+  Execute/alu_inst/add_10_3/U1_7/CO (ADDFX2M)             0.20       4.71 f
+  Execute/alu_inst/add_10_3/U1_8/CO (ADDFXLM)             0.19       4.90 f
+  Execute/alu_inst/add_10_3/U1_9/CO (ADDFX2M)             0.20       5.10 f
+  Execute/alu_inst/add_10_3/U1_10/CO (ADDFXLM)            0.19       5.29 f
+  Execute/alu_inst/add_10_3/U1_11/CO (ADDFX2M)            0.20       5.49 f
+  Execute/alu_inst/add_10_3/U1_12/CO (ADDFXLM)            0.19       5.69 f
+  Execute/alu_inst/add_10_3/U1_13/CO (ADDFX2M)            0.20       5.89 f
+  Execute/alu_inst/add_10_3/U1_14/CO (ADDFXLM)            0.19       6.08 f
+  Execute/alu_inst/add_10_3/U1_15/CO (ADDFX2M)            0.20       6.28 f
+  Execute/alu_inst/add_10_3/U1_16/CO (ADDFXLM)            0.19       6.47 f
+  Execute/alu_inst/add_10_3/U1_17/CO (ADDFX2M)            0.20       6.67 f
+  Execute/alu_inst/add_10_3/U1_18/CO (ADDFXLM)            0.19       6.87 f
+  Execute/alu_inst/add_10_3/U1_19/CO (ADDFX2M)            0.20       7.06 f
+  Execute/alu_inst/add_10_3/U1_20/CO (ADDFXLM)            0.19       7.26 f
+  Execute/alu_inst/add_10_3/U1_21/CO (ADDFX2M)            0.20       7.46 f
+  Execute/alu_inst/add_10_3/U1_22/CO (ADDFXLM)            0.19       7.65 f
+  Execute/alu_inst/add_10_3/U1_23/CO (ADDFX2M)            0.20       7.85 f
+  Execute/alu_inst/add_10_3/U1_24/CO (ADDFXLM)            0.19       8.04 f
+  Execute/alu_inst/add_10_3/U1_25/CO (ADDFX2M)            0.20       8.24 f
+  Execute/alu_inst/add_10_3/U1_26/S (ADDFXLM)             0.20       8.44 r
+  Execute/alu_inst/add_10_3/SUM[26] (ALU_DW01_add_1)      0.00       8.44 r
+  Execute/alu_inst/U72/Y (NAND2X2M)                       0.04       8.48 f
+  Execute/alu_inst/U70/Y (OAI211X2M)                      0.05       8.53 r
+  Execute/alu_inst/Result[26] (ALU)                       0.00       8.53 r
+  Execute/ALUResultM_reg[26]/D (DFFRQX2M)                 0.00       8.53 r
+  data arrival time                                                  8.53
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  Execute/ALUResultM_reg[26]/CK (DFFRQX2M)                0.00      10.00 r
+  library setup time                                     -0.17       9.83
+  data required time                                                 9.83
+  --------------------------------------------------------------------------
+  data required time                                                 9.83
+  data arrival time                                                 -8.53
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.29
+
+
+  Startpoint: rst (input port clocked by clk)
+  Endpoint: Execute/ALUResultM_reg[25]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  rst (in)                                                0.00       2.00 r
+  Forwarding_block/rst (hazard_unit)                      0.00       2.00 r
+  Forwarding_block/U22/Y (CLKINVX16M)                     0.00       2.00 f
+  Forwarding_block/U36/Y (NAND3BX1M)                      0.12       2.12 f
+  Forwarding_block/U35/Y (CLKINVX1M)                      0.07       2.19 r
+  Forwarding_block/U4/Y (NAND4X2M)                        0.07       2.26 f
+  Forwarding_block/U3/Y (NOR4X1M)                         0.20       2.46 r
+  Forwarding_block/ForwardBE[0] (hazard_unit)             0.00       2.46 r
+  Execute/ForwardBE[0] (execute_cycle)                    0.00       2.46 r
+  Execute/SrcB_Mux/s[0] (Mux_3_by_1_2)                    0.00       2.46 r
+  Execute/SrcB_Mux/U22/Y (NOR2BX2M)                       0.06       2.52 f
+  Execute/SrcB_Mux/U17/Y (CLKBUFX2M)                      0.16       2.68 f
+  Execute/SrcB_Mux/U36/Y (AOI22X1M)                       0.12       2.80 r
+  Execute/SrcB_Mux/U4/Y (OAI2BB1X1M)                      0.05       2.85 f
+  Execute/SrcB_Mux/d[1] (Mux_3_by_1_2)                    0.00       2.85 f
+  Execute/ALU_Src_Mux/a[1] (Mux_1)                        0.00       2.85 f
+  Execute/ALU_Src_Mux/U1/Y (AO22XLM)                      0.26       3.11 f
+  Execute/ALU_Src_Mux/c[1] (Mux_1)                        0.00       3.11 f
+  Execute/alu_inst/B[1] (ALU)                             0.00       3.11 f
+  Execute/alu_inst/U4/Y (CLKINVX2M)                       0.06       3.16 r
+  Execute/alu_inst/add_10_2/A[1] (ALU_DW01_inc_0)         0.00       3.16 r
+  Execute/alu_inst/add_10_2/U1_1_1/S (ADDHX1M)            0.06       3.22 f
+  Execute/alu_inst/add_10_2/SUM[1] (ALU_DW01_inc_0)       0.00       3.22 f
+  Execute/alu_inst/add_10_3/B[1] (ALU_DW01_add_1)         0.00       3.22 f
+  Execute/alu_inst/add_10_3/U1_1/CO (ADDFX2M)             0.31       3.53 f
+  Execute/alu_inst/add_10_3/U1_2/CO (ADDFXLM)             0.19       3.72 f
+  Execute/alu_inst/add_10_3/U1_3/CO (ADDFX2M)             0.20       3.92 f
+  Execute/alu_inst/add_10_3/U1_4/CO (ADDFXLM)             0.19       4.11 f
+  Execute/alu_inst/add_10_3/U1_5/CO (ADDFX2M)             0.20       4.31 f
+  Execute/alu_inst/add_10_3/U1_6/CO (ADDFXLM)             0.19       4.51 f
+  Execute/alu_inst/add_10_3/U1_7/CO (ADDFX2M)             0.20       4.71 f
+  Execute/alu_inst/add_10_3/U1_8/CO (ADDFXLM)             0.19       4.90 f
+  Execute/alu_inst/add_10_3/U1_9/CO (ADDFX2M)             0.20       5.10 f
+  Execute/alu_inst/add_10_3/U1_10/CO (ADDFXLM)            0.19       5.29 f
+  Execute/alu_inst/add_10_3/U1_11/CO (ADDFX2M)            0.20       5.49 f
+  Execute/alu_inst/add_10_3/U1_12/CO (ADDFXLM)            0.19       5.69 f
+  Execute/alu_inst/add_10_3/U1_13/CO (ADDFX2M)            0.20       5.89 f
+  Execute/alu_inst/add_10_3/U1_14/CO (ADDFXLM)            0.19       6.08 f
+  Execute/alu_inst/add_10_3/U1_15/CO (ADDFX2M)            0.20       6.28 f
+  Execute/alu_inst/add_10_3/U1_16/CO (ADDFXLM)            0.19       6.47 f
+  Execute/alu_inst/add_10_3/U1_17/CO (ADDFX2M)            0.20       6.67 f
+  Execute/alu_inst/add_10_3/U1_18/CO (ADDFXLM)            0.19       6.87 f
+  Execute/alu_inst/add_10_3/U1_19/CO (ADDFX2M)            0.20       7.06 f
+  Execute/alu_inst/add_10_3/U1_20/CO (ADDFXLM)            0.19       7.26 f
+  Execute/alu_inst/add_10_3/U1_21/CO (ADDFX2M)            0.20       7.46 f
+  Execute/alu_inst/add_10_3/U1_22/CO (ADDFXLM)            0.19       7.65 f
+  Execute/alu_inst/add_10_3/U1_23/CO (ADDFX2M)            0.20       7.85 f
+  Execute/alu_inst/add_10_3/U1_24/CO (ADDFXLM)            0.19       8.04 f
+  Execute/alu_inst/add_10_3/U1_25/S (ADDFX2M)             0.20       8.24 r
+  Execute/alu_inst/add_10_3/SUM[25] (ALU_DW01_add_1)      0.00       8.24 r
+  Execute/alu_inst/U92/Y (NAND2X2M)                       0.04       8.28 f
+  Execute/alu_inst/U90/Y (OAI211X2M)                      0.05       8.33 r
+  Execute/alu_inst/Result[25] (ALU)                       0.00       8.33 r
+  Execute/ALUResultM_reg[25]/D (DFFRQX2M)                 0.00       8.33 r
+  data arrival time                                                  8.33
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  Execute/ALUResultM_reg[25]/CK (DFFRQX2M)                0.00      10.00 r
+  library setup time                                     -0.17       9.83
+  data required time                                                 9.83
+  --------------------------------------------------------------------------
+  data required time                                                 9.83
+  data arrival time                                                 -8.33
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.49
+
+
+  Startpoint: rst (input port clocked by clk)
+  Endpoint: Execute/ALUResultM_reg[24]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  rst (in)                                                0.00       2.00 r
+  Forwarding_block/rst (hazard_unit)                      0.00       2.00 r
+  Forwarding_block/U22/Y (CLKINVX16M)                     0.00       2.00 f
+  Forwarding_block/U36/Y (NAND3BX1M)                      0.12       2.12 f
+  Forwarding_block/U35/Y (CLKINVX1M)                      0.07       2.19 r
+  Forwarding_block/U4/Y (NAND4X2M)                        0.07       2.26 f
+  Forwarding_block/U3/Y (NOR4X1M)                         0.20       2.46 r
+  Forwarding_block/ForwardBE[0] (hazard_unit)             0.00       2.46 r
+  Execute/ForwardBE[0] (execute_cycle)                    0.00       2.46 r
+  Execute/SrcB_Mux/s[0] (Mux_3_by_1_2)                    0.00       2.46 r
+  Execute/SrcB_Mux/U22/Y (NOR2BX2M)                       0.06       2.52 f
+  Execute/SrcB_Mux/U17/Y (CLKBUFX2M)                      0.16       2.68 f
+  Execute/SrcB_Mux/U36/Y (AOI22X1M)                       0.12       2.80 r
+  Execute/SrcB_Mux/U4/Y (OAI2BB1X1M)                      0.05       2.85 f
+  Execute/SrcB_Mux/d[1] (Mux_3_by_1_2)                    0.00       2.85 f
+  Execute/ALU_Src_Mux/a[1] (Mux_1)                        0.00       2.85 f
+  Execute/ALU_Src_Mux/U1/Y (AO22XLM)                      0.26       3.11 f
+  Execute/ALU_Src_Mux/c[1] (Mux_1)                        0.00       3.11 f
+  Execute/alu_inst/B[1] (ALU)                             0.00       3.11 f
+  Execute/alu_inst/U4/Y (CLKINVX2M)                       0.06       3.16 r
+  Execute/alu_inst/add_10_2/A[1] (ALU_DW01_inc_0)         0.00       3.16 r
+  Execute/alu_inst/add_10_2/U1_1_1/S (ADDHX1M)            0.06       3.22 f
+  Execute/alu_inst/add_10_2/SUM[1] (ALU_DW01_inc_0)       0.00       3.22 f
+  Execute/alu_inst/add_10_3/B[1] (ALU_DW01_add_1)         0.00       3.22 f
+  Execute/alu_inst/add_10_3/U1_1/CO (ADDFX2M)             0.31       3.53 f
+  Execute/alu_inst/add_10_3/U1_2/CO (ADDFXLM)             0.19       3.72 f
+  Execute/alu_inst/add_10_3/U1_3/CO (ADDFX2M)             0.20       3.92 f
+  Execute/alu_inst/add_10_3/U1_4/CO (ADDFXLM)             0.19       4.11 f
+  Execute/alu_inst/add_10_3/U1_5/CO (ADDFX2M)             0.20       4.31 f
+  Execute/alu_inst/add_10_3/U1_6/CO (ADDFXLM)             0.19       4.51 f
+  Execute/alu_inst/add_10_3/U1_7/CO (ADDFX2M)             0.20       4.71 f
+  Execute/alu_inst/add_10_3/U1_8/CO (ADDFXLM)             0.19       4.90 f
+  Execute/alu_inst/add_10_3/U1_9/CO (ADDFX2M)             0.20       5.10 f
+  Execute/alu_inst/add_10_3/U1_10/CO (ADDFXLM)            0.19       5.29 f
+  Execute/alu_inst/add_10_3/U1_11/CO (ADDFX2M)            0.20       5.49 f
+  Execute/alu_inst/add_10_3/U1_12/CO (ADDFXLM)            0.19       5.69 f
+  Execute/alu_inst/add_10_3/U1_13/CO (ADDFX2M)            0.20       5.89 f
+  Execute/alu_inst/add_10_3/U1_14/CO (ADDFXLM)            0.19       6.08 f
+  Execute/alu_inst/add_10_3/U1_15/CO (ADDFX2M)            0.20       6.28 f
+  Execute/alu_inst/add_10_3/U1_16/CO (ADDFXLM)            0.19       6.47 f
+  Execute/alu_inst/add_10_3/U1_17/CO (ADDFX2M)            0.20       6.67 f
+  Execute/alu_inst/add_10_3/U1_18/CO (ADDFXLM)            0.19       6.87 f
+  Execute/alu_inst/add_10_3/U1_19/CO (ADDFX2M)            0.20       7.06 f
+  Execute/alu_inst/add_10_3/U1_20/CO (ADDFXLM)            0.19       7.26 f
+  Execute/alu_inst/add_10_3/U1_21/CO (ADDFX2M)            0.20       7.46 f
+  Execute/alu_inst/add_10_3/U1_22/CO (ADDFXLM)            0.19       7.65 f
+  Execute/alu_inst/add_10_3/U1_23/CO (ADDFX2M)            0.20       7.85 f
+  Execute/alu_inst/add_10_3/U1_24/S (ADDFXLM)             0.20       8.05 r
+  Execute/alu_inst/add_10_3/SUM[24] (ALU_DW01_add_1)      0.00       8.05 r
+  Execute/alu_inst/U68/Y (NAND2X2M)                       0.04       8.09 f
+  Execute/alu_inst/U66/Y (OAI211X2M)                      0.05       8.14 r
+  Execute/alu_inst/Result[24] (ALU)                       0.00       8.14 r
+  Execute/ALUResultM_reg[24]/D (DFFRQX2M)                 0.00       8.14 r
+  data arrival time                                                  8.14
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  Execute/ALUResultM_reg[24]/CK (DFFRQX2M)                0.00      10.00 r
+  library setup time                                     -0.17       9.83
+  data required time                                                 9.83
+  --------------------------------------------------------------------------
+  data required time                                                 9.83
+  data arrival time                                                 -8.14
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.68
+
+
+  Startpoint: rst (input port clocked by clk)
+  Endpoint: Execute/ALUResultM_reg[23]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  rst (in)                                                0.00       2.00 r
+  Forwarding_block/rst (hazard_unit)                      0.00       2.00 r
+  Forwarding_block/U22/Y (CLKINVX16M)                     0.00       2.00 f
+  Forwarding_block/U36/Y (NAND3BX1M)                      0.12       2.12 f
+  Forwarding_block/U35/Y (CLKINVX1M)                      0.07       2.19 r
+  Forwarding_block/U4/Y (NAND4X2M)                        0.07       2.26 f
+  Forwarding_block/U3/Y (NOR4X1M)                         0.20       2.46 r
+  Forwarding_block/ForwardBE[0] (hazard_unit)             0.00       2.46 r
+  Execute/ForwardBE[0] (execute_cycle)                    0.00       2.46 r
+  Execute/SrcB_Mux/s[0] (Mux_3_by_1_2)                    0.00       2.46 r
+  Execute/SrcB_Mux/U22/Y (NOR2BX2M)                       0.06       2.52 f
+  Execute/SrcB_Mux/U17/Y (CLKBUFX2M)                      0.16       2.68 f
+  Execute/SrcB_Mux/U36/Y (AOI22X1M)                       0.12       2.80 r
+  Execute/SrcB_Mux/U4/Y (OAI2BB1X1M)                      0.05       2.85 f
+  Execute/SrcB_Mux/d[1] (Mux_3_by_1_2)                    0.00       2.85 f
+  Execute/ALU_Src_Mux/a[1] (Mux_1)                        0.00       2.85 f
+  Execute/ALU_Src_Mux/U1/Y (AO22XLM)                      0.26       3.11 f
+  Execute/ALU_Src_Mux/c[1] (Mux_1)                        0.00       3.11 f
+  Execute/alu_inst/B[1] (ALU)                             0.00       3.11 f
+  Execute/alu_inst/U4/Y (CLKINVX2M)                       0.06       3.16 r
+  Execute/alu_inst/add_10_2/A[1] (ALU_DW01_inc_0)         0.00       3.16 r
+  Execute/alu_inst/add_10_2/U1_1_1/S (ADDHX1M)            0.06       3.22 f
+  Execute/alu_inst/add_10_2/SUM[1] (ALU_DW01_inc_0)       0.00       3.22 f
+  Execute/alu_inst/add_10_3/B[1] (ALU_DW01_add_1)         0.00       3.22 f
+  Execute/alu_inst/add_10_3/U1_1/CO (ADDFX2M)             0.31       3.53 f
+  Execute/alu_inst/add_10_3/U1_2/CO (ADDFXLM)             0.19       3.72 f
+  Execute/alu_inst/add_10_3/U1_3/CO (ADDFX2M)             0.20       3.92 f
+  Execute/alu_inst/add_10_3/U1_4/CO (ADDFXLM)             0.19       4.11 f
+  Execute/alu_inst/add_10_3/U1_5/CO (ADDFX2M)             0.20       4.31 f
+  Execute/alu_inst/add_10_3/U1_6/CO (ADDFXLM)             0.19       4.51 f
+  Execute/alu_inst/add_10_3/U1_7/CO (ADDFX2M)             0.20       4.71 f
+  Execute/alu_inst/add_10_3/U1_8/CO (ADDFXLM)             0.19       4.90 f
+  Execute/alu_inst/add_10_3/U1_9/CO (ADDFX2M)             0.20       5.10 f
+  Execute/alu_inst/add_10_3/U1_10/CO (ADDFXLM)            0.19       5.29 f
+  Execute/alu_inst/add_10_3/U1_11/CO (ADDFX2M)            0.20       5.49 f
+  Execute/alu_inst/add_10_3/U1_12/CO (ADDFXLM)            0.19       5.69 f
+  Execute/alu_inst/add_10_3/U1_13/CO (ADDFX2M)            0.20       5.89 f
+  Execute/alu_inst/add_10_3/U1_14/CO (ADDFXLM)            0.19       6.08 f
+  Execute/alu_inst/add_10_3/U1_15/CO (ADDFX2M)            0.20       6.28 f
+  Execute/alu_inst/add_10_3/U1_16/CO (ADDFXLM)            0.19       6.47 f
+  Execute/alu_inst/add_10_3/U1_17/CO (ADDFX2M)            0.20       6.67 f
+  Execute/alu_inst/add_10_3/U1_18/CO (ADDFXLM)            0.19       6.87 f
+  Execute/alu_inst/add_10_3/U1_19/CO (ADDFX2M)            0.20       7.06 f
+  Execute/alu_inst/add_10_3/U1_20/CO (ADDFXLM)            0.19       7.26 f
+  Execute/alu_inst/add_10_3/U1_21/CO (ADDFX2M)            0.20       7.46 f
+  Execute/alu_inst/add_10_3/U1_22/CO (ADDFXLM)            0.19       7.65 f
+  Execute/alu_inst/add_10_3/U1_23/S (ADDFX2M)             0.20       7.85 r
+  Execute/alu_inst/add_10_3/SUM[23] (ALU_DW01_add_1)      0.00       7.85 r
+  Execute/alu_inst/U96/Y (NAND2X2M)                       0.04       7.89 f
+  Execute/alu_inst/U94/Y (OAI211X2M)                      0.06       7.95 r
+  Execute/alu_inst/Result[23] (ALU)                       0.00       7.95 r
+  Execute/ALUResultM_reg[23]/D (DFFRQX2M)                 0.00       7.95 r
+  data arrival time                                                  7.95
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  Execute/ALUResultM_reg[23]/CK (DFFRQX2M)                0.00      10.00 r
+  library setup time                                     -0.18       9.82
+  data required time                                                 9.82
+  --------------------------------------------------------------------------
+  data required time                                                 9.82
+  data arrival time                                                 -7.95
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.88
+
+
+  Startpoint: rst (input port clocked by clk)
+  Endpoint: Execute/ALUResultM_reg[22]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  rst (in)                                                0.00       2.00 r
+  Forwarding_block/rst (hazard_unit)                      0.00       2.00 r
+  Forwarding_block/U22/Y (CLKINVX16M)                     0.00       2.00 f
+  Forwarding_block/U36/Y (NAND3BX1M)                      0.12       2.12 f
+  Forwarding_block/U35/Y (CLKINVX1M)                      0.07       2.19 r
+  Forwarding_block/U4/Y (NAND4X2M)                        0.07       2.26 f
+  Forwarding_block/U3/Y (NOR4X1M)                         0.20       2.46 r
+  Forwarding_block/ForwardBE[0] (hazard_unit)             0.00       2.46 r
+  Execute/ForwardBE[0] (execute_cycle)                    0.00       2.46 r
+  Execute/SrcB_Mux/s[0] (Mux_3_by_1_2)                    0.00       2.46 r
+  Execute/SrcB_Mux/U22/Y (NOR2BX2M)                       0.06       2.52 f
+  Execute/SrcB_Mux/U17/Y (CLKBUFX2M)                      0.16       2.68 f
+  Execute/SrcB_Mux/U36/Y (AOI22X1M)                       0.12       2.80 r
+  Execute/SrcB_Mux/U4/Y (OAI2BB1X1M)                      0.05       2.85 f
+  Execute/SrcB_Mux/d[1] (Mux_3_by_1_2)                    0.00       2.85 f
+  Execute/ALU_Src_Mux/a[1] (Mux_1)                        0.00       2.85 f
+  Execute/ALU_Src_Mux/U1/Y (AO22XLM)                      0.26       3.11 f
+  Execute/ALU_Src_Mux/c[1] (Mux_1)                        0.00       3.11 f
+  Execute/alu_inst/B[1] (ALU)                             0.00       3.11 f
+  Execute/alu_inst/U4/Y (CLKINVX2M)                       0.06       3.16 r
+  Execute/alu_inst/add_10_2/A[1] (ALU_DW01_inc_0)         0.00       3.16 r
+  Execute/alu_inst/add_10_2/U1_1_1/S (ADDHX1M)            0.06       3.22 f
+  Execute/alu_inst/add_10_2/SUM[1] (ALU_DW01_inc_0)       0.00       3.22 f
+  Execute/alu_inst/add_10_3/B[1] (ALU_DW01_add_1)         0.00       3.22 f
+  Execute/alu_inst/add_10_3/U1_1/CO (ADDFX2M)             0.31       3.53 f
+  Execute/alu_inst/add_10_3/U1_2/CO (ADDFXLM)             0.19       3.72 f
+  Execute/alu_inst/add_10_3/U1_3/CO (ADDFX2M)             0.20       3.92 f
+  Execute/alu_inst/add_10_3/U1_4/CO (ADDFXLM)             0.19       4.11 f
+  Execute/alu_inst/add_10_3/U1_5/CO (ADDFX2M)             0.20       4.31 f
+  Execute/alu_inst/add_10_3/U1_6/CO (ADDFXLM)             0.19       4.51 f
+  Execute/alu_inst/add_10_3/U1_7/CO (ADDFX2M)             0.20       4.71 f
+  Execute/alu_inst/add_10_3/U1_8/CO (ADDFXLM)             0.19       4.90 f
+  Execute/alu_inst/add_10_3/U1_9/CO (ADDFX2M)             0.20       5.10 f
+  Execute/alu_inst/add_10_3/U1_10/CO (ADDFXLM)            0.19       5.29 f
+  Execute/alu_inst/add_10_3/U1_11/CO (ADDFX2M)            0.20       5.49 f
+  Execute/alu_inst/add_10_3/U1_12/CO (ADDFXLM)            0.19       5.69 f
+  Execute/alu_inst/add_10_3/U1_13/CO (ADDFX2M)            0.20       5.89 f
+  Execute/alu_inst/add_10_3/U1_14/CO (ADDFXLM)            0.19       6.08 f
+  Execute/alu_inst/add_10_3/U1_15/CO (ADDFX2M)            0.20       6.28 f
+  Execute/alu_inst/add_10_3/U1_16/CO (ADDFXLM)            0.19       6.47 f
+  Execute/alu_inst/add_10_3/U1_17/CO (ADDFX2M)            0.20       6.67 f
+  Execute/alu_inst/add_10_3/U1_18/CO (ADDFXLM)            0.19       6.87 f
+  Execute/alu_inst/add_10_3/U1_19/CO (ADDFX2M)            0.20       7.06 f
+  Execute/alu_inst/add_10_3/U1_20/CO (ADDFXLM)            0.19       7.26 f
+  Execute/alu_inst/add_10_3/U1_21/CO (ADDFX2M)            0.20       7.46 f
+  Execute/alu_inst/add_10_3/U1_22/S (ADDFXLM)             0.20       7.65 r
+  Execute/alu_inst/add_10_3/SUM[22] (ALU_DW01_add_1)      0.00       7.65 r
+  Execute/alu_inst/U60/Y (NAND2X2M)                       0.04       7.70 f
+  Execute/alu_inst/U58/Y (OAI211X2M)                      0.06       7.75 r
+  Execute/alu_inst/Result[22] (ALU)                       0.00       7.75 r
+  Execute/ALUResultM_reg[22]/D (DFFRQX2M)                 0.00       7.75 r
+  data arrival time                                                  7.75
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  Execute/ALUResultM_reg[22]/CK (DFFRQX2M)                0.00      10.00 r
+  library setup time                                     -0.18       9.82
+  data required time                                                 9.82
+  --------------------------------------------------------------------------
+  data required time                                                 9.82
+  data arrival time                                                 -7.75
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.07
+
+
+  Startpoint: rst (input port clocked by clk)
+  Endpoint: Execute/ALUResultM_reg[21]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  rst (in)                                                0.00       2.00 r
+  Forwarding_block/rst (hazard_unit)                      0.00       2.00 r
+  Forwarding_block/U22/Y (CLKINVX16M)                     0.00       2.00 f
+  Forwarding_block/U36/Y (NAND3BX1M)                      0.12       2.12 f
+  Forwarding_block/U35/Y (CLKINVX1M)                      0.07       2.19 r
+  Forwarding_block/U4/Y (NAND4X2M)                        0.07       2.26 f
+  Forwarding_block/U3/Y (NOR4X1M)                         0.20       2.46 r
+  Forwarding_block/ForwardBE[0] (hazard_unit)             0.00       2.46 r
+  Execute/ForwardBE[0] (execute_cycle)                    0.00       2.46 r
+  Execute/SrcB_Mux/s[0] (Mux_3_by_1_2)                    0.00       2.46 r
+  Execute/SrcB_Mux/U22/Y (NOR2BX2M)                       0.06       2.52 f
+  Execute/SrcB_Mux/U17/Y (CLKBUFX2M)                      0.16       2.68 f
+  Execute/SrcB_Mux/U36/Y (AOI22X1M)                       0.12       2.80 r
+  Execute/SrcB_Mux/U4/Y (OAI2BB1X1M)                      0.05       2.85 f
+  Execute/SrcB_Mux/d[1] (Mux_3_by_1_2)                    0.00       2.85 f
+  Execute/ALU_Src_Mux/a[1] (Mux_1)                        0.00       2.85 f
+  Execute/ALU_Src_Mux/U1/Y (AO22XLM)                      0.26       3.11 f
+  Execute/ALU_Src_Mux/c[1] (Mux_1)                        0.00       3.11 f
+  Execute/alu_inst/B[1] (ALU)                             0.00       3.11 f
+  Execute/alu_inst/U4/Y (CLKINVX2M)                       0.06       3.16 r
+  Execute/alu_inst/add_10_2/A[1] (ALU_DW01_inc_0)         0.00       3.16 r
+  Execute/alu_inst/add_10_2/U1_1_1/S (ADDHX1M)            0.06       3.22 f
+  Execute/alu_inst/add_10_2/SUM[1] (ALU_DW01_inc_0)       0.00       3.22 f
+  Execute/alu_inst/add_10_3/B[1] (ALU_DW01_add_1)         0.00       3.22 f
+  Execute/alu_inst/add_10_3/U1_1/CO (ADDFX2M)             0.31       3.53 f
+  Execute/alu_inst/add_10_3/U1_2/CO (ADDFXLM)             0.19       3.72 f
+  Execute/alu_inst/add_10_3/U1_3/CO (ADDFX2M)             0.20       3.92 f
+  Execute/alu_inst/add_10_3/U1_4/CO (ADDFXLM)             0.19       4.11 f
+  Execute/alu_inst/add_10_3/U1_5/CO (ADDFX2M)             0.20       4.31 f
+  Execute/alu_inst/add_10_3/U1_6/CO (ADDFXLM)             0.19       4.51 f
+  Execute/alu_inst/add_10_3/U1_7/CO (ADDFX2M)             0.20       4.71 f
+  Execute/alu_inst/add_10_3/U1_8/CO (ADDFXLM)             0.19       4.90 f
+  Execute/alu_inst/add_10_3/U1_9/CO (ADDFX2M)             0.20       5.10 f
+  Execute/alu_inst/add_10_3/U1_10/CO (ADDFXLM)            0.19       5.29 f
+  Execute/alu_inst/add_10_3/U1_11/CO (ADDFX2M)            0.20       5.49 f
+  Execute/alu_inst/add_10_3/U1_12/CO (ADDFXLM)            0.19       5.69 f
+  Execute/alu_inst/add_10_3/U1_13/CO (ADDFX2M)            0.20       5.89 f
+  Execute/alu_inst/add_10_3/U1_14/CO (ADDFXLM)            0.19       6.08 f
+  Execute/alu_inst/add_10_3/U1_15/CO (ADDFX2M)            0.20       6.28 f
+  Execute/alu_inst/add_10_3/U1_16/CO (ADDFXLM)            0.19       6.47 f
+  Execute/alu_inst/add_10_3/U1_17/CO (ADDFX2M)            0.20       6.67 f
+  Execute/alu_inst/add_10_3/U1_18/CO (ADDFXLM)            0.19       6.87 f
+  Execute/alu_inst/add_10_3/U1_19/CO (ADDFX2M)            0.20       7.06 f
+  Execute/alu_inst/add_10_3/U1_20/CO (ADDFXLM)            0.19       7.26 f
+  Execute/alu_inst/add_10_3/U1_21/S (ADDFX2M)             0.20       7.46 r
+  Execute/alu_inst/add_10_3/SUM[21] (ALU_DW01_add_1)      0.00       7.46 r
+  Execute/alu_inst/U100/Y (NAND2X2M)                      0.04       7.50 f
+  Execute/alu_inst/U98/Y (OAI211X2M)                      0.06       7.55 r
+  Execute/alu_inst/Result[21] (ALU)                       0.00       7.55 r
+  Execute/ALUResultM_reg[21]/D (DFFRQX2M)                 0.00       7.55 r
+  data arrival time                                                  7.55
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  Execute/ALUResultM_reg[21]/CK (DFFRQX2M)                0.00      10.00 r
+  library setup time                                     -0.18       9.82
+  data required time                                                 9.82
+  --------------------------------------------------------------------------
+  data required time                                                 9.82
+  data arrival time                                                 -7.55
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.27
+
+
+  Startpoint: rst (input port clocked by clk)
+  Endpoint: Execute/ALUResultM_reg[20]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  rst (in)                                                0.00       2.00 r
+  Forwarding_block/rst (hazard_unit)                      0.00       2.00 r
+  Forwarding_block/U22/Y (CLKINVX16M)                     0.00       2.00 f
+  Forwarding_block/U36/Y (NAND3BX1M)                      0.12       2.12 f
+  Forwarding_block/U35/Y (CLKINVX1M)                      0.07       2.19 r
+  Forwarding_block/U4/Y (NAND4X2M)                        0.07       2.26 f
+  Forwarding_block/U3/Y (NOR4X1M)                         0.20       2.46 r
+  Forwarding_block/ForwardBE[0] (hazard_unit)             0.00       2.46 r
+  Execute/ForwardBE[0] (execute_cycle)                    0.00       2.46 r
+  Execute/SrcB_Mux/s[0] (Mux_3_by_1_2)                    0.00       2.46 r
+  Execute/SrcB_Mux/U22/Y (NOR2BX2M)                       0.06       2.52 f
+  Execute/SrcB_Mux/U17/Y (CLKBUFX2M)                      0.16       2.68 f
+  Execute/SrcB_Mux/U36/Y (AOI22X1M)                       0.12       2.80 r
+  Execute/SrcB_Mux/U4/Y (OAI2BB1X1M)                      0.05       2.85 f
+  Execute/SrcB_Mux/d[1] (Mux_3_by_1_2)                    0.00       2.85 f
+  Execute/ALU_Src_Mux/a[1] (Mux_1)                        0.00       2.85 f
+  Execute/ALU_Src_Mux/U1/Y (AO22XLM)                      0.26       3.11 f
+  Execute/ALU_Src_Mux/c[1] (Mux_1)                        0.00       3.11 f
+  Execute/alu_inst/B[1] (ALU)                             0.00       3.11 f
+  Execute/alu_inst/U4/Y (CLKINVX2M)                       0.06       3.16 r
+  Execute/alu_inst/add_10_2/A[1] (ALU_DW01_inc_0)         0.00       3.16 r
+  Execute/alu_inst/add_10_2/U1_1_1/S (ADDHX1M)            0.06       3.22 f
+  Execute/alu_inst/add_10_2/SUM[1] (ALU_DW01_inc_0)       0.00       3.22 f
+  Execute/alu_inst/add_10_3/B[1] (ALU_DW01_add_1)         0.00       3.22 f
+  Execute/alu_inst/add_10_3/U1_1/CO (ADDFX2M)             0.31       3.53 f
+  Execute/alu_inst/add_10_3/U1_2/CO (ADDFXLM)             0.19       3.72 f
+  Execute/alu_inst/add_10_3/U1_3/CO (ADDFX2M)             0.20       3.92 f
+  Execute/alu_inst/add_10_3/U1_4/CO (ADDFXLM)             0.19       4.11 f
+  Execute/alu_inst/add_10_3/U1_5/CO (ADDFX2M)             0.20       4.31 f
+  Execute/alu_inst/add_10_3/U1_6/CO (ADDFXLM)             0.19       4.51 f
+  Execute/alu_inst/add_10_3/U1_7/CO (ADDFX2M)             0.20       4.71 f
+  Execute/alu_inst/add_10_3/U1_8/CO (ADDFXLM)             0.19       4.90 f
+  Execute/alu_inst/add_10_3/U1_9/CO (ADDFX2M)             0.20       5.10 f
+  Execute/alu_inst/add_10_3/U1_10/CO (ADDFXLM)            0.19       5.29 f
+  Execute/alu_inst/add_10_3/U1_11/CO (ADDFX2M)            0.20       5.49 f
+  Execute/alu_inst/add_10_3/U1_12/CO (ADDFXLM)            0.19       5.69 f
+  Execute/alu_inst/add_10_3/U1_13/CO (ADDFX2M)            0.20       5.89 f
+  Execute/alu_inst/add_10_3/U1_14/CO (ADDFXLM)            0.19       6.08 f
+  Execute/alu_inst/add_10_3/U1_15/CO (ADDFX2M)            0.20       6.28 f
+  Execute/alu_inst/add_10_3/U1_16/CO (ADDFXLM)            0.19       6.47 f
+  Execute/alu_inst/add_10_3/U1_17/CO (ADDFX2M)            0.20       6.67 f
+  Execute/alu_inst/add_10_3/U1_18/CO (ADDFXLM)            0.19       6.87 f
+  Execute/alu_inst/add_10_3/U1_19/CO (ADDFX2M)            0.20       7.06 f
+  Execute/alu_inst/add_10_3/U1_20/S (ADDFXLM)             0.20       7.26 r
+  Execute/alu_inst/add_10_3/SUM[20] (ALU_DW01_add_1)      0.00       7.26 r
+  Execute/alu_inst/U106/Y (NAND2X2M)                      0.04       7.30 f
+  Execute/alu_inst/U104/Y (OAI211X2M)                     0.06       7.36 r
+  Execute/alu_inst/Result[20] (ALU)                       0.00       7.36 r
+  Execute/ALUResultM_reg[20]/D (DFFRQX2M)                 0.00       7.36 r
+  data arrival time                                                  7.36
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  Execute/ALUResultM_reg[20]/CK (DFFRQX2M)                0.00      10.00 r
+  library setup time                                     -0.18       9.82
+  data required time                                                 9.82
+  --------------------------------------------------------------------------
+  data required time                                                 9.82
+  data arrival time                                                 -7.36
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.47
+
+
+  Startpoint: rst (input port clocked by clk)
+  Endpoint: Execute/ALUResultM_reg[19]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  rst (in)                                                0.00       2.00 r
+  Forwarding_block/rst (hazard_unit)                      0.00       2.00 r
+  Forwarding_block/U22/Y (CLKINVX16M)                     0.00       2.00 f
+  Forwarding_block/U36/Y (NAND3BX1M)                      0.12       2.12 f
+  Forwarding_block/U35/Y (CLKINVX1M)                      0.07       2.19 r
+  Forwarding_block/U4/Y (NAND4X2M)                        0.07       2.26 f
+  Forwarding_block/U3/Y (NOR4X1M)                         0.20       2.46 r
+  Forwarding_block/ForwardBE[0] (hazard_unit)             0.00       2.46 r
+  Execute/ForwardBE[0] (execute_cycle)                    0.00       2.46 r
+  Execute/SrcB_Mux/s[0] (Mux_3_by_1_2)                    0.00       2.46 r
+  Execute/SrcB_Mux/U22/Y (NOR2BX2M)                       0.06       2.52 f
+  Execute/SrcB_Mux/U17/Y (CLKBUFX2M)                      0.16       2.68 f
+  Execute/SrcB_Mux/U36/Y (AOI22X1M)                       0.12       2.80 r
+  Execute/SrcB_Mux/U4/Y (OAI2BB1X1M)                      0.05       2.85 f
+  Execute/SrcB_Mux/d[1] (Mux_3_by_1_2)                    0.00       2.85 f
+  Execute/ALU_Src_Mux/a[1] (Mux_1)                        0.00       2.85 f
+  Execute/ALU_Src_Mux/U1/Y (AO22XLM)                      0.26       3.11 f
+  Execute/ALU_Src_Mux/c[1] (Mux_1)                        0.00       3.11 f
+  Execute/alu_inst/B[1] (ALU)                             0.00       3.11 f
+  Execute/alu_inst/U4/Y (CLKINVX2M)                       0.06       3.16 r
+  Execute/alu_inst/add_10_2/A[1] (ALU_DW01_inc_0)         0.00       3.16 r
+  Execute/alu_inst/add_10_2/U1_1_1/S (ADDHX1M)            0.06       3.22 f
+  Execute/alu_inst/add_10_2/SUM[1] (ALU_DW01_inc_0)       0.00       3.22 f
+  Execute/alu_inst/add_10_3/B[1] (ALU_DW01_add_1)         0.00       3.22 f
+  Execute/alu_inst/add_10_3/U1_1/CO (ADDFX2M)             0.31       3.53 f
+  Execute/alu_inst/add_10_3/U1_2/CO (ADDFXLM)             0.19       3.72 f
+  Execute/alu_inst/add_10_3/U1_3/CO (ADDFX2M)             0.20       3.92 f
+  Execute/alu_inst/add_10_3/U1_4/CO (ADDFXLM)             0.19       4.11 f
+  Execute/alu_inst/add_10_3/U1_5/CO (ADDFX2M)             0.20       4.31 f
+  Execute/alu_inst/add_10_3/U1_6/CO (ADDFXLM)             0.19       4.51 f
+  Execute/alu_inst/add_10_3/U1_7/CO (ADDFX2M)             0.20       4.71 f
+  Execute/alu_inst/add_10_3/U1_8/CO (ADDFXLM)             0.19       4.90 f
+  Execute/alu_inst/add_10_3/U1_9/CO (ADDFX2M)             0.20       5.10 f
+  Execute/alu_inst/add_10_3/U1_10/CO (ADDFXLM)            0.19       5.29 f
+  Execute/alu_inst/add_10_3/U1_11/CO (ADDFX2M)            0.20       5.49 f
+  Execute/alu_inst/add_10_3/U1_12/CO (ADDFXLM)            0.19       5.69 f
+  Execute/alu_inst/add_10_3/U1_13/CO (ADDFX2M)            0.20       5.89 f
+  Execute/alu_inst/add_10_3/U1_14/CO (ADDFXLM)            0.19       6.08 f
+  Execute/alu_inst/add_10_3/U1_15/CO (ADDFX2M)            0.20       6.28 f
+  Execute/alu_inst/add_10_3/U1_16/CO (ADDFXLM)            0.19       6.47 f
+  Execute/alu_inst/add_10_3/U1_17/CO (ADDFX2M)            0.20       6.67 f
+  Execute/alu_inst/add_10_3/U1_18/CO (ADDFXLM)            0.19       6.87 f
+  Execute/alu_inst/add_10_3/U1_19/S (ADDFX2M)             0.20       7.07 r
+  Execute/alu_inst/add_10_3/SUM[19] (ALU_DW01_add_1)      0.00       7.07 r
+  Execute/alu_inst/U114/Y (NAND2X2M)                      0.04       7.10 f
+  Execute/alu_inst/U112/Y (OAI211X2M)                     0.06       7.16 r
+  Execute/alu_inst/Result[19] (ALU)                       0.00       7.16 r
+  Execute/ALUResultM_reg[19]/D (DFFRQX2M)                 0.00       7.16 r
+  data arrival time                                                  7.16
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  Execute/ALUResultM_reg[19]/CK (DFFRQX2M)                0.00      10.00 r
+  library setup time                                     -0.18       9.82
+  data required time                                                 9.82
+  --------------------------------------------------------------------------
+  data required time                                                 9.82
+  data arrival time                                                 -7.16
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.67
+
+
+  Startpoint: rst (input port clocked by clk)
+  Endpoint: Execute/ALUResultM_reg[18]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  rst (in)                                                0.00       2.00 r
+  Forwarding_block/rst (hazard_unit)                      0.00       2.00 r
+  Forwarding_block/U22/Y (CLKINVX16M)                     0.00       2.00 f
+  Forwarding_block/U36/Y (NAND3BX1M)                      0.12       2.12 f
+  Forwarding_block/U35/Y (CLKINVX1M)                      0.07       2.19 r
+  Forwarding_block/U4/Y (NAND4X2M)                        0.07       2.26 f
+  Forwarding_block/U3/Y (NOR4X1M)                         0.20       2.46 r
+  Forwarding_block/ForwardBE[0] (hazard_unit)             0.00       2.46 r
+  Execute/ForwardBE[0] (execute_cycle)                    0.00       2.46 r
+  Execute/SrcB_Mux/s[0] (Mux_3_by_1_2)                    0.00       2.46 r
+  Execute/SrcB_Mux/U22/Y (NOR2BX2M)                       0.06       2.52 f
+  Execute/SrcB_Mux/U17/Y (CLKBUFX2M)                      0.16       2.68 f
+  Execute/SrcB_Mux/U36/Y (AOI22X1M)                       0.12       2.80 r
+  Execute/SrcB_Mux/U4/Y (OAI2BB1X1M)                      0.05       2.85 f
+  Execute/SrcB_Mux/d[1] (Mux_3_by_1_2)                    0.00       2.85 f
+  Execute/ALU_Src_Mux/a[1] (Mux_1)                        0.00       2.85 f
+  Execute/ALU_Src_Mux/U1/Y (AO22XLM)                      0.26       3.11 f
+  Execute/ALU_Src_Mux/c[1] (Mux_1)                        0.00       3.11 f
+  Execute/alu_inst/B[1] (ALU)                             0.00       3.11 f
+  Execute/alu_inst/U4/Y (CLKINVX2M)                       0.06       3.16 r
+  Execute/alu_inst/add_10_2/A[1] (ALU_DW01_inc_0)         0.00       3.16 r
+  Execute/alu_inst/add_10_2/U1_1_1/S (ADDHX1M)            0.06       3.22 f
+  Execute/alu_inst/add_10_2/SUM[1] (ALU_DW01_inc_0)       0.00       3.22 f
+  Execute/alu_inst/add_10_3/B[1] (ALU_DW01_add_1)         0.00       3.22 f
+  Execute/alu_inst/add_10_3/U1_1/CO (ADDFX2M)             0.31       3.53 f
+  Execute/alu_inst/add_10_3/U1_2/CO (ADDFXLM)             0.19       3.72 f
+  Execute/alu_inst/add_10_3/U1_3/CO (ADDFX2M)             0.20       3.92 f
+  Execute/alu_inst/add_10_3/U1_4/CO (ADDFXLM)             0.19       4.11 f
+  Execute/alu_inst/add_10_3/U1_5/CO (ADDFX2M)             0.20       4.31 f
+  Execute/alu_inst/add_10_3/U1_6/CO (ADDFXLM)             0.19       4.51 f
+  Execute/alu_inst/add_10_3/U1_7/CO (ADDFX2M)             0.20       4.71 f
+  Execute/alu_inst/add_10_3/U1_8/CO (ADDFXLM)             0.19       4.90 f
+  Execute/alu_inst/add_10_3/U1_9/CO (ADDFX2M)             0.20       5.10 f
+  Execute/alu_inst/add_10_3/U1_10/CO (ADDFXLM)            0.19       5.29 f
+  Execute/alu_inst/add_10_3/U1_11/CO (ADDFX2M)            0.20       5.49 f
+  Execute/alu_inst/add_10_3/U1_12/CO (ADDFXLM)            0.19       5.69 f
+  Execute/alu_inst/add_10_3/U1_13/CO (ADDFX2M)            0.20       5.89 f
+  Execute/alu_inst/add_10_3/U1_14/CO (ADDFXLM)            0.19       6.08 f
+  Execute/alu_inst/add_10_3/U1_15/CO (ADDFX2M)            0.20       6.28 f
+  Execute/alu_inst/add_10_3/U1_16/CO (ADDFXLM)            0.19       6.47 f
+  Execute/alu_inst/add_10_3/U1_17/CO (ADDFX2M)            0.20       6.67 f
+  Execute/alu_inst/add_10_3/U1_18/S (ADDFXLM)             0.20       6.87 r
+  Execute/alu_inst/add_10_3/SUM[18] (ALU_DW01_add_1)      0.00       6.87 r
+  Execute/alu_inst/U122/Y (NAND2X2M)                      0.04       6.91 f
+  Execute/alu_inst/U120/Y (OAI211X2M)                     0.06       6.96 r
+  Execute/alu_inst/Result[18] (ALU)                       0.00       6.96 r
+  Execute/ALUResultM_reg[18]/D (DFFRQX2M)                 0.00       6.96 r
+  data arrival time                                                  6.96
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  Execute/ALUResultM_reg[18]/CK (DFFRQX2M)                0.00      10.00 r
+  library setup time                                     -0.18       9.82
+  data required time                                                 9.82
+  --------------------------------------------------------------------------
+  data required time                                                 9.82
+  data arrival time                                                 -6.96
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.86
+
+
+  Startpoint: rst (input port clocked by clk)
+  Endpoint: Execute/ALUResultM_reg[17]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  rst (in)                                                0.00       2.00 r
+  Forwarding_block/rst (hazard_unit)                      0.00       2.00 r
+  Forwarding_block/U22/Y (CLKINVX16M)                     0.00       2.00 f
+  Forwarding_block/U36/Y (NAND3BX1M)                      0.12       2.12 f
+  Forwarding_block/U35/Y (CLKINVX1M)                      0.07       2.19 r
+  Forwarding_block/U4/Y (NAND4X2M)                        0.07       2.26 f
+  Forwarding_block/U3/Y (NOR4X1M)                         0.20       2.46 r
+  Forwarding_block/ForwardBE[0] (hazard_unit)             0.00       2.46 r
+  Execute/ForwardBE[0] (execute_cycle)                    0.00       2.46 r
+  Execute/SrcB_Mux/s[0] (Mux_3_by_1_2)                    0.00       2.46 r
+  Execute/SrcB_Mux/U22/Y (NOR2BX2M)                       0.06       2.52 f
+  Execute/SrcB_Mux/U17/Y (CLKBUFX2M)                      0.16       2.68 f
+  Execute/SrcB_Mux/U36/Y (AOI22X1M)                       0.12       2.80 r
+  Execute/SrcB_Mux/U4/Y (OAI2BB1X1M)                      0.05       2.85 f
+  Execute/SrcB_Mux/d[1] (Mux_3_by_1_2)                    0.00       2.85 f
+  Execute/ALU_Src_Mux/a[1] (Mux_1)                        0.00       2.85 f
+  Execute/ALU_Src_Mux/U1/Y (AO22XLM)                      0.26       3.11 f
+  Execute/ALU_Src_Mux/c[1] (Mux_1)                        0.00       3.11 f
+  Execute/alu_inst/B[1] (ALU)                             0.00       3.11 f
+  Execute/alu_inst/U4/Y (CLKINVX2M)                       0.06       3.16 r
+  Execute/alu_inst/add_10_2/A[1] (ALU_DW01_inc_0)         0.00       3.16 r
+  Execute/alu_inst/add_10_2/U1_1_1/S (ADDHX1M)            0.06       3.22 f
+  Execute/alu_inst/add_10_2/SUM[1] (ALU_DW01_inc_0)       0.00       3.22 f
+  Execute/alu_inst/add_10_3/B[1] (ALU_DW01_add_1)         0.00       3.22 f
+  Execute/alu_inst/add_10_3/U1_1/CO (ADDFX2M)             0.31       3.53 f
+  Execute/alu_inst/add_10_3/U1_2/CO (ADDFXLM)             0.19       3.72 f
+  Execute/alu_inst/add_10_3/U1_3/CO (ADDFX2M)             0.20       3.92 f
+  Execute/alu_inst/add_10_3/U1_4/CO (ADDFXLM)             0.19       4.11 f
+  Execute/alu_inst/add_10_3/U1_5/CO (ADDFX2M)             0.20       4.31 f
+  Execute/alu_inst/add_10_3/U1_6/CO (ADDFXLM)             0.19       4.51 f
+  Execute/alu_inst/add_10_3/U1_7/CO (ADDFX2M)             0.20       4.71 f
+  Execute/alu_inst/add_10_3/U1_8/CO (ADDFXLM)             0.19       4.90 f
+  Execute/alu_inst/add_10_3/U1_9/CO (ADDFX2M)             0.20       5.10 f
+  Execute/alu_inst/add_10_3/U1_10/CO (ADDFXLM)            0.19       5.29 f
+  Execute/alu_inst/add_10_3/U1_11/CO (ADDFX2M)            0.20       5.49 f
+  Execute/alu_inst/add_10_3/U1_12/CO (ADDFXLM)            0.19       5.69 f
+  Execute/alu_inst/add_10_3/U1_13/CO (ADDFX2M)            0.20       5.89 f
+  Execute/alu_inst/add_10_3/U1_14/CO (ADDFXLM)            0.19       6.08 f
+  Execute/alu_inst/add_10_3/U1_15/CO (ADDFX2M)            0.20       6.28 f
+  Execute/alu_inst/add_10_3/U1_16/CO (ADDFXLM)            0.19       6.47 f
+  Execute/alu_inst/add_10_3/U1_17/S (ADDFX2M)             0.20       6.67 r
+  Execute/alu_inst/add_10_3/SUM[17] (ALU_DW01_add_1)      0.00       6.67 r
+  Execute/alu_inst/U110/Y (NAND2X2M)                      0.04       6.71 f
+  Execute/alu_inst/U108/Y (OAI211X2M)                     0.06       6.76 r
+  Execute/alu_inst/Result[17] (ALU)                       0.00       6.76 r
+  Execute/ALUResultM_reg[17]/D (DFFRQX2M)                 0.00       6.76 r
+  data arrival time                                                  6.76
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  Execute/ALUResultM_reg[17]/CK (DFFRQX2M)                0.00      10.00 r
+  library setup time                                     -0.18       9.82
+  data required time                                                 9.82
+  --------------------------------------------------------------------------
+  data required time                                                 9.82
+  data arrival time                                                 -6.76
+  --------------------------------------------------------------------------
+  slack (MET)                                                        3.06
+
+
+  Startpoint: rst (input port clocked by clk)
+  Endpoint: Execute/ALUResultM_reg[16]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  rst (in)                                                0.00       2.00 r
+  Forwarding_block/rst (hazard_unit)                      0.00       2.00 r
+  Forwarding_block/U22/Y (CLKINVX16M)                     0.00       2.00 f
+  Forwarding_block/U36/Y (NAND3BX1M)                      0.12       2.12 f
+  Forwarding_block/U35/Y (CLKINVX1M)                      0.07       2.19 r
+  Forwarding_block/U4/Y (NAND4X2M)                        0.07       2.26 f
+  Forwarding_block/U3/Y (NOR4X1M)                         0.20       2.46 r
+  Forwarding_block/ForwardBE[0] (hazard_unit)             0.00       2.46 r
+  Execute/ForwardBE[0] (execute_cycle)                    0.00       2.46 r
+  Execute/SrcB_Mux/s[0] (Mux_3_by_1_2)                    0.00       2.46 r
+  Execute/SrcB_Mux/U22/Y (NOR2BX2M)                       0.06       2.52 f
+  Execute/SrcB_Mux/U17/Y (CLKBUFX2M)                      0.16       2.68 f
+  Execute/SrcB_Mux/U36/Y (AOI22X1M)                       0.12       2.80 r
+  Execute/SrcB_Mux/U4/Y (OAI2BB1X1M)                      0.05       2.85 f
+  Execute/SrcB_Mux/d[1] (Mux_3_by_1_2)                    0.00       2.85 f
+  Execute/ALU_Src_Mux/a[1] (Mux_1)                        0.00       2.85 f
+  Execute/ALU_Src_Mux/U1/Y (AO22XLM)                      0.26       3.11 f
+  Execute/ALU_Src_Mux/c[1] (Mux_1)                        0.00       3.11 f
+  Execute/alu_inst/B[1] (ALU)                             0.00       3.11 f
+  Execute/alu_inst/U4/Y (CLKINVX2M)                       0.06       3.16 r
+  Execute/alu_inst/add_10_2/A[1] (ALU_DW01_inc_0)         0.00       3.16 r
+  Execute/alu_inst/add_10_2/U1_1_1/S (ADDHX1M)            0.06       3.22 f
+  Execute/alu_inst/add_10_2/SUM[1] (ALU_DW01_inc_0)       0.00       3.22 f
+  Execute/alu_inst/add_10_3/B[1] (ALU_DW01_add_1)         0.00       3.22 f
+  Execute/alu_inst/add_10_3/U1_1/CO (ADDFX2M)             0.31       3.53 f
+  Execute/alu_inst/add_10_3/U1_2/CO (ADDFXLM)             0.19       3.72 f
+  Execute/alu_inst/add_10_3/U1_3/CO (ADDFX2M)             0.20       3.92 f
+  Execute/alu_inst/add_10_3/U1_4/CO (ADDFXLM)             0.19       4.11 f
+  Execute/alu_inst/add_10_3/U1_5/CO (ADDFX2M)             0.20       4.31 f
+  Execute/alu_inst/add_10_3/U1_6/CO (ADDFXLM)             0.19       4.51 f
+  Execute/alu_inst/add_10_3/U1_7/CO (ADDFX2M)             0.20       4.71 f
+  Execute/alu_inst/add_10_3/U1_8/CO (ADDFXLM)             0.19       4.90 f
+  Execute/alu_inst/add_10_3/U1_9/CO (ADDFX2M)             0.20       5.10 f
+  Execute/alu_inst/add_10_3/U1_10/CO (ADDFXLM)            0.19       5.29 f
+  Execute/alu_inst/add_10_3/U1_11/CO (ADDFX2M)            0.20       5.49 f
+  Execute/alu_inst/add_10_3/U1_12/CO (ADDFXLM)            0.19       5.69 f
+  Execute/alu_inst/add_10_3/U1_13/CO (ADDFX2M)            0.20       5.89 f
+  Execute/alu_inst/add_10_3/U1_14/CO (ADDFXLM)            0.19       6.08 f
+  Execute/alu_inst/add_10_3/U1_15/CO (ADDFX2M)            0.20       6.28 f
+  Execute/alu_inst/add_10_3/U1_16/S (ADDFXLM)             0.20       6.47 r
+  Execute/alu_inst/add_10_3/SUM[16] (ALU_DW01_add_1)      0.00       6.47 r
+  Execute/alu_inst/U126/Y (NAND2X2M)                      0.04       6.52 f
+  Execute/alu_inst/U124/Y (OAI211X2M)                     0.06       6.57 r
+  Execute/alu_inst/Result[16] (ALU)                       0.00       6.57 r
+  Execute/ALUResultM_reg[16]/D (DFFRQX2M)                 0.00       6.57 r
+  data arrival time                                                  6.57
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  Execute/ALUResultM_reg[16]/CK (DFFRQX2M)                0.00      10.00 r
+  library setup time                                     -0.18       9.82
+  data required time                                                 9.82
+  --------------------------------------------------------------------------
+  data required time                                                 9.82
+  data arrival time                                                 -6.57
+  --------------------------------------------------------------------------
+  slack (MET)                                                        3.25
+
+
+  Startpoint: rst (input port clocked by clk)
+  Endpoint: Execute/ALUResultM_reg[15]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  rst (in)                                                0.00       2.00 r
+  Forwarding_block/rst (hazard_unit)                      0.00       2.00 r
+  Forwarding_block/U22/Y (CLKINVX16M)                     0.00       2.00 f
+  Forwarding_block/U36/Y (NAND3BX1M)                      0.12       2.12 f
+  Forwarding_block/U35/Y (CLKINVX1M)                      0.07       2.19 r
+  Forwarding_block/U4/Y (NAND4X2M)                        0.07       2.26 f
+  Forwarding_block/U3/Y (NOR4X1M)                         0.20       2.46 r
+  Forwarding_block/ForwardBE[0] (hazard_unit)             0.00       2.46 r
+  Execute/ForwardBE[0] (execute_cycle)                    0.00       2.46 r
+  Execute/SrcB_Mux/s[0] (Mux_3_by_1_2)                    0.00       2.46 r
+  Execute/SrcB_Mux/U22/Y (NOR2BX2M)                       0.06       2.52 f
+  Execute/SrcB_Mux/U17/Y (CLKBUFX2M)                      0.16       2.68 f
+  Execute/SrcB_Mux/U36/Y (AOI22X1M)                       0.12       2.80 r
+  Execute/SrcB_Mux/U4/Y (OAI2BB1X1M)                      0.05       2.85 f
+  Execute/SrcB_Mux/d[1] (Mux_3_by_1_2)                    0.00       2.85 f
+  Execute/ALU_Src_Mux/a[1] (Mux_1)                        0.00       2.85 f
+  Execute/ALU_Src_Mux/U1/Y (AO22XLM)                      0.26       3.11 f
+  Execute/ALU_Src_Mux/c[1] (Mux_1)                        0.00       3.11 f
+  Execute/alu_inst/B[1] (ALU)                             0.00       3.11 f
+  Execute/alu_inst/U4/Y (CLKINVX2M)                       0.06       3.16 r
+  Execute/alu_inst/add_10_2/A[1] (ALU_DW01_inc_0)         0.00       3.16 r
+  Execute/alu_inst/add_10_2/U1_1_1/S (ADDHX1M)            0.06       3.22 f
+  Execute/alu_inst/add_10_2/SUM[1] (ALU_DW01_inc_0)       0.00       3.22 f
+  Execute/alu_inst/add_10_3/B[1] (ALU_DW01_add_1)         0.00       3.22 f
+  Execute/alu_inst/add_10_3/U1_1/CO (ADDFX2M)             0.31       3.53 f
+  Execute/alu_inst/add_10_3/U1_2/CO (ADDFXLM)             0.19       3.72 f
+  Execute/alu_inst/add_10_3/U1_3/CO (ADDFX2M)             0.20       3.92 f
+  Execute/alu_inst/add_10_3/U1_4/CO (ADDFXLM)             0.19       4.11 f
+  Execute/alu_inst/add_10_3/U1_5/CO (ADDFX2M)             0.20       4.31 f
+  Execute/alu_inst/add_10_3/U1_6/CO (ADDFXLM)             0.19       4.51 f
+  Execute/alu_inst/add_10_3/U1_7/CO (ADDFX2M)             0.20       4.71 f
+  Execute/alu_inst/add_10_3/U1_8/CO (ADDFXLM)             0.19       4.90 f
+  Execute/alu_inst/add_10_3/U1_9/CO (ADDFX2M)             0.20       5.10 f
+  Execute/alu_inst/add_10_3/U1_10/CO (ADDFXLM)            0.19       5.29 f
+  Execute/alu_inst/add_10_3/U1_11/CO (ADDFX2M)            0.20       5.49 f
+  Execute/alu_inst/add_10_3/U1_12/CO (ADDFXLM)            0.19       5.69 f
+  Execute/alu_inst/add_10_3/U1_13/CO (ADDFX2M)            0.20       5.89 f
+  Execute/alu_inst/add_10_3/U1_14/CO (ADDFXLM)            0.19       6.08 f
+  Execute/alu_inst/add_10_3/U1_15/S (ADDFX2M)             0.20       6.28 r
+  Execute/alu_inst/add_10_3/SUM[15] (ALU_DW01_add_1)      0.00       6.28 r
+  Execute/alu_inst/U118/Y (NAND2X2M)                      0.04       6.32 f
+  Execute/alu_inst/U116/Y (OAI211X2M)                     0.06       6.37 r
+  Execute/alu_inst/Result[15] (ALU)                       0.00       6.37 r
+  Execute/ALUResultM_reg[15]/D (DFFRQX2M)                 0.00       6.37 r
+  data arrival time                                                  6.37
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  Execute/ALUResultM_reg[15]/CK (DFFRQX2M)                0.00      10.00 r
+  library setup time                                     -0.18       9.82
+  data required time                                                 9.82
+  --------------------------------------------------------------------------
+  data required time                                                 9.82
+  data arrival time                                                 -6.37
+  --------------------------------------------------------------------------
+  slack (MET)                                                        3.45
+
+
+  Startpoint: rst (input port clocked by clk)
+  Endpoint: Execute/ALUResultM_reg[14]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  rst (in)                                                0.00       2.00 r
+  Forwarding_block/rst (hazard_unit)                      0.00       2.00 r
+  Forwarding_block/U22/Y (CLKINVX16M)                     0.00       2.00 f
+  Forwarding_block/U36/Y (NAND3BX1M)                      0.12       2.12 f
+  Forwarding_block/U35/Y (CLKINVX1M)                      0.07       2.19 r
+  Forwarding_block/U4/Y (NAND4X2M)                        0.07       2.26 f
+  Forwarding_block/U3/Y (NOR4X1M)                         0.20       2.46 r
+  Forwarding_block/ForwardBE[0] (hazard_unit)             0.00       2.46 r
+  Execute/ForwardBE[0] (execute_cycle)                    0.00       2.46 r
+  Execute/SrcB_Mux/s[0] (Mux_3_by_1_2)                    0.00       2.46 r
+  Execute/SrcB_Mux/U22/Y (NOR2BX2M)                       0.06       2.52 f
+  Execute/SrcB_Mux/U17/Y (CLKBUFX2M)                      0.16       2.68 f
+  Execute/SrcB_Mux/U36/Y (AOI22X1M)                       0.12       2.80 r
+  Execute/SrcB_Mux/U4/Y (OAI2BB1X1M)                      0.05       2.85 f
+  Execute/SrcB_Mux/d[1] (Mux_3_by_1_2)                    0.00       2.85 f
+  Execute/ALU_Src_Mux/a[1] (Mux_1)                        0.00       2.85 f
+  Execute/ALU_Src_Mux/U1/Y (AO22XLM)                      0.26       3.11 f
+  Execute/ALU_Src_Mux/c[1] (Mux_1)                        0.00       3.11 f
+  Execute/alu_inst/B[1] (ALU)                             0.00       3.11 f
+  Execute/alu_inst/U4/Y (CLKINVX2M)                       0.06       3.16 r
+  Execute/alu_inst/add_10_2/A[1] (ALU_DW01_inc_0)         0.00       3.16 r
+  Execute/alu_inst/add_10_2/U1_1_1/S (ADDHX1M)            0.06       3.22 f
+  Execute/alu_inst/add_10_2/SUM[1] (ALU_DW01_inc_0)       0.00       3.22 f
+  Execute/alu_inst/add_10_3/B[1] (ALU_DW01_add_1)         0.00       3.22 f
+  Execute/alu_inst/add_10_3/U1_1/CO (ADDFX2M)             0.31       3.53 f
+  Execute/alu_inst/add_10_3/U1_2/CO (ADDFXLM)             0.19       3.72 f
+  Execute/alu_inst/add_10_3/U1_3/CO (ADDFX2M)             0.20       3.92 f
+  Execute/alu_inst/add_10_3/U1_4/CO (ADDFXLM)             0.19       4.11 f
+  Execute/alu_inst/add_10_3/U1_5/CO (ADDFX2M)             0.20       4.31 f
+  Execute/alu_inst/add_10_3/U1_6/CO (ADDFXLM)             0.19       4.51 f
+  Execute/alu_inst/add_10_3/U1_7/CO (ADDFX2M)             0.20       4.71 f
+  Execute/alu_inst/add_10_3/U1_8/CO (ADDFXLM)             0.19       4.90 f
+  Execute/alu_inst/add_10_3/U1_9/CO (ADDFX2M)             0.20       5.10 f
+  Execute/alu_inst/add_10_3/U1_10/CO (ADDFXLM)            0.19       5.29 f
+  Execute/alu_inst/add_10_3/U1_11/CO (ADDFX2M)            0.20       5.49 f
+  Execute/alu_inst/add_10_3/U1_12/CO (ADDFXLM)            0.19       5.69 f
+  Execute/alu_inst/add_10_3/U1_13/CO (ADDFX2M)            0.20       5.89 f
+  Execute/alu_inst/add_10_3/U1_14/S (ADDFXLM)             0.20       6.08 r
+  Execute/alu_inst/add_10_3/SUM[14] (ALU_DW01_add_1)      0.00       6.08 r
+  Execute/alu_inst/U130/Y (NAND2X2M)                      0.04       6.12 f
+  Execute/alu_inst/U128/Y (OAI211X2M)                     0.06       6.18 r
+  Execute/alu_inst/Result[14] (ALU)                       0.00       6.18 r
+  Execute/ALUResultM_reg[14]/D (DFFRQX2M)                 0.00       6.18 r
+  data arrival time                                                  6.18
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  Execute/ALUResultM_reg[14]/CK (DFFRQX2M)                0.00      10.00 r
+  library setup time                                     -0.18       9.82
+  data required time                                                 9.82
+  --------------------------------------------------------------------------
+  data required time                                                 9.82
+  data arrival time                                                 -6.18
+  --------------------------------------------------------------------------
+  slack (MET)                                                        3.65
+
+
+  Startpoint: rst (input port clocked by clk)
+  Endpoint: Execute/ALUResultM_reg[13]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  rst (in)                                                0.00       2.00 r
+  Forwarding_block/rst (hazard_unit)                      0.00       2.00 r
+  Forwarding_block/U22/Y (CLKINVX16M)                     0.00       2.00 f
+  Forwarding_block/U36/Y (NAND3BX1M)                      0.12       2.12 f
+  Forwarding_block/U35/Y (CLKINVX1M)                      0.07       2.19 r
+  Forwarding_block/U4/Y (NAND4X2M)                        0.07       2.26 f
+  Forwarding_block/U3/Y (NOR4X1M)                         0.20       2.46 r
+  Forwarding_block/ForwardBE[0] (hazard_unit)             0.00       2.46 r
+  Execute/ForwardBE[0] (execute_cycle)                    0.00       2.46 r
+  Execute/SrcB_Mux/s[0] (Mux_3_by_1_2)                    0.00       2.46 r
+  Execute/SrcB_Mux/U22/Y (NOR2BX2M)                       0.06       2.52 f
+  Execute/SrcB_Mux/U17/Y (CLKBUFX2M)                      0.16       2.68 f
+  Execute/SrcB_Mux/U36/Y (AOI22X1M)                       0.12       2.80 r
+  Execute/SrcB_Mux/U4/Y (OAI2BB1X1M)                      0.05       2.85 f
+  Execute/SrcB_Mux/d[1] (Mux_3_by_1_2)                    0.00       2.85 f
+  Execute/ALU_Src_Mux/a[1] (Mux_1)                        0.00       2.85 f
+  Execute/ALU_Src_Mux/U1/Y (AO22XLM)                      0.26       3.11 f
+  Execute/ALU_Src_Mux/c[1] (Mux_1)                        0.00       3.11 f
+  Execute/alu_inst/B[1] (ALU)                             0.00       3.11 f
+  Execute/alu_inst/U4/Y (CLKINVX2M)                       0.06       3.16 r
+  Execute/alu_inst/add_10_2/A[1] (ALU_DW01_inc_0)         0.00       3.16 r
+  Execute/alu_inst/add_10_2/U1_1_1/S (ADDHX1M)            0.06       3.22 f
+  Execute/alu_inst/add_10_2/SUM[1] (ALU_DW01_inc_0)       0.00       3.22 f
+  Execute/alu_inst/add_10_3/B[1] (ALU_DW01_add_1)         0.00       3.22 f
+  Execute/alu_inst/add_10_3/U1_1/CO (ADDFX2M)             0.31       3.53 f
+  Execute/alu_inst/add_10_3/U1_2/CO (ADDFXLM)             0.19       3.72 f
+  Execute/alu_inst/add_10_3/U1_3/CO (ADDFX2M)             0.20       3.92 f
+  Execute/alu_inst/add_10_3/U1_4/CO (ADDFXLM)             0.19       4.11 f
+  Execute/alu_inst/add_10_3/U1_5/CO (ADDFX2M)             0.20       4.31 f
+  Execute/alu_inst/add_10_3/U1_6/CO (ADDFXLM)             0.19       4.51 f
+  Execute/alu_inst/add_10_3/U1_7/CO (ADDFX2M)             0.20       4.71 f
+  Execute/alu_inst/add_10_3/U1_8/CO (ADDFXLM)             0.19       4.90 f
+  Execute/alu_inst/add_10_3/U1_9/CO (ADDFX2M)             0.20       5.10 f
+  Execute/alu_inst/add_10_3/U1_10/CO (ADDFXLM)            0.19       5.29 f
+  Execute/alu_inst/add_10_3/U1_11/CO (ADDFX2M)            0.20       5.49 f
+  Execute/alu_inst/add_10_3/U1_12/CO (ADDFXLM)            0.19       5.69 f
+  Execute/alu_inst/add_10_3/U1_13/S (ADDFX2M)             0.20       5.89 r
+  Execute/alu_inst/add_10_3/SUM[13] (ALU_DW01_add_1)      0.00       5.89 r
+  Execute/alu_inst/U138/Y (NAND2X2M)                      0.04       5.92 f
+  Execute/alu_inst/U136/Y (OAI211X2M)                     0.06       5.98 r
+  Execute/alu_inst/Result[13] (ALU)                       0.00       5.98 r
+  Execute/ALUResultM_reg[13]/D (DFFRQX2M)                 0.00       5.98 r
+  data arrival time                                                  5.98
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  Execute/ALUResultM_reg[13]/CK (DFFRQX2M)                0.00      10.00 r
+  library setup time                                     -0.18       9.82
+  data required time                                                 9.82
+  --------------------------------------------------------------------------
+  data required time                                                 9.82
+  data arrival time                                                 -5.98
+  --------------------------------------------------------------------------
+  slack (MET)                                                        3.85
+
+
+1

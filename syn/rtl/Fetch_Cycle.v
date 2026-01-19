@@ -1,0 +1,52 @@
+// `include "Mux.v"
+// `include "PC_Module.v"
+// `include "Instruction_Memory.v"    
+// `include "PC_Adder.v"
+
+module fetch_cycle (clk, rst, PCSrcE, PCTargetE, InstrD, PCD, PCPlus4D);
+    input clk, rst;
+    input PCSrcE;
+    input [31:0] PCTargetE;
+    output reg [31:0] InstrD, PCD, PCPlus4D;
+
+    wire [31:0] PC_F, PCPlus4F, PCF;
+    wire [31:0] InstrF;
+
+    Mux PC_MUX (
+        .a(PCPlus4F),
+        .b(PCTargetE),
+        .s(PCSrcE),
+        .c(PC_F)
+    );
+
+PC_Module Program_counter (
+        .clk(clk), 
+        .rst(rst),
+        .PC(PCF),    
+        .PC_Next(PC_F) 
+    );
+
+    Instruction_Memory IMEM(
+        .rst(rst),
+        .A(PCF), 
+        .RD(InstrF)
+    );
+
+    PC_Adder Adder (
+        .a(PCF),
+        .b(32'd4),
+        .c(PCPlus4F)
+    );
+
+    always @(posedge clk or negedge rst) begin
+        if (rst == 1'b0) begin
+            InstrD <= 32'b0;
+            PCPlus4D <= 32'b0;
+            PCD <= 32'b0;
+        end else begin
+            InstrD <= InstrF;
+            PCPlus4D <= PCPlus4F;
+            PCD <= PCF;
+        end
+    end
+endmodule

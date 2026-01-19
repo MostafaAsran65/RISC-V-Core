@@ -1,0 +1,53 @@
+
+icc2_shell> start_gui
+icc2_shell> 
+################################################################################
+# Synopsys ICC Script - DESKTOP PATHS & POWER FIX
+# Location: /home/IC/Desktop/RESIC-V/pnr/scripts
+################################################################################
+# 1. DEFINING PATHS (Based on your new Desktop structure)
+# ------------------------------------------------------------------------------
+set DESIGN_ROOT   "/home/IC/Desktop/RESIC-V"
+/home/IC/Desktop/RESIC-V
+set PNR_PATH      "$DESIGN_ROOT/pnr"
+/home/IC/Desktop/RESIC-V/pnr
+set SYN_OUTPUT    "$DESIGN_ROOT/syn/output"
+/home/IC/Desktop/RESIC-V/syn/output
+# Folders inside pnr directory (based on your image)
+set RUNTIME_PATH  "$PNR_PATH/runtime"
+/home/IC/Desktop/RESIC-V/pnr/runtime
+set OUTPUTS_PATH  "$PNR_PATH/output"
+/home/IC/Desktop/RESIC-V/pnr/output
+set REPORTS_PATH  "$PNR_PATH/reports"
+/home/IC/Desktop/RESIC-V/pnr/reports
+# Clean Start
+file mkdir $OUTPUTS_PATH $REPORTS_PATH
+Error: can't create directory "/home/IC": permission denied
+        Use error_info for more info. (CMD-013)
+Information: script '/home/ICer/Desktop/RESIC-V/pnr/scripts/icc_pnr.tcl'
+        stopped at line 18 due to error. (CMD-081)
+Extended error info:
+can't create directory "/home/IC": permission denied
+    while executing
+"file mkdir $OUTPUTS_PATH $REPORTS_PATH"
+ -- End Extended Error Info
+Error  when sourcing file /home/ICer/Desktop/RESIC-V/pnr/scripts/icc_pnr.tcl
+       Tcl stack follows:
+can't create directory "/home/IC": permission denied
+    while executing
+"file mkdir $OUTPUTS_PATH $REPORTS_PATH"
+    (file "/home/ICer/Desktop/RESIC-V/pnr/scripts/icc_pnr.tcl" line 18)
+    invoked from within
+"source -verbose -echo /home/ICer/Desktop/RESIC-V/pnr/scripts/icc_pnr.tcl"
+    (in namespace eval "::" script line 1)
+    invoked from within
+"namespace eval :: {source -verbose -echo /home/ICer/Desktop/RESIC-V/pnr/scripts/icc_pnr.tcl}"
+    (in namespace eval "::" script line 1)
+    invoked from within
+"namespace eval :: $source_cmd "
+icc2_shell> exit
+Maximum memory usage for this session: 166.93 MB
+CPU usage for this session:      6 seconds (  0.00 hours)
+Elapsed time for this session:     95 seconds (  0.03 hours)
+Thank you for using IC Compiler II.
+

@@ -1,0 +1,288 @@
+
+                                 Formality (R)
+
+               Version L-2016.03-SP1 for linux64 - Apr 13, 2016 
+
+                    Copyright (c) 1988 - 2016 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+  ** Highlights of Formality (R) Version L-2016.03 **
+   - New alternate verification strategies for resolving inconclusive verifications
+   - Automation for deploying alternate strategies
+   - New command to export the mapping of reference to implementation registers
+   - New capability to combine PG and low power information from db libraries with Verilog functional models
+
+   * Please refer to the Formality Release Notes for details and additional enhancements
+
+Build: 4031317
+Hostname: IC (RHEL64)
+Current time: Sat Jan 17 04:28:32 2026
+
+Loading db file '/opt/Synopsys/Formality2016/libraries/syn/gtech.db'
+################################################################################
+# Synopsys Formality Verification Script
+# Project: RISC-V Pipeline
+# Description: Professional setup with error suppression for Memory Models.
+################################################################################
+# 1. CLEAN START & WORKSPACE SETUP
+################################################################################
+# Clear previous session
+remove_container -all
+Cleared container 'i'
+Cleared container 'r'
+1
+# --- CRITICAL FIX for FMR_ELAB-147 Error ---
+# Suppress "Index may take values outside array bound" warning.
+# This tells Formality to ignore that our 32-bit address is larger than the 1024 memory size.
+suppress_message FMR_ELAB-147
+# Define local directories
+set FM_RUNTIME_PATH "../runtime"
+../runtime
+set FM_REPORTS_PATH "../reports"
+../reports
+# Create directories if missing
+file mkdir $FM_RUNTIME_PATH
+file mkdir $FM_REPORTS_PATH
+# Redirect Log
+set sh_output_log_file "$FM_RUNTIME_PATH/formality.log"
+../runtime/formality.log
+################################################################################
+# 2. DEFINE INPUT PATHS
+################################################################################
+set SYN_BASE_PATH "/home/IC/RESIC-V/syn"
+/home/IC/RESIC-V/syn
+set RTL_PATH      "$SYN_BASE_PATH/rtl"
+/home/IC/RESIC-V/syn/rtl
+set NETLIST_PATH  "$SYN_BASE_PATH/output"
+/home/IC/RESIC-V/syn/output
+set LIB_PATH      "$SYN_BASE_PATH/std_cells"
+/home/IC/RESIC-V/syn/std_cells
+set SVF_PATH      "$SYN_BASE_PATH/runtime" 
+/home/IC/RESIC-V/syn/runtime
+set LIB_NAME "scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db"
+scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db
+set TOP_MODULE "Pipeline_top"
+Pipeline_top
+################################################################################
+# 3. LOAD GUIDANCE (SVF)
+################################################################################
+puts "----------------------------------------------------------------"
+----------------------------------------------------------------
+puts "Step 1: Loading SVF Guidance..."
+Step 1: Loading SVF Guidance...
+puts "----------------------------------------------------------------"
+----------------------------------------------------------------
+set_svf "$SVF_PATH/default.svf"
+SVF set to '/home/IC/RESIC-V/syn/runtime/default.svf'.
+1
+################################################################################
+# 4. READ LIBRARIES & NETLIST (Implementation)
+################################################################################
+puts "----------------------------------------------------------------"
+----------------------------------------------------------------
+puts "Step 2: Reading Implementation (Netlist)..."
+Step 2: Reading Implementation (Netlist)...
+puts "----------------------------------------------------------------"
+----------------------------------------------------------------
+read_db "$LIB_PATH/$LIB_NAME"
+Loading db file '/home/IC/RESIC-V/syn/std_cells/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db'
+1
+read_verilog -container i -netlist "$NETLIST_PATH/pipeline_netlist.v"
+No target library specified, default is WORK
+Loading verilog file '/home/IC/RESIC-V/syn/output/pipeline_netlist.v'
+Current container set to 'i'
+1
+set_top i:/WORK/$TOP_MODULE
+Setting top design to 'i:/WORK/Pipeline_top'
+Status:  Implementing inferred operators...
+
+************ Library Checking Summary ************
+Warning:  1 unlinked power cell(s) with unread pg pins.
+        Use 'report_libraries -defects all' for more details.
+**************************************************
+
+Top design successfully set to 'i:/WORK/Pipeline_top'
+Implementation design set to 'i:/WORK/Pipeline_top'
+1
+################################################################################
+# 5. READ RTL (Reference)
+################################################################################
+puts "----------------------------------------------------------------"
+----------------------------------------------------------------
+puts "Step 3: Reading Reference (RTL)..."
+Step 3: Reading Reference (RTL)...
+puts "----------------------------------------------------------------"
+----------------------------------------------------------------
+set rtl_files [list     "$RTL_PATH/Mux.v"     "$RTL_PATH/PC.v"     "$RTL_PATH/PC_Adder.v"     "$RTL_PATH/Sign_Extend.v"     "$RTL_PATH/ALU.v"     "$RTL_PATH/Register_File.v"     "$RTL_PATH/Instruction_Memory.v"     "$RTL_PATH/Data_Memory.v"     "$RTL_PATH/Main_Decoder.v"     "$RTL_PATH/ALU_Decoder.v"     "$RTL_PATH/Control_Unit_Top.v"     "$RTL_PATH/Hazard_unit.v"     "$RTL_PATH/Fetch_Cycle.v"     "$RTL_PATH/Decode_Cyle.v"     "$RTL_PATH/Execute_Cycle.v"     "$RTL_PATH/Memory_Cycle.v"     "$RTL_PATH/Writeback_Cycle.v"     "$RTL_PATH/Pipeline_Top.v" ]
+/home/IC/RESIC-V/syn/rtl/Mux.v /home/IC/RESIC-V/syn/rtl/PC.v /home/IC/RESIC-V/syn/rtl/PC_Adder.v /home/IC/RESIC-V/syn/rtl/Sign_Extend.v /home/IC/RESIC-V/syn/rtl/ALU.v /home/IC/RESIC-V/syn/rtl/Register_File.v /home/IC/RESIC-V/syn/rtl/Instruction_Memory.v /home/IC/RESIC-V/syn/rtl/Data_Memory.v /home/IC/RESIC-V/syn/rtl/Main_Decoder.v /home/IC/RESIC-V/syn/rtl/ALU_Decoder.v /home/IC/RESIC-V/syn/rtl/Control_Unit_Top.v /home/IC/RESIC-V/syn/rtl/Hazard_unit.v /home/IC/RESIC-V/syn/rtl/Fetch_Cycle.v /home/IC/RESIC-V/syn/rtl/Decode_Cyle.v /home/IC/RESIC-V/syn/rtl/Execute_Cycle.v /home/IC/RESIC-V/syn/rtl/Memory_Cycle.v /home/IC/RESIC-V/syn/rtl/Writeback_Cycle.v /home/IC/RESIC-V/syn/rtl/Pipeline_Top.v
+read_verilog -container r -libname WORK -05 $rtl_files
+Loading verilog file '/home/IC/RESIC-V/syn/rtl/Control_Unit_Top.v'
+Loading verilog file '/home/IC/RESIC-V/syn/rtl/Writeback_Cycle.v'
+Loading verilog file '/home/IC/RESIC-V/syn/rtl/Pipeline_Top.v'
+Loading verilog file '/home/IC/RESIC-V/syn/rtl/Mux.v'
+Loading verilog file '/home/IC/RESIC-V/syn/rtl/PC.v'
+Loading verilog file '/home/IC/RESIC-V/syn/rtl/PC_Adder.v'
+Loading verilog file '/home/IC/RESIC-V/syn/rtl/Sign_Extend.v'
+Loading verilog file '/home/IC/RESIC-V/syn/rtl/ALU.v'
+Loading verilog file '/home/IC/RESIC-V/syn/rtl/Register_File.v'
+Warning: INITIAL statements are not supported. (File: /home/IC/RESIC-V/syn/rtl/Register_File.v Line: 18)  (FMR_VLOG-101)
+Loading verilog file '/home/IC/RESIC-V/syn/rtl/Instruction_Memory.v'
+Loading verilog file '/home/IC/RESIC-V/syn/rtl/Data_Memory.v'
+Warning: INITIAL statements are not supported. (File: /home/IC/RESIC-V/syn/rtl/Data_Memory.v Line: 15)  (FMR_VLOG-101)
+Loading verilog file '/home/IC/RESIC-V/syn/rtl/Main_Decoder.v'
+Loading verilog file '/home/IC/RESIC-V/syn/rtl/ALU_Decoder.v'
+Loading verilog file '/home/IC/RESIC-V/syn/rtl/Hazard_unit.v'
+Loading verilog file '/home/IC/RESIC-V/syn/rtl/Fetch_Cycle.v'
+Loading verilog file '/home/IC/RESIC-V/syn/rtl/Decode_Cyle.v'
+Loading verilog file '/home/IC/RESIC-V/syn/rtl/Execute_Cycle.v'
+Loading verilog file '/home/IC/RESIC-V/syn/rtl/Memory_Cycle.v'
+Current container set to 'r'
+1
+set_top r:/WORK/$TOP_MODULE
+Setting top design to 'r:/WORK/Pipeline_top'
+Status:   Elaborating design fetch_cycle   ...  
+Status:   Elaborating design Mux   ...  
+Status:   Elaborating design PC_Module   ...  
+Status:   Elaborating design Instruction_Memory   ...  
+Status:   Elaborating design PC_Adder   ...  
+Status:   Elaborating design decode_cycle   ...  
+Status:   Elaborating design Main_Decoder   ...  
+Status:   Elaborating design ALU_Decoder   ...  
+Status:   Elaborating design Register_File   ...  
+Status:   Elaborating design Sign_Extend   ...  
+Status:   Elaborating design execute_cycle   ...  
+Status:   Elaborating design Mux_3_by_1   ...  
+Status:   Elaborating design ALU   ...  
+Status:   Elaborating design memory_cycle   ...  
+Status:   Elaborating design Data_Memory   ...  
+Status:   Elaborating design hazard_unit   ...  
+Status:  Implementing inferred operators...
+
+************ Library Checking Summary ************
+Warning:  1 unlinked power cell(s) with unread pg pins.
+        Use 'report_libraries -defects all' for more details.
+**************************************************
+
+Top design successfully set to 'r:/WORK/Pipeline_top'
+Reference design set to 'r:/WORK/Pipeline_top'
+1
+################################################################################
+# 6. MATCH & VERIFY
+################################################################################
+puts "----------------------------------------------------------------"
+----------------------------------------------------------------
+puts "Step 4: Matching & Verifying..."
+Step 4: Matching & Verifying...
+puts "----------------------------------------------------------------"
+----------------------------------------------------------------
+match
+Reference design is 'r:/WORK/Pipeline_top'
+Implementation design is 'i:/WORK/Pipeline_top'
+Status:  Checking designs...
+    Warning: 0 (4) undriven nets found in reference (implementation) design; see formality5.log for list (FM-399)
+Status:  Building verification models...
+Status:  Processing Guide Commands...
+
+***************************** Guidance Summary *****************************
+                                         Status
+Command                 Accepted   Rejected  Unsupported  Unprocessed  Total
+----------------------------------------------------------------------------
+environment         :          3          0          0          0          3
+instance_map        :         18          0          0          0         18
+mark                :         16          0          0          0         16
+reg_constant        :         16          0          0          0         16
+transformation
+   map              :         10          0          0          0         10
+uniquify            :          2          0          0          0          2
+
+SVF files read:
+      /home/IC/RESIC-V/syn/runtime/default.svf
+
+SVF files produced:
+  /home/IC/RESIC-V/formality/scripts/formality5_svf/
+    svf.txt
+****************************************************************************
+
+Status:  Matching...
+    
+*********************************** Matching Results ***********************************    
+ 33646 Compare points matched by name    
+ 0 Compare points matched by signature analysis    
+ 0 Compare points matched by topology    
+ 2 Matched primary inputs, black-box outputs    
+ 0(0) Unmatched reference(implementation) compare points    
+ 0(0) Unmatched reference(implementation) primary inputs, black-box outputs    
+ 16(0) Unmatched reference(implementation) unread points    
+****************************************************************************************
+
+1
+if { [verify] } {
+    puts "################################################################"
+    puts "  SUCCESS: Verification SUCCEEDED! RTL matches Netlist."
+    puts "################################################################"
+} else {
+    puts "################################################################"
+    puts "  ERROR: Verification FAILED! Differences detected."
+    puts "  Check report: $FM_REPORTS_PATH/failing_points.rpt"
+    puts "################################################################"
+    report_failing_points > "$FM_REPORTS_PATH/failing_points.rpt"
+}
+Reference design is 'r:/WORK/Pipeline_top'
+Implementation design is 'i:/WORK/Pipeline_top'
+    
+*********************************** Matching Results ***********************************    
+ 33646 Compare points matched by name    
+ 0 Compare points matched by signature analysis    
+ 0 Compare points matched by topology    
+ 2 Matched primary inputs, black-box outputs    
+ 0(0) Unmatched reference(implementation) compare points    
+ 0(0) Unmatched reference(implementation) primary inputs, black-box outputs    
+ 16(0) Unmatched reference(implementation) unread points    
+****************************************************************************************
+
+Status:  Verifying...
+.......
+
+********************************* Verification Results *********************************
+Verification SUCCEEDED
+----------------------
+ Reference design: r:/WORK/Pipeline_top
+ Implementation design: i:/WORK/Pipeline_top
+ 33646 Passing compare points
+----------------------------------------------------------------------------------------
+Matched Compare Points     BBPin    Loop   BBNet     Cut    Port     DFF     LAT   TOTAL
+----------------------------------------------------------------------------------------
+Passing (equivalent)           0       0       0       0      64   33582       0   33646
+Failing (not equivalent)       0       0       0       0       0       0       0       0
+Not Compared
+  Constant reg                                                        54       0      54
+  Unread                       0       0       0       0       0     662       0     662
+****************************************************************************************
+################################################################
+  SUCCESS: Verification SUCCEEDED! RTL matches Netlist.
+################################################################
+################################################################################
+# 7. LAUNCH GUI
+################################################################################
+puts "Starting Formality GUI..."
+Starting Formality GUI...
+start_gui     1  source -echo -verbose formality.tcl
+fm_shell (verify)> match 
+Reference design is 'r:/WORK/Pipeline_top'
+Implementation design is 'i:/WORK/Pipeline_top'
+
+*********************************** Matching Results ***********************************
+ 33646 Compare points matched previously
+ 0 Compare points matched by name
+ 0 Compare points matched by signature analysis
+ 0 Compare points matched by topology
+ 2 Matched primary inputs, black-box outputs
+ 0(0) Unmatched reference(implementation) compare points
+ 0(0) Unmatched reference(implementation) primary inputs, black-box outputs
+ 16(0) Unmatched reference(implementation) unread points
+****************************************************************************************
+
+1
